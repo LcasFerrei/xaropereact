@@ -1,0 +1,31 @@
+/* subtitulo */
+.subtitulo {
+    text-align: center;
+    color: lightcyan;
+    font-size: 1.3rem;
+    margin: 1.5rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    padding: 3rem;
+    margin-left: 5.2rem;
+    width: 90%;
+    height: 50%;
+    background-color: rgba(61, 61, 147, 0.55);
+    border-radius: 1rem;
+    opacity: 0; /* Define a opacidade inicial como 0 para que o elemento seja invisível */
+    transition: opacity 2.5s ease; /* Adiciona uma transição suave de 0.5 segundos para a propriedade de opacidade */
+}
+
+.textosub{
+    color: white;
+}
+.subtitulo.aparecer {
+    opacity: 1; /* Define a opacidade como 1 para que o elemento se torne visível */
+}
+
+.beneficios img {
+    max-width: 100%; /* Define o tamanho máximo da imagem para 100% da largura do contêiner pai */
+    max-height: 100px; /* Define a altura máxima da imagem */
+    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+    display: block; /* Adiciona um espaço em volta da imagem para evitar o espaçamento estranho */
+}

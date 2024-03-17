@@ -1,0 +1,288 @@
+html{
+    /*background: linear-gradient(rgb(98, 98, 204), black)*/
+    background-color: #c9d6ff;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+}
+
+
+.duvida-pergunta-texto {
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+}
+
+.duvida-pergunta-texto:hover {
+    color: rgb(255, 255, 255);
+}
+
+.resposta {
+    display: none;
+    color: rgb(255, 255, 255);
+    transition: color 0.3s; /* Adiciona uma transição suave de 0.3 segundos para a mudança de cor */
+    font-size: 18px;
+
+}
+
+.ativo {
+    display: block;
+    color: rgb(0, 0, 0);
+    transition: 1s
+}
+
+
+button{
+    text-align: center;
+}
+
+.footer-content {
+    color: white;
+    text-align: center;
+}
+
+.botoes {
+    text-align: center; /* Centraliza os botões horizontalmente */
+    margin-top: 20px; /* Adiciona margem acima dos botões */
+    margin-bottom: 20px; /* Adiciona margem abaixo dos botões */
+}
+
+
+/* Footer */
+.footer-content {
+    color: white;
+    text-align: center;
+    padding: 20px 0; /* Adiciona espaçamento interno */
+}
+
+footer a {
+    color: rgb(98, 98, 204);
+    text-decoration: none;
+}
+
+footer p {
+    color: rgb(98, 98, 204); /* Define a cor do texto como branco */
+    transition: color 0.3s; /* Adiciona uma transição suave para a mudança de cor */
+    text-align: center;
+}
+
+footer p:hover {
+    text-decoration: underline;
+    color: white; /* Muda a cor do texto quando o mouse passa por cima */
+}
+
+footer {
+    background-color: #b0c4de; /* Define o fundo do footer como preto */
+    border-radius: 10px; /* Adiciona um leve border-radius */
+}
+
+
+/* Botões */
+button {
+    text-align: center; /* Centraliza o texto dentro do botão */
+    background-color: rgb(253, 253, 253); /* Cor de fundo */
+    color: black; /* Cor do texto */
+    border: none; /* Remove a borda */
+    padding: 10px 20px; /* Adiciona espaço interno */
+    cursor: pointer; /* Muda o cursor ao passar por cima */
+    transition: background-color 0.3s; /* Efeito de transição para a cor de fundo */
+}
+
+/* header */
+
+header {
+    position: fixed; /*Torna o header fixo */
+    width: 100%; /* Define a largura como 100% */
+    top: 0; /* Mantém o header fixo no topo */
+    z-index: 1000; /* Define a ordem de empilhamento */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 3% 8%; Ajusta o preenchimento */
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    margin-left: -0.5rem;
+    /*background-color: rgb(98, 98, 204); /* Adiciona cor de fundo */
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
+}
+
+.inicial{
+    display: flexbox;
+    align-items: center;
+    color: black;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.inicial i{
+    color: black;
+    font-size: 32px;
+    margin-right: 5px;
+}
+
+.inicial:hover,
+.inicial:hover i {
+    color: rgb(98, 98, 204);
+}
+
+
+.navegação{
+    display: flex;
+
+}
+
+.navegação a{
+    color: black;
+    font-size: smaller;
+    font-weight: 500;
+    margin: 0 30px;
+    transition: a .55s ease;
+}
+
+.navegação a:hover{
+    color: rgb(98, 98, 204);
+}
+
+.header-icons {
+    margin: 0;
+    padding: 0;
+    margin-top: 0.8rem;
+  }
+
+#menu{
+    font-size: 35px;
+    color: black;
+    z-index: 10001;
+    cursor: pointer;
+}
+
+.header-icons i{
+    margin-right: 25px;
+    font-size: 28px;
+    cursor: pointer;
+    transition: all .5s ease;
+    color: black;
+}
+
+.header-icons i:hover{
+    transform: translateY(-5px);
+    color: rgb(98, 98, 204)
+}
+
+body {
+    padding-top: 100px; /* Ajusta o padding superior do body para compensar o espaço ocupado pelo header */
+}
+
+h1 {
+    color: rgb(98, 98, 204);
+    text-align: center;
+    margin-top: 80px; /* Adiciona margem superior ao título */
+}
+
+
+.bx {
+    color: black; /* Define a cor roxa para todos os ícones */
+}
+
+/* teste teste teste */
+
+
+* {
+    box-sizing: border-box;
+  }
+  
+  .accordion-container {
+    margin: 0 auto;
+    min-width: 330px;
+    overflow: hidden;
+  }
+  
+  .main-item {
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    cursor: pointer;
+    background: white;
+    align-items: center;
+    justify-content: start;
+    gap: 8px;
+    transition: all ease-in-out 1s;
+  }
+  
+  .main-item:hover {
+    background-color: rgb(98, 98, 204);
+    color: black;
+  }
+  
+  .main-item svg {
+    color: rgb(98, 98, 204);
+    transition: all ease-in-out 1s;
+  }
+  
+  .main-item:hover svg {
+    color: rgb(98, 98, 204);
+  }
+  
+  .main-item--open {
+    border-radius: 8px 8px 0px 0px;
+    background-color:black;
+    transition: all 1s;
+    color: rgb(0, 0, 0);
+  }
+  
+  .main-item--open:hover {
+    color: rgb(0, 0, 0);
+    border-radius: 8px 8px 0px 0px;
+    background-color: rgb(98, 98, 204);
+  }
+  
+  .main-item--open svg {
+    color: rgb(0, 0, 0);
+  }
+  
+  .main-item--open:hover svg {
+    color: rgb(0, 0, 0);
+  }
+  
+  .accordion-container > ul {
+    max-height: 0px;
+    background-color: black;
+    list-style-type: none;
+    margin: 0px;
+    padding-left: 14px;
+    opacity: 0;
+    background-color: rgb(98, 98, 204);
+    visibility: hidden;
+    transition: all ease-in-out 0.2s;
+  }
+  
+  .main-item--open + ul {
+    visibility: visible;
+    max-height: 400px;
+    opacity: 1;
+    border-radius: 0px 0px 8px 8px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .accordion-container > ul > li {
+    height: 48px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .accordion-container > ul > li:hover {
+    color: black;
+    cursor: pointer;
+  }
+  
+  .expand-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+  }
+  
+  .main-item--open > .expand-icon {
+    transform: rotate(90deg);
+  }
+  

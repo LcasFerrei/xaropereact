@@ -1,0 +1,25 @@
+/* Footer */
+
+
+.footer-content {
+    color: white;
+    text-align: center;
+    padding: 5px 0; /* Adiciona espaçamento interno */
+}
+
+footer a {
+    color: rgb(98, 98, 204);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: white; /* Muda a cor do texto quando o mouse passa por cima */
+}
+
+
+
+footer {
+    background-color: #b0c4de; /* Define o fundo do footer como preto */
+    border-radius: 10px; /* Adiciona um leve border-radius */
+}
