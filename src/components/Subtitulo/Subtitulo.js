@@ -2,28 +2,37 @@ import React, { useState, useEffect } from 'react';
 import './cssSubtitulo.css'; // Importando o arquivo CSS
 
 function Subtitulo() {
+    // Estado para controlar a visibilidade do subtitulo
     const [isVisible, setIsVisible] = useState(false);
 
+    // Efeito para verificar a visibilidade do subtitulo ao rolar a página
     useEffect(() => {
+        // Função para verificar se o subtitulo está visível na tela
         function verificarVisibilidade() {
+            // Seleciona o elemento do subtitulo
             const subtitulo = document.querySelector('.subtitulo');
             if (subtitulo) {
+                // Obtém a posição do topo do subtitulo em relação à janela de visualização
                 const posicaoTopo = subtitulo.getBoundingClientRect().top;
                 const screenHeight = window.innerHeight;
+                // Verifica se o subtitulo está a 75% da altura da tela
                 if (posicaoTopo < screenHeight * 0.75) {
+                    // Define o subtitulo como visível e remove o evento de rolagem
                     setIsVisible(true);
                     window.removeEventListener('scroll', verificarVisibilidade);
                 }
             }
         }
-
+        // Adiciona um evento de rolagem para verificar a visibilidade
         window.addEventListener('scroll', verificarVisibilidade);
-        verificarVisibilidade(); // Para verificar a visibilidade inicial quando o componente montar
+        // Verifica a visibilidade inicial quando o componente é montado
+        verificarVisibilidade();
 
+        // Limpa o evento de rolagem quando o componente é desmontado
         return () => {
             window.removeEventListener('scroll', verificarVisibilidade);
         };
-    }, []);
+    }, []); // Array de dependências vazio, efeito só é executado uma vez
 
     return (
         <div className={`subtitulo ${isVisible ? 'aparecer' : ''}`}>

@@ -12,7 +12,6 @@ function Faq() {
     return (
       <>
         <Header />
-        {/* Conteúdo do componente Faq */}
         <PerguntasRespostas />
         <Footer />
       </>

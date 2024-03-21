@@ -1,4 +1,3 @@
-import { LuUser2 } from "react-icons/lu";
 import { GiRemedy } from "react-icons/gi";
 import { Link } from "react-router-dom";
 
@@ -12,12 +11,12 @@ function Header() {
       </a>
 
       <ul className="navegação">
-        <a href="login.html">Inscreva-se</a>
-        <a href="./review.html">Reviews</a>
-        <a href="Professores.html">Professores</a>
-        <a href="/Faq">Dúvidas Frequentes</a>
-        
+        <a href="login.html" style={{textDecoration: 'none'}}>Inscreva-se</a>
+        <a href="./review.html" style={{textDecoration: 'none'}}>Reviews</a>
+        <a href="Professores.html" style={{textDecoration: 'none'}}>Professores</a>
+        <a href="/Faq" style={{textDecoration: 'none'}}>Dúvidas Frequentes</a>
       </ul>
+
 
       <div className="header-icons">
       <Link to="/login">

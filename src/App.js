@@ -1,8 +1,8 @@
 //import AppRoutes from './routes';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Faq from './pages/FAQ/Faq';
-import LoginPage from "./components/Usuario/Usuario";
+import Login from "./components/Usuario/Usuario";
 
 
 function App(){
@@ -11,7 +11,7 @@ function App(){
     <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/FAQ" element={<Faq />}></Route>
-        <Route path="/Login" element={<LoginPage />}></Route>
+        <Route path="/Login" element={<Login />}></Route>
     </Routes>
 </BrowserRouter>
    

@@ -13,6 +13,7 @@ header {
     /*background-color: rgb(98, 98, 204); /* Adiciona cor de fundo */
     background-color: #fff;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
+    font-size: 'Montserrat', sans-serif;
 }
 
 .inicial{
@@ -40,12 +41,13 @@ header {
 
 }
 
-.navegação a{
+.navegação a {
     color: black;
     font-size: smaller;
     font-weight: 500;
     margin: 0 30px;
-    transition: a .55s ease;
+    transition: color 0.55s ease; /* Modifiquei a transição para aplicar somente na cor */
+    text-decoration: none; /* Removendo o sublinhado */
 }
 
 .navegação a:hover{

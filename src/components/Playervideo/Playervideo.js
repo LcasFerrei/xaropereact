@@ -3,7 +3,6 @@ function playervideo() {
         <section className="playervideo">
             <button className="slick-prev"><i className="bx bx-chevron-left"></i></button>
 
-            {/* Vídeo do YouTube */}
             <div className="video">
                 <div className="iframe-container">
                     <iframe width="440" height="315" src="https://www.youtube.com/embed/jer4GLb0dVw" frameborder="0" allowfullscreen></iframe>

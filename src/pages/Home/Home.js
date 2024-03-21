@@ -15,7 +15,6 @@ import Barrinha from '../../components/Barrinha/Barrinha';
 
 function Home() {
   return (
-    
       <div>
           {/* Componentes */}
           <Header />
