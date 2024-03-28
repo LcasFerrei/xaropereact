@@ -1,4 +1,4 @@
-import BannerImage from '../Assets/Bannerteste.png'
+import BannerImage from '../Assets/Banner/Bannerteste.png'
 import { GiRemedy } from "react-icons/gi";
 
 function Banner() {

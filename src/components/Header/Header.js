@@ -6,15 +6,16 @@ function Header() {
     <header id="header">
       <a href="index.html" className="inicial">
         <Link to="/">
-        <i className='bx bxs-capsule'><GiRemedy />XaropeGenius</i>
+        <i className='bx bxs-capsule'>XaropeGenius</i>
         </Link>
       </a>
 
       <ul className="navegação">
-        <a href="login.html" style={{textDecoration: 'none'}}>Inscreva-se</a>
-        <a href="./review.html" style={{textDecoration: 'none'}}>Reviews</a>
-        <a href="Professores.html" style={{textDecoration: 'none'}}>Professores</a>
-        <a href="/Faq" style={{textDecoration: 'none'}}>Dúvidas Frequentes</a>
+        <Link to="/" style={{textDecoration: 'none'}}>Inscreva-se</Link>
+        <Link to="/Review" style={{textDecoration: 'none'}}>Reviews</Link>
+        <Link to="/Professores" style={{textDecoration: 'none'}}>Professores</Link>
+        <Link to="/Faq" style={{textDecoration: 'none'}}>Dúvidas Frequentes</Link>
+        
       </ul>
 
 

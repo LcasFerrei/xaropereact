@@ -13,10 +13,10 @@ function Login() {
         <form>
           <h1>Inscrever-se</h1>
           <div className="social-icons">
-            <a href="#" className="icon"><i className="fa-brands fa-google-plus-g"></i></a>
-            <a href="#" className="icon"><i className="fa-brands fa-facebook-f"></i></a>
-            <a href="#" className="icon"><i className="fa-brands fa-github"></i></a>
-            <a href="#" className="icon"><i className="fa-brands fa-linkedin-in"></i></a>
+            <button className="icon"><i className="fa-brands fa-google-plus-g"></i></button>
+            <button className="icon"><i className="fa-brands fa-facebook-f"></i></button>
+            <button className="icon"><i className="fa-brands fa-github"></i></button>
+            <button className="icon"><i className="fa-brands fa-linkedin-in"></i></button>
           </div>
           <span>ou use seu e-mail para cadastro</span>
           <input type="text" placeholder="Name" />
@@ -29,10 +29,10 @@ function Login() {
         <form>
           <h1>Entrar</h1>
           <div className="social-icons">
-            <a href="#" className="icon"><i className="fa-brands fa-google-plus-g"></i></a>
-            <a href="#" className="icon"><i className="fa-brands fa-facebook-f"></i></a>
-            <a href="#" className="icon"><i className="fa-brands fa-github"></i></a>
-            <a href="#" className="icon"><i className="fa-brands fa-linkedin-in"></i></a>
+            <button className="icon"><i className="fa-brands fa-google-plus-g"></i></button>
+            <button className="icon"><i className="fa-brands fa-facebook-f"></i></button>
+            <button className="icon"><i className="fa-brands fa-github"></i></button>
+            <button className="icon"><i className="fa-brands fa-linkedin-in"></i></button>
           </div>
           <span>ou use sua senha de e-mail</span>
           <input type="email" placeholder="Email" />
