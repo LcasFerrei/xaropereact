@@ -17,7 +17,6 @@ function Home() {
   return (
       <div>
           {/* Componentes */}
-          <Header />
           <Banner />
           <h1>A DOSE CERTA DE CONHECIMENTO PARA SUA JORNADA NA PROGRAMAÇÃO!</h1>
     <p className="sub">Consuma abaixo algumas pílulas de conhecimento para inicar seu aprendizado.</p>
@@ -25,10 +24,9 @@ function Home() {
           <Subtitulo />
 
           {/*<Barrinha />*/}
-          <Footer />
       </div>
     
-  );
+  )
 }
 
 export default Home;

@@ -11,9 +11,7 @@ import PerguntasRespostas from '../../components/PerguntasRespostas/PerguntasRes
 function Faq() {
     return (
       <>
-        <Header />
         <PerguntasRespostas />
-        <Footer />
       </>
     );
   }
