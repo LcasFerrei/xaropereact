@@ -1,0 +1,627 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+html{
+    /*background: linear-gradient(rgb(98, 98, 204), black)*/
+    background-color: #c9d6ff;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+}
+
+
+
+/* Footer */
+
+
+.footer-content {
+    color: white;
+    text-align: center;
+    padding: 5px 0; /* Adiciona espaçamento interno */
+}
+
+footer a {
+    color: rgb(98, 98, 204);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: white; /* Muda a cor do texto quando o mouse passa por cima */
+}
+
+
+
+footer {
+    background-color: #b0c4de; /* Define o fundo do footer como preto */
+    border-radius: 10px; /* Adiciona um leve border-radius */
+}
+
+
+/* Botões */
+button {
+    text-align: center; /* Centraliza o texto dentro do botão */
+    background-color: rgb(98, 98, 204); /* Cor de fundo */
+    color: black; /* Cor do texto */
+    border: none; /* Remove a borda */
+    padding: 10px 20px; /* Adiciona espaço interno */
+    cursor: pointer; /* Muda o cursor ao passar por cima */
+    transition: background-color 0.3s; /* Efeito de transição para a cor de fundo */
+}
+
+button:hover {
+    background-color: white; /* Muda a cor de fundo ao passar o mouse */
+    color: black; /* Muda a cor do texto */
+}
+
+.botoes {
+    text-align: center; /* Centraliza os botões horizontalmente */
+    margin-top: 20px; /* Adiciona margem acima dos botões */
+    margin-bottom: 20px; /* Adiciona margem abaixo dos botões */
+}
+
+
+/* BARRINHA */
+
+.barrinha {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-items {
+    display: none;
+    transition: all 0.3s ease; /* Adicionando transição para suavizar a animação */
+}
+
+.sub-items:hover {
+    color: rgb(98, 98, 204); /* Altera a cor do texto dos itens secundários para a cor desejada ao passar o mouse */
+}
+
+
+.expandable {
+    cursor: pointer;
+}
+
+li:last-child {
+    text-align: center;
+}
+
+.expandable:hover,
+.expandable:active {
+    color: rgb(98, 98, 204); /* Altera a cor do texto para a cor desejada ao passar o mouse ou clicar */
+}
+
+
+/* Header */
+
+header {
+    position: fixed; /*Torna o header fixo */
+    width: 100%; /* Define a largura como 100% */
+    top: 0; /* Mantém o header fixo no topo */
+    z-index: 1000; /* Define a ordem de empilhamento */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 3% 8%; Ajusta o preenchimento */
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    margin-left: -0.5rem;
+    /*background-color: rgb(98, 98, 204); /* Adiciona cor de fundo */
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
+}
+
+.inicial{
+    display: flexbox;
+    align-items: center;
+    color: black;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.inicial i{
+    color: black;
+    font-size: 32px;
+    margin-right: 5px;
+}
+
+.inicial:hover,
+.inicial:hover i {
+    color: rgb(98, 98, 204);
+}
+
+
+.navegação{
+    display: flex;
+
+}
+
+.navegação a{
+    color: black;
+    font-size: smaller;
+    font-weight: 500;
+    margin: 0 30px;
+    transition: a .55s ease;
+}
+
+.navegação a:hover{
+    color: rgb(98, 98, 204);
+}
+
+.header-icons {
+    margin: 0;
+    padding: 0;
+    margin-top: 0.8rem;
+  }
+
+#menu{
+    font-size: 35px;
+    color: black;
+    z-index: 10001;
+    cursor: pointer;
+}
+
+.header-icons i{
+    margin-right: 25px;
+    font-size: 28px;
+    cursor: pointer;
+    transition: all .5s ease;
+    color: black;
+}
+
+.header-icons i:hover{
+    transform: translateY(-5px);
+    color: rgb(98, 98, 204)
+}
+
+/* Body */
+
+body {
+    padding-top: 100px; /* Ajusta o padding superior do body para compensar o espaço ocupado pelo header */
+}
+
+h1 {
+    color: black;
+    text-align: center;
+    margin-top: 80px; /* Adiciona margem superior ao título */
+    font-family: 'Montserrat', sans-serif;
+    /* Adiciona uma transição suave para a mudança de cor */
+    transition: color 0.3s ease;
+}
+
+h1:hover {
+    color: rgb(98, 98, 204); /* Altera a cor para preto ao passar o mouse */
+}
+
+.sub {
+    font-size: 25px; /* Tamanho da fonte */
+    color: black;
+    text-align: center; /* Alinhamento do texto */
+    margin-top: 20px; /* Margem superior */
+}
+
+p{
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+}
+
+h1:hover, .sub:hover, footer p:hover {
+    color: rgb(98, 98, 204);
+}
+
+
+footer p {
+    color: white; /* Define a cor do texto como branco */
+    transition: color 0.3s; /* Adiciona uma transição suave para a mudança de cor */
+    text-align: center;
+}
+
+
+.footer-divider {
+    width: 1px; /* Largura do quadrado */
+    height: 80px; /* Altura do quadrado */
+    background-color: white; /* Cor branca */
+    margin: 0 10px; /* Margem para separação dos elementos */
+}
+
+.footer-logo i:hover{
+    color: white;
+}
+
+.topicbeneficios {
+    display: flex;
+    justify-content: space-between;
+}
+
+.beneficios {
+    width: 30%; /* Ajuste conforme necessário */
+    background-color: #f0f0f0; /* Cor de fundo dos quadrados */
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s; /* Adicionando transição para suavizar a mudança de cor */
+    color: black; /* Cor inicial do texto */
+    box-shadow: 0 500px 500px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
+}
+
+.beneficios h2 {
+    margin-left: -10px; /* Move um pouco para a esquerda */
+}
+  
+.beneficios p {
+    text-align: center; /* Centraliza o texto */
+ }
+
+ .beneficios:hover, .beneficios:hover p {
+    background-color: rgb(98, 98, 204); /* Cor de fundo ao passar o mouse */
+    color: white; /* Cor do texto ao passar o mouse */
+}
+
+
+/* Carrosel barrinha */
+
+/* Estilos para os botões de seta do Slick Carousel */
+.slick-prev,
+.slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    width: 30px; /* Ajuste conforme necessário */
+    height: 30px; /* Ajuste conforme necessário */
+    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo dos botões */
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.slick-prev i,
+.slick-next i {
+    color: white; /* Cor dos ícones */
+    font-size: 24px; /* Tamanho dos ícones */
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Cor de fundo dos botões ao passar o mouse */
+}
+
+
+/* Estilos para as setas do Slick Carousel */
+.slick-prev,
+.slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    color: white;
+}
+
+.slick-prev i,
+.slick-next i {
+    font-size: 24px;
+}
+
+.slick-prev {
+    left: 20px; /* Define a posição da seta esquerda */
+}
+
+.slick-next {
+    right: 20px; /* Define a posição da seta direita */
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* subtitulo */
+.subtitulo {
+    text-align: center;
+    color: lightcyan;
+    font-size: 1.3rem;
+    margin: 1.5rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    padding: 3rem;
+    margin-left: 5.2rem;
+    width: 90%;
+    height: 50%;
+    background-color: rgba(61, 61, 147, 0.55);
+    border-radius: 1rem;
+    opacity: 0; /* Define a opacidade inicial como 0 para que o elemento seja invisível */
+    transition: opacity 2.5s ease; /* Adiciona uma transição suave de 0.5 segundos para a propriedade de opacidade */
+}
+
+.textosub{
+    color: white;
+}
+.subtitulo.aparecer {
+    opacity: 1; /* Define a opacidade como 1 para que o elemento se torne visível */
+}
+
+.beneficios img {
+    max-width: 100%; /* Define o tamanho máximo da imagem para 100% da largura do contêiner pai */
+    max-height: 100px; /* Define a altura máxima da imagem */
+    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+    display: block; /* Adiciona um espaço em volta da imagem para evitar o espaçamento estranho */
+}
+
+
+
+/* Video carrosel */
+.playervideo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.playervideo .video {
+    width: 30%; /* Ajuste conforme necessário */
+    background-color: #f0f0f0; /* Cor de fundo dos quadrados */
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s; /* Adicionando transição para suavizar a mudança de cor */
+    color: black; /* Cor inicial do texto */
+    box-shadow: 0 500px 500px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
+}
+
+.playervideo .video h2 {
+    margin-left: -10px; /* Reduz o nível da margem à esquerda em 10px */
+}
+
+.playervideo .video p {
+    text-align: center; /* Centraliza o texto */
+}
+
+.playervideo .video:hover {
+    background-color: rgb(98, 98, 204); /* Cor de fundo ao passar o mouse */
+    color: white; /* Cor do texto ao passar o mouse */
+}
+
+/* Estilos para os botões de seta do Slick Carousel */
+.playervideo .slick-prev,
+.playervideo .slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    width: 30px; /* Ajuste conforme necessário */
+    height: 30px; /* Ajuste conforme necessário */
+    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo dos botões */
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.playervideo .slick-prev i,
+.playervideo .slick-next i {
+    color: white; /* Cor dos ícones */
+    font-size: 24px; /* Tamanho dos ícones */
+}
+
+.playervideo .slick-prev:hover,
+.playervideo .slick-next:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Cor de fundo dos botões ao passar o mouse */
+}
+
+
+
+/*BANNER */
+.banner {
+    text-align: center;
+    color: lightcyan;
+    font-size: 1.3rem;
+    margin: 1.5rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    padding: 3rem;
+    margin-left: 5.2rem;
+    width: 90%;
+    height: 50%;
+    background-color: rgba(61, 61, 147, 0.55); /* Cor de fundo do banner */
+    border-radius: 1rem;
+}
+
+
+.banner img {
+    max-width: 100%; /* Garante que a imagem do banner não ultrapasse o contêiner */
+    border-radius: 1rem;
+    font-size: 'Montserrat', sans-serif;
+}
+
+.banner h5 {
+    font-size: 36px; /* Tamanho da fonte do título */
+    margin-top: 20px; /* Espaçamento superior entre o título e o parágrafo */
+}
+
+.banne {
+    font-size: 25px; /* Tamanho da fonte do parágrafo */
+    color: white; /* Cor do texto */
+}
+
+.banner .btn {
+    display: inline-block; /* Permite que o botão se ajuste ao tamanho do texto */
+    margin-top: 20px; /* Espaçamento superior entre o parágrafo e o botão */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    background-color: white; /* Cor de fundo do botão */
+    color: black; /* Cor do texto do botão */
+    text-decoration: none; /* Remove sublinhado padrão dos links */
+    border-radius: 5px; /* Borda arredondada do botão */
+    transition: background-color 0.3s; /* Efeito de transição suave */
+}
+
+.banner .btn:hover {
+    background-color: rgb(72, 0, 255); /* Cor de fundo do botão ao passar o mouse */
+    color: white;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  .accordion-container {
+    margin: 0 auto;
+    min-width: 330px;
+    overflow: hidden;
+  }
+  
+  .main-item {
+    border-radius: 8px;
+    padding: 8px; /* Reduz o padding */
+    display: flex;
+    cursor: pointer;
+    background: white;
+    align-items: center;
+    justify-content: start;
+    gap: 8px;
+    transition: all ease-in-out 1s;
+    font-size: 14px; /* Reduz o tamanho da fonte */
+}
+  
+  .main-item:hover {
+    background-color: rgb(98, 98, 204);
+    color: black;
+  }
+  
+  .main-item svg {
+    color: rgb(98, 98, 204);
+    transition: all ease-in-out 1s;
+  }
+  
+  .main-item:hover svg {
+    color: rgb(98, 98, 204);
+  }
+  
+  .main-item--open {
+    border-radius: 8px 8px 0px 0px;
+    background-color:black;
+    transition: all 1s;
+    color: rgb(0, 0, 0);
+  }
+  
+  .main-item--open:hover {
+    color: rgb(0, 0, 0);
+    border-radius: 8px 8px 0px 0px;
+    background-color: rgb(98, 98, 204);
+  }
+  
+  .main-item--open svg {
+    color: rgb(0, 0, 0);
+  }
+  
+  .main-item--open:hover svg {
+    color: rgb(0, 0, 0);
+  }
+  
+  .accordion-container > ul {
+    max-height: 0px;
+    background-color: black;
+    list-style-type: none;
+    margin: 0px;
+    padding-left: 14px;
+    opacity: 0;
+    background-color: rgb(98, 98, 204);
+    visibility: hidden;
+    transition: all ease-in-out 0.2s;
+  }
+  
+  .main-item--open + ul {
+    visibility: visible;
+    max-height: 400px;
+    opacity: 1;
+    border-radius: 0px 0px 8px 8px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .accordion-container > ul > li {
+    height: 48px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .accordion-container > ul > li:hover {
+    color: black;
+    cursor: pointer;
+  }
+  
+  .expand-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+  }
+  
+  .main-item--open > .expand-icon {
+    transform: rotate(90deg);
+  }
+
+  .duvida-pergunta-texto {
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    flex: 1; /* Adiciona essa linha para estender o texto pela largura total do contêiner flexível */
+}
+
+
+.duvida-pergunta-texto:hover {
+    color: rgb(255, 255, 255);
+}
+
+.resposta {
+    display: none;
+    color: rgb(255, 255, 255);
+    transition: color 0.3s; /* Adiciona uma transição suave de 0.3 segundos para a mudança de cor */
+    font-size: 18px;
+    text-align: center;
+
+}
+
+.ativo {
+    display: block;
+    color: rgb(0, 0, 0);
+    transition: 1s
+}
+
+
+button{
+    text-align: center;
+}
+
+.footer-content {
+    color: white;
+    text-align: center;
+}
+
+.botoes {
+    text-align: center; /* Centraliza os botões horizontalmente */
+    margin-top: 20px; /* Adiciona margem acima dos botões */
+    margin-bottom: 20px; /* Adiciona margem abaixo dos botões */
+}
+
