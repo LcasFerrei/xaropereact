@@ -15,10 +15,7 @@ function Login() {
   return (
     
       <div>
-          {/* Componentes */}
-          <Header />
           <Login />
-          <Footer />
       </div>
     
   );

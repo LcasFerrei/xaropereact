@@ -1,34 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-}
+/* usuario css */ 
 
 body{
-    background-color: #c9d6ff;
-    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
-    display: flex;
+    /* Centralizando o conteúdo verticalmente e horizontalmente */
+    display: center;
     align-items: center;
     justify-content: center;
+    /* Empilhando os elementos filhos verticalmente */
     flex-direction: column;
+    /* Definindo a altura do corpo igual à altura da janela de visualização */
     height: 100vh;
+    margin: 0;
 }
 
 .container{
+    /* Estilização do contêiner */
     background-color: #fff;
     border-radius: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     position: relative;
     overflow: hidden;
     width: 768px;
-    max-width: 100%;
-    min-height: 480px;
+    max-width: 100%; /* Certificando-se de que o contêiner não ultrapasse a largura da janela de visualização */
+    min-height: 480px; /* Definindo uma altura mínima para o contêiner */
+    margin: auto; /* Adicionado para centralizar o contêiner */
 }
 
 .container p{
+    /* Estilização para parágrafos dentro do contêiner */
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.3px;
@@ -36,10 +34,12 @@ body{
 }
 
 .container span{
+    /* Estilização para spans dentro do contêiner */
     font-size: 12px;
 }
 
 .container a{
+    /* Estilização para links dentro do contêiner */
     color: #333;
     font-size: 13px;
     text-decoration: none;
@@ -47,6 +47,7 @@ body{
 }
 
 .container button{
+    /* Estilização para botões dentro do contêiner */
     background-color: #512da8;
     color: #fff;
     font-size: 12px;
@@ -61,32 +62,36 @@ body{
 }
 
 .container button.hidden{
+    /* Estilização adicional para botões ocultos */
     background-color: transparent;
     border-color: #fff;
 }
 
 .container form{
+    /* Estilização para formulários dentro do contêiner */
     background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     padding: 0 40px;
-    height: 100%;
+    height: 100%; /* Preenchendo toda a altura do contêiner */
 }
 
 .container input{
+    /* Estilização para inputs dentro do contêiner */
     background-color: #eee;
     border: none;
     margin: 8px 0;
     padding: 10px 15px;
     font-size: 13px;
     border-radius: 8px;
-    width: 100%;
+    width: 100%; /* Fazendo os inputs ocuparem toda a largura do contêiner */
     outline: none;
 }
 
 .form-container{
+    /* Estilização para o contêiner do formulário */
     position: absolute;
     top: 0;
     height: 100%;
@@ -94,16 +99,19 @@ body{
 }
 
 .sign-in{
+    /* Estilização para a seção de login */
     left: 0;
     width: 50%;
     z-index: 2;
 }
 
 .container.active .sign-in{
+    /* Estilização para a seção de login ativa */
     transform: translateX(100%);
 }
 
 .sign-up{
+    /* Estilização para a seção de registro */
     left: 0;
     width: 50%;
     opacity: 0;
@@ -111,13 +119,15 @@ body{
 }
 
 .container.active .sign-up{
+    /* Estilização para a seção de registro ativa */
     transform: translateX(100%);
     opacity: 1;
     z-index: 5;
-    animation: move 0.6s;
+    animation: move 0.6s; /* Aplicando animação */
 }
 
 @keyframes move{
+    /* Keyframes para animação */
     0%, 49.99%{
         opacity: 0;
         z-index: 1;
@@ -129,10 +139,12 @@ body{
 }
 
 .social-icons{
+    /* Estilização para ícones sociais */
     margin: 20px 0;
 }
 
 .social-icons a{
+    /* Estilização para links de ícones sociais */
     border: 1px solid #ccc;
     border-radius: 20%;
     display: inline-flex;
@@ -144,6 +156,7 @@ body{
 }
 
 .toggle-container{
+    /* Estilização para o contêiner de alternância */
     position: absolute;
     top: 0;
     left: 50%;
@@ -156,11 +169,13 @@ body{
 }
 
 .container.active .toggle-container{
+    /* Estilização para o contêiner de alternância ativo */
     transform: translateX(-100%);
     border-radius: 0 150px 100px 0;
 }
 
 .toggle{
+    /* Estilização para o botão de alternância */
     background-color: #512da8;
     height: 100%;
     background: linear-gradient(to right, #5c6bc0, #512da8);
@@ -174,10 +189,12 @@ body{
 }
 
 .container.active .toggle{
+    /* Estilização para o botão de alternância ativo */
     transform: translateX(50%);
 }
 
 .toggle-panel{
+    /* Estilização para o painel de alternância */
     position: absolute;
     width: 50%;
     height: 100%;
@@ -193,101 +210,23 @@ body{
 }
 
 .toggle-left{
+    /* Estilização para alternar para a esquerda */
     transform: translateX(-200%);
 }
 
 .container.active .toggle-left{
+    /* Estilização para alternar para a esquerda ativa */
     transform: translateX(0);
 }
 
 .toggle-right{
+    /* Estilização para alternar para a direita */
     right: 0;
     transform: translateX(0);
 }
 
 .container.active .toggle-right{
+    /* Estilização para alternar para a direita ativa */
     transform: translateX(200%);
 }
 
- /* header */
-
-
-header {
-    position: fixed; /*Torna o header fixo */
-    width: 100%; /* Define a largura como 100% */
-    top: 0; /* Mantém o header fixo no topo */
-    z-index: 1000; /* Define a ordem de empilhamento */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    /* padding: 3% 8%; Ajusta o preenchimento */
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    margin-left: -0.5rem;
-    /*background-color: rgb(98, 98, 204); /* Adiciona cor de fundo */
-    background-color: #fff;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
-}
-
-.inicial{
-    display: flexbox;
-    align-items: center;
-    color: black;
-    font-size: 28px;
-    font-weight: 500;
-}
-
-.inicial i{
-    color: black;
-    font-size: 32px;
-    margin-right: 5px;
-}
-
-.inicial:hover,
-.inicial:hover i {
-    color: rgb(98, 98, 204);
-}
-
-
-.navegação{
-    display: flex;
-
-}
-
-.navegação a{
-    color: black;
-    font-size: smaller;
-    font-weight: 500;
-    margin: 0 30px;
-    transition: a .55s ease;
-}
-
-.navegação a:hover{
-    color: rgb(98, 98, 204);
-}
-
-.header-icons {
-    margin: 0;
-    padding: 0;
-    margin-top: 0.8rem;
-  }
-
-#menu{
-    font-size: 35px;
-    color: black;
-    z-index: 10001;
-    cursor: pointer;
-}
-
-.header-icons i{
-    margin-right: 25px;
-    font-size: 28px;
-    cursor: pointer;
-    transition: all .5s ease;
-    color: black;
-}
-
-.header-icons i:hover{
-    transform: translateY(-5px);
-    color: rgb(98, 98, 204)
-}

@@ -544,3 +544,235 @@ button{
     margin-bottom: 20px; /* Adiciona margem abaixo dos botões */
 }
 
+/* usuario css */ 
+
+body{
+    /* Centralizando o conteúdo verticalmente e horizontalmente */
+    display: center;
+    align-items: center;
+    justify-content: center;
+    /* Empilhando os elementos filhos verticalmente */
+    flex-direction: column;
+    /* Definindo a altura do corpo igual à altura da janela de visualização */
+    height: 100vh;
+    margin: 0;
+}
+
+.container{
+    /* Estilização do contêiner */
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%; /* Certificando-se de que o contêiner não ultrapasse a largura da janela de visualização */
+    min-height: 480px; /* Definindo uma altura mínima para o contêiner */
+    margin: auto; /* Adicionado para centralizar o contêiner */
+}
+
+.container p{
+    /* Estilização para parágrafos dentro do contêiner */
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    margin: 20px 0;
+}
+
+.container span{
+    /* Estilização para spans dentro do contêiner */
+    font-size: 12px;
+}
+
+.container a{
+    /* Estilização para links dentro do contêiner */
+    color: #333;
+    font-size: 13px;
+    text-decoration: none;
+    margin: 15px 0 10px;
+}
+
+.container button{
+    /* Estilização para botões dentro do contêiner */
+    background-color: #512da8;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.container button.hidden{
+    /* Estilização adicional para botões ocultos */
+    background-color: transparent;
+    border-color: #fff;
+}
+
+.container form{
+    /* Estilização para formulários dentro do contêiner */
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    height: 100%; /* Preenchendo toda a altura do contêiner */
+}
+
+.container input{
+    /* Estilização para inputs dentro do contêiner */
+    background-color: #eee;
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 100%; /* Fazendo os inputs ocuparem toda a largura do contêiner */
+    outline: none;
+}
+
+.form-container{
+    /* Estilização para o contêiner do formulário */
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.sign-in{
+    /* Estilização para a seção de login */
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.container.active .sign-in{
+    /* Estilização para a seção de login ativa */
+    transform: translateX(100%);
+}
+
+.sign-up{
+    /* Estilização para a seção de registro */
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.active .sign-up{
+    /* Estilização para a seção de registro ativa */
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: move 0.6s; /* Aplicando animação */
+}
+
+@keyframes move{
+    /* Keyframes para animação */
+    0%, 49.99%{
+        opacity: 0;
+        z-index: 1;
+    }
+    50%, 100%{
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+.social-icons{
+    /* Estilização para ícones sociais */
+    margin: 20px 0;
+}
+
+.social-icons a{
+    /* Estilização para links de ícones sociais */
+    border: 1px solid #ccc;
+    border-radius: 20%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3px;
+    width: 40px;
+    height: 40px;
+}
+
+.toggle-container{
+    /* Estilização para o contêiner de alternância */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    border-radius: 150px 0 0 100px;
+    z-index: 1000;
+}
+
+.container.active .toggle-container{
+    /* Estilização para o contêiner de alternância ativo */
+    transform: translateX(-100%);
+    border-radius: 0 150px 100px 0;
+}
+
+.toggle{
+    /* Estilização para o botão de alternância */
+    background-color: #512da8;
+    height: 100%;
+    background: linear-gradient(to right, #5c6bc0, #512da8);
+    color: #fff;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.container.active .toggle{
+    /* Estilização para o botão de alternância ativo */
+    transform: translateX(50%);
+}
+
+.toggle-panel{
+    /* Estilização para o painel de alternância */
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+    top: 0;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.toggle-left{
+    /* Estilização para alternar para a esquerda */
+    transform: translateX(-200%);
+}
+
+.container.active .toggle-left{
+    /* Estilização para alternar para a esquerda ativa */
+    transform: translateX(0);
+}
+
+.toggle-right{
+    /* Estilização para alternar para a direita */
+    right: 0;
+    transform: translateX(0);
+}
+
+.container.active .toggle-right{
+    /* Estilização para alternar para a direita ativa */
+    transform: translateX(200%);
+}
+
