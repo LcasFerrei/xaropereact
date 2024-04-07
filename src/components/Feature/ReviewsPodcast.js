@@ -28,8 +28,9 @@ const PodcastItem = ({ title, description }) => {
 const HomePage = () => {
   // Dados de exemplo para reviews de alunos
   const reviews = [
-    { name: 'João', comment: 'Ótimo curso, aprendi muito!' },
-    { name: 'Maria', comment: 'Excelente material, recomendo!' },
+    { name: 'Anna Maria', comment: 'Ótimo curso, aprendi muito!' },
+    { name: 'Jardiana', comment: 'Excelente material, recomendo!' },
+    { name: 'Lucas', comment: 'Excelente melhor do que tomar remedio' },
     // Adicione mais reviews conforme necessário
   ];
 

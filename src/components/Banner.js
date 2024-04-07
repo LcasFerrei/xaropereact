@@ -7,7 +7,7 @@ function Banner() {
             <h5>Descubra o XaropeGenius! <GiRemedy /></h5>
             <img src={BannerImage} alt="Banner XaropeGenius" />
             <p className="banne">Obtenha acesso ilimitado a cursos de programação de alta qualidade.</p>
-            <a href="login.html" className="btn">Inscreva-se Agora</a>
+            <a href="/login" className="btn">Inscreva-se Agora</a>
           
         </div>
     );
