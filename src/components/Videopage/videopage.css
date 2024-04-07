@@ -1,61 +1,96 @@
 .video-page {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-/* videopage.css */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .video-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centraliza os elementos horizontalmente */
-    justify-content: center; /* Centraliza os elementos verticalmente */
-    text-align: center; /* Alinha o texto ao centro */
-    margin-left: 20px; /* Adiciona uma margem à esquerda para mover o conteúdo para a direita */
-  }
-  
-  .video-player {
-    margin-bottom: 20px;
-  }
-  
-  
-  
-  .video-container h2 {
-    margin-bottom: 20px;
-    text-align: center;
-    color: black;
-  }
-  
-  .related-lessons ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .comments-section {
-    flex: 1;
-  }
-  
-  .comments-section h3 {
-    margin-bottom: 20px;
-  }
-  
-  .comments-section form textarea {
-    width: 100%;
-    height: 100px;
-    margin-bottom: 10px;
-  }
-  
-  .comments-section form button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    cursor: pointer;
-  }
-  
-  .comments-list .comment {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  
+  width: 80%;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-top: 50%;
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.video-details {
+  padding: 20px;
+}
+
+.video-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.video-description {
+  font-size: 16px;
+}
+
+.related-videos {
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+.related-videos h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.related-videos-list {
+  display: flex;
+}
+
+.related-video {
+  margin-right: 20px;
+}
+
+.related-video img {
+  width: 150px;
+  height: 100px;
+}
+
+.related-video p {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.comments-section {
+  width: 80%;
+}
+
+.comments-section h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.comments-section textarea {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.comments-section button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.comment-list {
+  width: 100%;
+}
+
+.comment {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}

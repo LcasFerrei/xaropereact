@@ -25,7 +25,7 @@ function Profs(){
                 </div>
             </div>
             <div className="card">
-                <img src="https://media.licdn.com/dms/image/C4E35AQHekeivwSY1jQ/profile-framedphoto-shrink_200_200/0/1617289967591?e=1712260800&v=beta&t=7YmoPGIz0umKpyyYNFcRX3nryDcdYX-Y0oheO6K3Qog" alt="professor Leone"/>
+                <img src="https://media.licdn.com/dms/image/C4E35AQHekeivwSY1jQ/profile-framedphoto-shrink_400_400/0/1617289967591?e=1713063600&v=beta&t=Rj4yKGMXDT0mGqsLtk3CYffQNdRrOh9nrRXICLEmEZU" alt="professor Leone"/>
                 <div className="card-body">
                     <h4 className="card-title"><strong>Leone Fernandes</strong></h4>
                     <p className="card-text">Estudante de Análise e Desenvolvimento de Sistemas pela Unifor. Especialista em Administração Financeira - UECE. Focado na área de <em>desenvolvimento web, IoT, e desenvolvimento para nuvem</em>.</p>
@@ -42,15 +42,6 @@ function Profs(){
                     <a href="https://www.linkedin.com/in/anna-maria-do-nascimento-oliveira-25a31b221/" className="linkedin-link" target="_blank"><i className='bx bxl-linkedin'></i></a>
                     <a href="https://github.com/annamariaoliveira" className="GitHub-link" target="_blank"><i className='bx bxl-github'></i></a>
                     <a href="https://www.instagram.com/annamariadonascimento/" className="Insta-link" target="_blank"><i className='bx bxl-instagram'></i></a>
-                </div>
-            </div>
-            <div className="card">
-                <img src="https://media.licdn.com/dms/image/D4D35AQGQbt71GiVadg/profile-framedphoto-shrink_200_200/0/1690036726740?e=1712260800&v=beta&t=6mYd_ffNh5P0QmFSdhXOcqt1Lw18qaunGg9Fos3cY9I" alt="professor Pedro Victor"/>
-                <div className="card-body">
-                    <h4 className="card-title"><strong>Pedro Victor</strong></h4>
-                    <p className="card-text">Graduando do 3º semestre de ADS. Focado na área de <em>desenvolvimento web, IoT, e desenvolvimento para nuvem</em>.</p>
-                    <a href="https://www.linkedin.com/in/pedro-v%C3%ADctor-melo-de-carvalho-braga-4195ba183/" className="linkedin-link" target="_blank"><i className='bx bxl-linkedin'></i></a>
-                    <a href="https://github.com/PedroVictorMcB" className="GitHub-link" target="_blank"><i className='bx bxl-github'></i></a>
                 </div>
             </div>
             <div className="card">

@@ -307,6 +307,7 @@ footer p {
 
 .playervideo .video h2 {
     margin-left: -10px; /* Reduz o nível da margem à esquerda em 10px */
+    color: black;
 }
 
 .playervideo .video p {
@@ -316,6 +317,14 @@ footer p {
 .playervideo .video:hover {
     background-color: rgb(98, 98, 204); /* Cor de fundo ao passar o mouse */
     color: white; /* Cor do texto ao passar o mouse */
+}
+
+.playervideo .video:hover h2 {
+    color: white; /* Cor do texto do h2 ao passar o mouse */
+}
+
+.playervideo .video:hover p {
+    color: white; /* Cor do texto do h2 ao passar o mouse */
 }
 
 /* Estilos para os botões de seta do Slick Carousel */
@@ -594,7 +603,7 @@ body{
 
 .container button{
     /* Estilização para botões dentro do contêiner */
-    background-color: #512da8;
+    background-color: rgb(98, 98, 204);
     color: #fff;
     font-size: 12px;
     padding: 10px 45px;
@@ -776,3 +785,71 @@ body{
     transform: translateX(200%);
 }
 
+
+
+/* CursoCard.css */
+
+.curso-card {
+    width: calc(25% - 20px); /* 25% para exibir até 4 cards por linha, subtraindo a margem */
+    margin: 10px; /* Espaçamento entre os cards */
+    display: inline-block;
+    vertical-align: top; /* Alinhar os cards no topo */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  
+  .curso-card h6 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .curso-card p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+  
+  /* Para garantir que os cards tenham a mesma altura */
+  .lista-de-cursos {
+    overflow: hidden;
+  }
+  
+  /* Estilo opcional para quando houver menos de 4 cards por linha */
+  @media (max-width: 768px) {
+    .curso-card {
+      width: calc(50% - 20px); /* Exibir 2 cards por linha em telas menores */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .curso-card {
+      width: 100%; /* Exibir 1 card por linha em telas muito pequenas */
+    }
+  }
+  
+  .curso-card:hover {
+    background-color: rgb(98, 98, 204);
+  }
+  
+  .curso-card:hover h6,
+.curso-card:hover p {
+  color: white;
+}
+
+.imgcursos-container {
+    max-width: 100%;
+    height: auto;
+    text-align: center;
+  }
+  
+  .imgcursos-container img {
+    max-width: 100%;
+    max-height: 150px; /* ou qualquer altura desejada */
+    height: auto;
+    display: block; /* alterado de inline-block para block */
+    margin: 0 auto;
+  }
+  

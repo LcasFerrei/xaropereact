@@ -1,0 +1,41 @@
+/* CursoCard.css */
+
+.curso-card {
+    width: calc(25% - 20px); /* 25% para exibir até 4 cards por linha, subtraindo a margem */
+    margin: 10px; /* Espaçamento entre os cards */
+    display: inline-block;
+    vertical-align: top; /* Alinhar os cards no topo */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  
+  .curso-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .curso-card p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  
+  /* Para garantir que os cards tenham a mesma altura */
+  .lista-de-cursos {
+    overflow: hidden;
+  }
+  
+  /* Estilo opcional para quando houver menos de 4 cards por linha */
+  @media (max-width: 768px) {
+    .curso-card {
+      width: calc(50% - 20px); /* Exibir 2 cards por linha em telas menores */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .curso-card {
+      width: 100%; /* Exibir 1 card por linha em telas muito pequenas */
+    }
+  }
+  

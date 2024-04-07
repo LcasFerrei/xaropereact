@@ -1,4 +1,3 @@
-import { GiRemedy } from "react-icons/gi";
 import { Link } from "react-router-dom";
 
 function Header() {
@@ -11,10 +10,10 @@ function Header() {
       </a>
 
       <ul className="navegação">
-        <Link to="/" style={{textDecoration: 'none'}}>Inscreva-se</Link>
-        <Link to="/Review" style={{textDecoration: 'none'}}>Reviews</Link>
+        <Link to="/login" style={{textDecoration: 'none'}}>Inscreva-se</Link>
         <Link to="/Professores" style={{textDecoration: 'none'}}>Professores</Link>
         <Link to="/Faq" style={{textDecoration: 'none'}}>Dúvidas Frequentes</Link>
+        <Link to="/Cursos" style={{textDecoration: 'none'}}>Cursos</Link>
         
       </ul>
 

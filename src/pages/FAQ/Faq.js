@@ -12,6 +12,7 @@ function Faq() {
     return (
       <>
         <PerguntasRespostas />
+        <Footer />
       </>
     );
   }
