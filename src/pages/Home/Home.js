@@ -12,6 +12,8 @@ import jsImage from '../../Assets/Cursos/JavaScriptSymbol.png';
 import HtmlImage from '../../Assets/Cursos/HTML.png';
 import BancoImage from '../../Assets/Cursos/bancodedados.png';
 import CssImage from '../../Assets/Cursos/css.png';
+import HomePage from '../../components/Feature/ReviewsPodcast';
+import StudentCommentsAndPodcasts from '../../components/Feature/teste';
 
 function Home() {
   return (
@@ -27,6 +29,8 @@ function Home() {
 
       <h1>"Não há atalhos para a genialidade? Nunca experimentou os cursos gratuitos de programação do XaropeGenius!"</h1>
       <ListaDeCursos cursos={cursos} />
+      <HomePage />
+      <StudentCommentsAndPodcasts />
       {/*<Barrinha />*/}
       <Footer />
     </div>

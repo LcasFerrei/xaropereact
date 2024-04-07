@@ -1,0 +1,188 @@
+/* Define o espaçamento superior para o elemento .student-comments-and-podcasts */
+.student-comments-and-podcasts {
+    margin-top: 50px; /* Margem superior de 50 pixels */
+  }
+  
+  /* Estiliza o elemento de separador */
+  .separator {
+    display: flex; /* Usa flexbox para alinhar os itens */
+    align-items: center; /* Alinha os itens verticalmente */
+    justify-content: space-between; /* Distribui o espaço entre os itens */
+    margin-bottom: 20px; /* Margem inferior de 20 pixels */
+  }
+  
+  /* Estiliza o título dentro do separador */
+  .separator h2 {
+    font-size: 24px; /* Define o tamanho da fonte */
+  }
+  
+  /* Estiliza a seção de comentários */
+  .comments {
+    background-color: rgb(98, 98, 204); /* Define a cor de fundo */
+    color: #fff; /* Define a cor do texto como branco */
+    padding: 20px; /* Adiciona preenchimento interno */
+    border-radius: 10px; /* Adiciona bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+  }
+  
+  /* Estiliza os parágrafos dentro da seção de comentários */
+  .comments p {
+    font-size: 16px; /* Define o tamanho da fonte */
+    margin-bottom: 20px; /* Margem inferior de 20 pixels */
+  }
+  
+  /* Estiliza a área dos comentários dos alunos */
+  .comments .right {
+    display: flex; /* Usa flexbox para alinhar os itens */
+    flex-wrap: wrap; /* Permite que os itens quebrem linha */
+  }
+  
+  /* Estiliza cada item de comentário */
+  .comments .item {
+    background-color: #fff; /* Define a cor de fundo */
+    padding: 15px; /* Adiciona preenchimento interno */
+    border-radius: 10px; /* Adiciona bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+    margin-bottom: 15px; /* Margem inferior de 15 pixels */
+  }
+  
+  /* Estiliza as imagens dentro dos itens de comentário */
+  .comments .item img {
+    width: 40px; /* Define a largura da imagem */
+    height: 40px; /* Define a altura da imagem */
+    border-radius: 50%; /* Faz a imagem circular */
+    margin-right: 10px; /* Margem à direita */
+  }
+  
+  /* Estiliza os parágrafos dentro dos itens de comentário */
+  .comments .item p {
+    font-size: 14px; /* Define o tamanho da fonte */
+  }
+  
+  /* Estiliza os links dentro do separador */
+  .separator a {
+    color: black; /* Define a cor do texto */
+    text-decoration: none; /* Remove a decoração de texto */
+    font-weight: bold; /* Define a espessura da fonte como negrito */
+  }
+  
+  /* Estiliza os links dentro do separador quando o mouse está sobre eles */
+  .separator a:hover {
+    color: rgb(98, 98, 204); /* Define a cor do texto como branco */
+  }
+  
+  /* Estiliza a seção de podcasts */
+  .podcasts {
+    display: flex; /* Usa flexbox para alinhar os itens */
+    flex-wrap: wrap; /* Permite que os itens quebrem linha */
+    justify-content: flex-end; /* Alinha os itens à direita */
+  }
+  
+  /* Estiliza cada item de podcast */
+  .podcasts .item {
+    width: calc(33.33% - 20px); /* Define a largura do item */
+    background-color: white; /* Define a cor de fundo */
+    color: black; /* Define a cor do texto como preto */
+    padding: 20px; /* Adiciona preenchimento interno */
+    border-radius: 10px; /* Adiciona bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+    margin-bottom: 20px; /* Margem inferior de 20 pixels */
+    margin-right: 20px; /* Margem à direita */
+    transition: background-color 0.3s, color 0.3s; /* Define a transição suave */
+  }
+  
+  /* Estiliza o último item de podcast */
+  .podcasts .item:last-child {
+    margin-right: 0; /* Remove a margem à direita do último item */
+  }
+  
+  /* Estiliza os itens de podcast quando o mouse está sobre eles */
+  .podcasts .item:hover {
+    background-color: rgb(98, 98, 204); /* Define a cor de fundo */
+    color: #fff; /* Define a cor do texto como branco */
+  }
+  
+  /* Estiliza a parte superior dos itens de podcast */
+  .podcasts .item .top {
+    display: flex; /* Usa flexbox para alinhar os itens */
+    align-items: center; /* Alinha os itens verticalmente */
+  }
+  
+  /* Estiliza o ícone dentro dos itens de podcast */
+  .podcasts .item .top i {
+    font-size: 28px; /* Define o tamanho do ícone */
+    color: #000; /* Define a cor do ícone como preto */
+    padding: 10px; /* Adiciona preenchimento interno */
+    border-radius: 50%; /* Faz o ícone circular */
+    background-color: #fff; /* Define a cor de fundo */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+  }
+  
+  /* Estiliza a informação dentro dos itens de podcast */
+  .podcasts .item .info {
+    margin-left: 15px; /* Define a margem à esquerda */
+  }
+  
+  /* Estiliza os links dentro dos itens de podcast */
+  .podcasts .item .info a {
+    color: black; /* Define a cor do texto como preto */
+    text-decoration: none; /* Remove a decoração de texto */
+    font-size: 18px; /* Define o tamanho da fonte */
+  }
+  
+  /* Estiliza os parágrafos dentro dos itens de podcast */
+  .podcasts .item .info p {
+    color: black; /* Define a cor do texto como preto */
+    font-size: 14px; /* Define o tamanho da fonte */
+  }
+  
+  /* Estiliza a parte inferior dos itens de podcast */
+  .podcasts .item .bottom {
+    display: flex; /* Usa flexbox para alinhar os itens */
+    align-items: center; /* Alinha os itens verticalmente */
+    justify-content: space-between; /* Distribui o espaço entre os itens */
+    margin-top: 10px; /* Margem superior de 10 pixels */
+    color: white;
+  }
+  
+  /* Estiliza a duração dos itens de podcast */
+  .podcasts .item .bottom .duration {
+    display: flex; /* Usa flexbox para alinhar os itens */
+    align-items: center; /* Alinha os itens verticalmente */
+  }
+  
+  /* Estiliza o ícone de duração dentro dos itens de podcast */
+  .podcasts .item .bottom .duration i {
+    font-size: 20px; /* Define o tamanho do ícone */
+    color: black; /* Define a cor do texto como branco */
+    margin-right: 5px; /* Margem à direita */
+  }
+  
+  /* Estiliza os parágrafos dentro dos itens de podcast quando o mouse está sobre eles */
+  .podcasts .item:hover p {
+    color: #fff; /* Define a cor do texto como branco */
+  }
+  
+  /* Estiliza a tag dentro dos itens de podcast */
+  .podcasts .item .bottom .tag {
+    font-size: 14px; /* Define o tamanho da fonte */
+    color: #db7c26; /* Define a cor do texto */
+    background-color: #fff2b2; /* Define a cor de fundo */
+    padding: 8px 12px; /* Adiciona preenchimento interno */
+    border-radius: 20px; /* Adiciona bordas arredondadas */
+  }
+  
+  /* Estiliza o texto dentro da tag dos itens de podcast */
+  .podcasts .item .bottom .tag span {
+    font-weight: bold; /* Define a espessura da fonte como negrito */
+  }
+  
+  /* Estiliza os itens de podcast quando a tela tem largura máxima de 768 pixels */
+  @media screen and (max-width: 768px) {
+    .comments .right .item,
+    .podcasts .item {
+      width: 100%; /* Define a largura como 100% */
+      margin-right: 0; /* Remove a margem à direita */
+    }
+  }
+  

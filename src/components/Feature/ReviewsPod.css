@@ -1,0 +1,51 @@
+/* ReviewsPod.css */
+
+.homepage {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .reviews-carousel,
+  .podcasts-carousel {
+    width: 45%;
+  }
+  
+  h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .carousel-item {
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin: 0 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .slick-dots {
+    bottom: -25px;
+  }
+  
+  .slick-dots li.slick-active button:before {
+    color: #000;
+  }
+  
+
+  /* ReviewsPod.css */
+
+.card {
+    background-color: #ffffff; /* Fundo branco */
+    padding: 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease; /* Transição suave de cor */
+  
+    /* Estilo do cursor ao passar o mouse */
+    cursor: pointer;
+  }
+  
+  .card:hover {
+    background-color: #8a2be2; /* Fundo roxo quando hover */
+  }
+  
