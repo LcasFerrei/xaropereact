@@ -67,7 +67,7 @@ const VideoPage = () => {
               height="100px"
               controls
             />  
-            <p>Related Video 1</p>
+            <p>Video 1</p>
           </div>
           <div className="related-video">
           <ReactPlayer
@@ -77,7 +77,7 @@ const VideoPage = () => {
               height="100px"
               controls
             />
-            <p>Related Video 2</p>
+            <p>Video 2</p>
           </div>
           <div className="related-video">
           <ReactPlayer
@@ -87,7 +87,7 @@ const VideoPage = () => {
               height="100px"
               controls
             />
-            <p>Related Video 3</p>
+            <p>Video 3</p>
           </div>
           <div className="related-video">
           <ReactPlayer
@@ -97,7 +97,7 @@ const VideoPage = () => {
               height="100px"
               controls
             />
-            <p>Related Video 4</p>
+            <p>Video 4</p>
           </div>
           <div className="related-video">
           <ReactPlayer
@@ -107,7 +107,7 @@ const VideoPage = () => {
               height="100px"
               controls
             />
-            <p>Related Video 5</p>
+            <p>Video 5</p>
           </div>
           <div className="related-video">
           <ReactPlayer
@@ -117,7 +117,7 @@ const VideoPage = () => {
               height="100px"
               controls
             />
-            <p>Related Video 6</p>
+            <p>Video 6</p>
           </div>
           <div className="related-video">
           <ReactPlayer
@@ -127,7 +127,7 @@ const VideoPage = () => {
               height="100px"
               controls
             />
-            <p>Related Video 7</p>
+            <p>Video 7</p>
           </div>
         </div>
       </div>
