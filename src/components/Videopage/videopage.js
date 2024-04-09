@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ReactPlayer from 'react-player';
 import './videopage.css';
 import videoSrc from './teste.mp4'; // Importando o vídeo local
+import LeoneVid from './leoneaula.mp4';
 
 const VideoPage = () => {
   // Estado para armazenar os comentários
@@ -72,7 +73,7 @@ const VideoPage = () => {
           <div className="related-video">
           <ReactPlayer
               className="related-video-player"
-              url={videoSrc}
+              url={LeoneVid }
               width="150px"
               height="100px"
               controls
@@ -92,7 +93,7 @@ const VideoPage = () => {
           <div className="related-video">
           <ReactPlayer
               className="related-video-player"
-              url={videoSrc}
+              url={LeoneVid }
               width="150px"
               height="100px"
               controls
@@ -112,7 +113,7 @@ const VideoPage = () => {
           <div className="related-video">
           <ReactPlayer
               className="related-video-player"
-              url={videoSrc}
+              url={LeoneVid }
               width="150px"
               height="100px"
               controls
