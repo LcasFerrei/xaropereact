@@ -7,29 +7,29 @@ import Login from "./components/Usuario/Usuario";
 import Header from "./components/Header/Header";
 import Playvideo from "./pages/Videopages/videohtml";
 import CursoHTML from "./pages/Cursos/html"
-import Jscurso from "./pages/Cursos/js";
 import CursosPage from "./pages/Cursos/Cursos"
+import CursoDetail from "./components/CursosCard/CursoDetail";
 
 
 
-function App(){
-  return(
+
+function App() {
+  return (
     <BrowserRouter>
-    <Header />
-    <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/FAQ" element={<Faq />}></Route>
-        <Route path="/Login" element={<Login />}></Route>
-        <Route path="/Professores" element={<Professores />}></Route>
-        <Route path="/Videopages" element={<Playvideo/>}></Route>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/FAQ" element={<Faq />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/Professores" element={<Professores />} />
+        <Route path="/Videopages" element={<Playvideo />} />
         <Route path="/cursos/html" element={<CursoHTML />} />
-        <Route path="/Cursos" element={<CursosPage/>}></Route>
-        <Route path="/cursos/:id" element={<Jscurso />} /> {/* Nova rota para a página de detalhes do curso */}
-        <Route path="/Cursos" element={<CursosPage />}></Route>
-    </Routes>
-  </BrowserRouter>
-   
-  )
+        <Route path="/Cursos" element={<CursosPage />} />
+        {/* Rota para detalhes do curso */}
+        <Route path="/Cursos/:id" element={<CursoDetail />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;

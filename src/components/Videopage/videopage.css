@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* Remova a posição absoluta */
 }
 
 .video-container {
@@ -28,6 +29,7 @@
 .video-title {
   font-size: 24px;
   margin-bottom: 10px;
+  text-align: center; /* Centralize o título */
 }
 
 .video-description {

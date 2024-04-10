@@ -3,6 +3,7 @@ import ReactPlayer from 'react-player';
 import './videopage.css';
 import videoSrc from './teste.mp4'; // Importando o vídeo local
 import LeoneVid from './leoneaula.mp4';
+import { Link } from 'react-router-dom';
 
 const VideoPage = () => {
   // Estado para armazenar os comentários
@@ -61,14 +62,16 @@ const VideoPage = () => {
         <h2 style={{color: 'purple'}}>Vídeos Relacionados</h2>
         <div className="related-videos-list">
           <div className="related-video">
-          <ReactPlayer
-              className="related-video-player"
-              url={videoSrc}
-              width="150px"
-              height="100px"
-              controls
-            />  
-            <p>Video 1</p>
+          <Link to="/VideoPage">
+              <ReactPlayer
+                className="related-video-player"
+                url={videoSrc}
+                width="150px"
+                height="100px"
+                controls
+              />  
+              <p>Video 1</p> {/* Envolve o texto em um componente Link */}
+            </Link>
           </div>
           <div className="related-video">
           <ReactPlayer

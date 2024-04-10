@@ -1,53 +1,81 @@
 import React, { useState } from 'react';
-import Home from "../../pages/Home/Home";
+
 
 function Login() {
-  const [isLogin, setIsLogin] = useState(true);
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false); // Estado para controlar a exibição da mensagem de sucesso
-  const [email, setEmail] = useState('');
-  const [validEmail, setValidEmail] = useState(true); // Estado para controlar se o email é válido
+  const [isLogin, setIsLogin] = useState(true); // Estado para controlar se o formulário exibido é o de login ou inscrição
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false); // Estado para controlar a exibição da mensagem de sucesso após a inscrição
+  const [email, setEmail] = useState(''); 
+  const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
+  const [validEmail, setValidEmail] = useState(true);
+  const [error, setError] = useState(''); 
 
+  // Função para alternar entre os formulários de login e inscrição
   const toggleForm = () => {
     setIsLogin(!isLogin);
   };
 
+  // Função para validar o formato do email
   const validateEmail = (email) => {
-    // Expressão regular para validar o email
     const re = /\S+@\S+\.\S+/;
     return re.test(email);
   };
 
+  // Função para lidar com a submissão do formulário de inscrição, Verifica se tudo está preenchida um por um.
   const handleSignup = () => {
-    // Verifica se o email é válido
-    const isValid = validateEmail(email);
-    setValidEmail(isValid);
+    const isValidEmail = validateEmail(email);
+    const isValidName = name.trim() !== '';
+    const isValidPassword = password.trim() !== '';
 
-    if (isValid) {
-      // Mostrar a mensagem de sucesso ao clicar no botão
+    // Define o estado de validEmail com base na validade do email
+    setValidEmail(isValidEmail);
+
+    // Se todos os campos estiverem preenchidos corretamente
+    if (isValidEmail && isValidName && isValidPassword) {
+      // Exibe a mensagem de sucesso
       setShowSuccessMessage(true);
-
-      // Ocultar a mensagem após 5 segundos
+      // Limpa os campos do formulário
       setTimeout(() => {
         setShowSuccessMessage(false);
-        // Redirecionamento para a página inicial
-        window.location.href = '/'; // Redireciona para a página inicial
-      }, 5000); // 5 segundos
+        setEmail('');
+        setPassword('');
+        setName('');
+        // Redireciona para a página inicial
+        window.location.href = '/';
+      }, 2000); // Oculta a mensagem de sucesso após 5 segundos
     } else {
-      // Se o email não for válido, mostrar a mensagem por 5 segundos
-      setShowSuccessMessage(true);
+      // Se algum campo estiver vazio ou o email for inválido
+      if (!isValidName) {
+        setError('Por favor, insira seu nome.');
+      } else if (!isValidEmail) {
+        setError('Por favor, insira um e-mail válido.');
+      } else if (!isValidPassword) {
+        setError('Por favor, insira sua senha.');
+      }
+
+      // Limpa os campos do formulário
+      setEmail('');
+      setPassword('');
+      setName('');
+
+      // Oculta a mensagem de erro após 2 segundos
       setTimeout(() => {
-        setShowSuccessMessage(false);
-      }, 2000); // 5 segundos
+        setError('');
+      }, 2000);
     }
   };
 
   return (
     <div className={`container ${isLogin ? '' : 'active'}`} id="container">
+      {/* Formulário de inscrição */}
       <div className="form-container sign-up">
         <form>
           <h1 style={{ color: 'black'}}>Inscrever-se</h1>
-          {showSuccessMessage && !validEmail && <p style={{ color: 'red' }}>Verificar Email</p>} {/* Mensagem de erro para email inválido */}
-          {showSuccessMessage && validEmail && <p style={{ color: 'green' }}>Cadastro realizado com sucesso!</p>} {/* Mensagem de sucesso */}
+          {/* Mensagem de sucesso após a inscrição */}
+          {showSuccessMessage && validEmail && <p style={{ color: 'green' }}>Cadastro realizado com sucesso!</p>}
+          {/* Mensagem de erro */}
+          {error && <p style={{ color: 'red' }}>{error}</p>}
+          {/* Ícones de redes sociais para login rápido */}
           <div className="social-icons">
             <button className="icon"><i className="fa-brands fa-google-plus-g"></i></button>
             <button className="icon"><i className="fa-brands fa-facebook-f"></i></button>
@@ -55,15 +83,21 @@ function Login() {
             <button className="icon"><i className="fa-brands fa-linkedin-in"></i></button>
           </div>
           <span>ou use seu e-mail para cadastro</span>
-          <input type="text" placeholder="Name" />
+          {/* Campo de nome */}
+          <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+          {/* Campo de email */}
           <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-          <input type="password" placeholder="Password" />
-          <button type="button" onClick={handleSignup}>Inscrever-se</button> {/* Alteração do tipo do botão para evitar o envio do formulário */}
+          {/* Campo de senha */}
+          <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+          {/* Botão de inscrição */}
+          <button type="button" onClick={handleSignup}>Inscrever-se</button>
         </form>
       </div>
+      {/* Formulário de login */}
       <div className="form-container sign-in">
         <form>
           <h1 style={{ color: 'black'}}>Entrar</h1>
+          {/* Ícones de redes sociais para login rápido */}
           <div className="social-icons">
             <button className="icon"><i className="fa-brands fa-google-plus-g"></i></button>
             <button className="icon"><i className="fa-brands fa-facebook-f"></i></button>
@@ -77,13 +111,16 @@ function Login() {
           <button>Entrar</button>
         </form>
       </div>
+      {/* Alternador de formulário (entre login e inscrição) */}
       <div className="toggle-container">
         <div className="toggle">
+          {/* Painel para alternar para o formulário de login */}
           <div className="toggle-panel toggle-left">
             <h1 style={{ color: 'white'}}>Bem vindo de volta!</h1>
             <p style={{ color: 'white'}}>Insira seus dados pessoais para usar todos os recursos do site</p>
             <button className="hidden" onClick={toggleForm}>Conta já cadastrada?</button>
           </div>
+          {/* Painel para alternar para o formulário de inscrição */}
           <div className="toggle-panel toggle-right">
             <h1 style={{ color: 'white'}}>Olá amigo!</h1>
             <p style={{ color: 'white'}}>Registre-se com seus dados pessoais para usar todos os recursos do site</p>
