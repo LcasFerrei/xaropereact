@@ -21,37 +21,37 @@ const cursos = {
     },
     '4': { 
         title: 'O que é React?', 
-        url: 'RelVid', 
+        url: Relvid, 
         description: 'Entenda os conceitos básicos do React, como componentes, props e state, e como utilizá-lo para criar interfaces de usuário interativas.' 
     },
     '5': { 
         title: 'O que é Banco de Dados', 
-        url: 'LeoneVid', 
+        url: leone, 
         description: 'Explore os fundamentos dos bancos de dados, incluindo tipos de banco de dados, linguagens de consulta e modelagem de dados.' 
     },
     '6': { 
         title: 'Diferença entre Git e GitHub', 
-        url: 'videoSrc', 
+        url: teste, 
         description: 'Compreenda as diferenças entre Git e GitHub, incluindo suas funcionalidades e como utilizá-los para controle de versão de código.' 
     },
     '7': { 
         title: 'Python do inicio ao avançado', 
-        url: 'RelVid', 
+        url: Relvid, 
         description: 'Aprenda Python desde os conceitos básicos até tópicos mais avançados, como programação orientada a objetos e desenvolvimento web.' 
     },
     '8': { 
         title: 'Introdução a Php, linguagem ainda está viva no meio dev?', 
-        url: 'videoSrc', 
+        url: teste,
         description: 'Introdução à linguagem PHP, incluindo sintaxe básica, funcionalidades e sua relevância no desenvolvimento web moderno.' 
     },
     '9': { 
         title: 'Introdução ao Laravel', 
-        url: 'LeoneVid', 
+        url: leone, 
         description: 'Explore o framework PHP Laravel e aprenda a criar aplicativos web robustos e escaláveis utilizando boas práticas de desenvolvimento.' 
     },
     '10': { 
         title: 'Bônus: Primeiros passos para montar um curriculo', 
-        url: 'RelVid', 
+        url: Relvid, 
         description: 'Dicas e orientações sobre como criar um currículo eficaz que destaque suas habilidades, experiências e qualificações.' 
     },
 };
