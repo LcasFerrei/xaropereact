@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import ReactPlayer from 'react-player';
-import '../Videopage/videopage.css';
-import videoSrc from '../Videopage/teste.mp4';
-import LeoneVid from '../Videopage/leoneaula.mp4';
-import RelVid from '../Videopage/Projeto de Relogio Digital com Html, CSS e Javascript em menos de 20 minutos - XaropesGenius.mp4';
+import cursos from '../../database/cursos';
 
 function CursoDetail() {
   const { id } = useParams();
@@ -14,68 +11,35 @@ function CursoDetail() {
   const [videosWatched, setVideosWatched] = useState(0);
   const [courseTitle, setCourseTitle] = useState('');
   const [videoURL, setVideoURL] = useState('');
+  const [videoDescription, setVideoDescription] = useState('');
 
   useEffect(() => {
-    let title = '';
-    let url = '';
-    if (id === '1') {
-      title = 'Primeiros Passos no HTML';
-      url = RelVid;
-    } else if (id === '2') {
-      title = 'JavaScript do inicio ao avançado';
-      url = LeoneVid;
-    } else if (id === '3') {
-      title = 'O que é e como usar o CSS?';
-      url = videoSrc;
-    } else if (id === '4') {
-      title = 'O que é React?';
-      url = RelVid;
-    } else if (id === '5') {
-      title = 'O que é Banco de Dados';
-      url = LeoneVid;
-    } else if (id === '6') {
-      title = 'Diferença entre Git e GitHub';
-      url = videoSrc;
-    } else if (id === '7') {
-      title = 'Python do inicio ao avançado';
-      url = RelVid;
-    } else if (id === '8') {
-      title = 'Introdução a Php, linguagem ainda está viva no meio dev?';
-      url = videoSrc;
-    } else if (id === '9') {
-      title = 'Introdução ao Laravel';
-      url = LeoneVid;
-    } else if (id === '10') {
-      title = 'Bônus: Primeiros passos para montar um curriculo';
-      url = RelVid;
-    }  else {
-      title = 'Curso a ser implementado';
-      url = '';
-    }
+    const { title, url, description } = cursos[id] || { title: 'Curso a ser implementado', videoPath: '', description: '' };
     setCourseTitle(title);
     setVideoURL(url);
+    setVideoDescription(description);
   }, [id]);
 
-  const totalVideos = 10;
+  const totalVideos = 10; // Número total de vídeos no curso
 
-  const handleCommentSubmit = (e) => {
-    e.preventDefault();
-    if (commentText.trim() !== '') {
-      setComments([...comments, commentText]);
-      setCommentText('');
+  const handleCommentSubmit = (e) => { // Função para lidar com o envio de comentários
+    e.preventDefault(); // Previne o comportamento padrão do formulário
+    if (commentText.trim() !== '') { // Verifica se o texto do comentário não está vazio
+      setComments([...comments, commentText]); // Adiciona o novo comentário ao estado de comentários
+      setCommentText(''); // Limpa o campo de texto do comentário
     }
   };
 
-  const handleVideoWatched = () => {
-    setVideosWatched(videosWatched + 1);
+  const handleVideoWatched = () => { // Função para lidar com a marcação de um vídeo como assistido
+    setVideosWatched(videosWatched + 1); // Incrementa o contador de vídeos assistidos
   };
 
-  const completionPercentage = (videosWatched / totalVideos) * 100;
+  const completionPercentage = (videosWatched / totalVideos) * 100; // Calcula a porcentagem de conclusão do curso
 
   return (
     <div className="video-page">
-      <h1 className="video-title">{courseTitle}</h1>
-      
+      <h1 className="video-title">{courseTitle}</h1> {/* Exibe o título do curso */}
+
       <div className="video-container">
         {/* Video principal */}
         <div className="video-wrapper">
@@ -85,15 +49,13 @@ function CursoDetail() {
             width="100%"
             height="100%"
             controls
-            onEnded={handleVideoWatched}
+            onEnded={handleVideoWatched} // Chama a função quando o vídeo termina
           />
         </div>
         <div className="video-details">
           {/* Descrição do vídeo */}
           <p className="video-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget est mauris. Proin nec scelerisque
-            enim. In euismod nulla at nisi consectetur, non efficitur lorem dapibus. Duis tincidunt magna ac lacus
-            ullamcorper fermentum. Morbi laoreet odio eget ullamcorper efficitur. In sit amet dictum ipsum.
+            {videoDescription}
           </p>
         </div>
       </div>
@@ -102,84 +64,10 @@ function CursoDetail() {
         {/* Vídeos relacionados */}
         <h2 style={{color: 'purple'}}>Vídeos Relacionados</h2>
         <div className="related-videos-list">
-          <div className="related-video">
-            <Link to="/Cursos/1">
-              <ReactPlayer
-                className="related-video-player"
-                url={videoSrc}
-                width="150px"
-                height="100px"
-                controls
-              />  
-              <p>Video 1</p>
-            </Link>
-          </div>
-          <div className="related-video">
-            <ReactPlayer
-              className="related-video-player"
-              url={LeoneVid}
-              width="150px"
-              height="100px"
-              controls
-            />
-            <p>Video 2</p>
-          </div>
-          <div className="related-video">
-            <Link to="/Cursos/1">
-              <ReactPlayer
-                className="related-video-player"
-                url={RelVid}
-                width="150px"
-                height="100px"
-                controls
-              />  
-              <p>Video 1</p>
-            </Link>
-          </div>
-          <div className="related-video">
-            <ReactPlayer
-              className="related-video-player"
-              url={LeoneVid}
-              width="150px"
-              height="100px"
-              controls
-            />
-            <p>Video 2</p>
-          </div>
-          <div className="related-video">
-            <Link to="/Cursos/1">
-              <ReactPlayer
-                className="related-video-player"
-                url={videoSrc}
-                width="150px"
-                height="100px"
-                controls
-              />  
-              <p>Video 1</p>
-            </Link>
-          </div>
-          <div className="related-video">
-            <ReactPlayer
-              className="related-video-player"
-              url={RelVid}
-              width="150px"
-              height="100px"
-              controls
-            />
-            <p>Video 2</p>
-          </div>
-          <div className="related-video">
-            <Link to="/Cursos/1">
-              <ReactPlayer
-                className="related-video-player"
-                url={videoSrc}
-                width="150px"
-                height="100px"
-                controls
-              />  
-              <p>Video 1</p>
-            </Link>
-          </div>
+          {/* Lista de vídeos relacionados */}
+          {/* Cada vídeo é representado por um componente ReactPlayer dentro de um Link */}
+          {/* O Link redireciona para a página do respectivo vídeo */}
+          {/* O título do vídeo é exibido abaixo do componente ReactPlayer */}
           {/* Adicione mais vídeos relacionados conforme necessário */}
         </div>
       </div>
@@ -194,6 +82,7 @@ function CursoDetail() {
       <div className="comments-section">
         {/* Seção de Comentários */}
         <h2 style={{color: 'purple'}}>Comentários</h2>
+        {/* Formulário para adicionar comentários */}
         <form onSubmit={handleCommentSubmit}>
           <textarea
             value={commentText}
@@ -202,6 +91,7 @@ function CursoDetail() {
           ></textarea>
           <button type="submit">Enviar</button>
         </form>
+        {/* Lista de comentários */}
         <div className="comment-list">
           {comments.map((comment, index) => (
             <div key={index} className="comment">

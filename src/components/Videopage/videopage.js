@@ -12,8 +12,8 @@ const VideoPage = () => {
   const [videosWatched, setVideosWatched] = useState(0); // Estado para acompanhar o número de vídeos assistidos
 
   // Número total de vídeos no curso
-  const totalVideos = 10; // Substitua pelo número total de vídeos do curso
-
+  const totalVideos = 10; 
+  
   // Função para lidar com o envio de comentários
   const handleCommentSubmit = (e) => {
     e.preventDefault();

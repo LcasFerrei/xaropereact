@@ -13,7 +13,7 @@ import HtmlImage from '../../Assets/Cursos/HTML.png';
 import BancoImage from '../../Assets/Cursos/bancodedados.png';
 import CssImage from '../../Assets/Cursos/css.png';
 import HomePage from '../../components/Feature/ReviewsFutere';
-import StudentCommentsAndPodcasts from '../../components/Feature/teste';
+import StudentCommentsAndPodcasts from '../../components/Feature/Podcast';
 
 function Home() {
   return (
