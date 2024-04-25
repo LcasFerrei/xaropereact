@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
-
+import db from '../../database/db.json';
 
 function UsuarioLogin() {
-  const [isLogin, setIsLogin] = useState(true); 
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false); 
-  const [email, setEmail] = useState(''); 
+  const [isLogin, setIsLogin] = useState(true);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
+  const [userType, setUserType] = useState('Aluno');
   const [validEmail, setValidEmail] = useState(true);
-  const [error, setError] = useState(''); 
+  const [error, setError] = useState('');
+  const [loginError, setLoginError] = useState(''); // Estado para armazenar a mensagem de erro no login
 
   const toggleForm = () => {
     setIsLogin(!isLogin);
@@ -19,33 +21,46 @@ function UsuarioLogin() {
     return re.test(email);
   };
 
-  const handleSignup = () => {
+  const handleSignup = async () => {
     const isValidEmail = validateEmail(email);
     const isValidName = name.trim() !== '';
     const isValidPassword = password.trim() !== '';
 
-    // Define o estado de validEmail com base na validade do email
     setValidEmail(isValidEmail);
 
-    // Se todos os campos estiverem preenchidos corretamente
     if (isValidEmail && isValidName && isValidPassword) {
-      // Exibe a mensagem de sucesso
-      setShowSuccessMessage(true);
+      const newUser = { nome: name, email: email, senha: password, userType: userType };
+      try {
+        const response = await fetch('http://localhost:3001/usuarios', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(newUser),
+        });
 
-      console.log('Nome:', name);
-      console.log('Email:', email);
-      console.log('Senha:', password);
-      // Limpa os campos do formulário
-      setTimeout(() => {
-        setShowSuccessMessage(false);
-        setEmail('');
-        setPassword('');
-        setName('');
-        // Redireciona para a página inicial
-        window.location.href = '/';
-      }, 5000); 
+        if (response.ok) {
+          console.log('Novo usuário cadastrado:', newUser);
+          setShowSuccessMessage(true);
+          setTimeout(() => {
+            setShowSuccessMessage(false);
+            setEmail('');
+            setPassword('');
+            setName('');
+            setUserType('Aluno');
+            window.location.href = '/';
+          }, 5000);
+        } else {
+          throw new Error('Erro ao cadastrar usuário.');
+        }
+      } catch (error) {
+        console.error('Erro ao cadastrar usuário:', error);
+        setError('Erro ao cadastrar usuário.');
+        setTimeout(() => {
+          setError('');
+        }, 5000);
+      }
     } else {
-      // Se algum campo estiver vazio ou o email for inválido
       if (!isValidName) {
         setError('Por favor, insira seu nome.');
       } else if (!isValidEmail) {
@@ -53,12 +68,11 @@ function UsuarioLogin() {
       } else if (!isValidPassword) {
         setError('Por favor, insira sua senha.');
       }
-      // Limpa os campos do formulário
+
       setEmail('');
       setPassword('');
       setName('');
 
-      // Oculta a mensagem de erro após 5 segundos
       setTimeout(() => {
         setError('');
       }, 5000);
@@ -66,65 +80,62 @@ function UsuarioLogin() {
   };
 
   const handleLogin = () => {
-    console.log('Email:', email);
-    console.log('Senha:', password);
-    window.location.href = '/';
-    setTimeout(() => {
-      setError('');
-    }, 5000);
+    const user = db.usuarios.find((user) => user.email === email);
+    if (user) {
+      if (user.senha === password) {
+        window.location.href = '/';
+      } else {
+        setLoginError('Email ou senha incorretos.'); // Define a mensagem de erro no loginError
+        setTimeout(() => {
+          setLoginError('');
+        }, 5000);
+      }
+    } else {
+      setLoginError('Email não cadastrado.'); // Define a mensagem de erro no loginError
+      setTimeout(() => {
+        setLoginError('');
+      }, 5000);
+    }
   };
 
   return (
     <div className={`container ${isLogin ? '' : 'active'}`} id="container">
-      {/* Formulário de inscrição */}
       <div className="form-container sign-up">
         <form>
-          <h1 style={{ color: 'black'}}>Inscrever-se</h1>
-          {/* Mensagem de sucesso após a inscrição */}
+          <h1 style={{ color: 'black' }}>Inscrever-se</h1>
           {showSuccessMessage && validEmail && <p style={{ color: 'green' }}>Cadastro realizado com sucesso!</p>}
-          {/* Mensagem de erro */}
           {error && <p style={{ color: 'red' }}>{error}</p>}
-          {/* Ícones de redes sociais para login rápido */}
-          
-          <span>ou use seu e-mail para cadastro</span>
-          {/* Campo de nome */}
+          <span>Selecione o tipo de usuário:</span>
+          <select value={userType} onChange={(e) => setUserType(e.target.value)}>
+            <option value="Aluno">Aluno(a)</option>
+            <option value="Professor">Professor(a)</option>
+          </select>
           <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
-          {/* Campo de email */}
           <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-          {/* Campo de senha */}
           <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-          {/* Botão de inscrição */}
           <button type="button" onClick={handleSignup}>Inscrever-se</button>
         </form>
       </div>
-      {/* Formulário de login */}
       <div className="form-container sign-in">
         <form>
-          <h1 style={{ color: 'black'}}>Entrar</h1>
-          
-          <span>ou use sua senha de e-mail</span>
+          <h1 style={{ color: 'black' }}>Entrar</h1>
           <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-          <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}  />
+          <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
           <button type="button" onClick={handleLogin}>Entrar</button>
-          
-
+          {loginError && <p style={{ color: 'red' }}>{loginError}</p>} {/* Exibe a mensagem de erro no login */}
           <a href="#">Esqueceu sua senha?</a>
-
         </form>
       </div>
-      {/* Alternador de formulário (entre login e inscrição) */}
       <div className="toggle-container">
         <div className="toggle">
-          {/* Painel para alternar para o formulário de login */}
           <div className="toggle-panel toggle-left">
-            <h1 style={{ color: 'white'}}>Bem vindo de volta!</h1>
-            <p style={{ color: 'white'}}>Insira seus dados pessoais para usar todos os recursos do site</p>
+            <h1 style={{ color: 'white' }}>Bem vindo de volta!</h1>
+            <p style={{ color: 'white' }}>Insira seus dados pessoais para usar todos os recursos do site</p>
             <button className="hidden" onClick={toggleForm}>Conta já cadastrada?</button>
           </div>
-          {/* Painel para alternar para o formulário de inscrição */}
           <div className="toggle-panel toggle-right">
-            <h1 style={{ color: 'white'}}>Olá, Genius!</h1>
-            <p style={{ color: 'white'}}>Registre-se com seus dados pessoais para usar todos os recursos do site</p>
+            <h1 style={{ color: 'white' }}>Olá, Genius!</h1>
+            <p style={{ color: 'white' }}>Registre-se com seus dados pessoais para usar todos os recursos do site</p>
             <button className="hidden" onClick={toggleForm}>Inscrever-se</button>
           </div>
         </div>

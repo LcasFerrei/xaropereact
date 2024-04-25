@@ -1,0 +1,152 @@
+{
+  "cursos": [
+    {
+      "id": "1",
+      "title": "Primeiros Passos no HTML",
+      "url": "leone",
+      "description": "Aprenda os conceitos básicos do HTML, incluindo tags, elementos e estrutura de página."
+    },
+    {
+      "id": "2",
+      "title": "JavaScript do início ao avançado",
+      "url": "Relvid",
+      "description": "Explore os fundamentos do JavaScript e avance para tópicos mais avançados, como manipulação do DOM e assincronicidade."
+    },
+    {
+      "id": "3",
+      "title": "O que é e como usar o CSS?",
+      "url": "teste",
+      "description": "Descubra o que é CSS e aprenda a utilizá-lo para estilizar páginas web e criar layouts visualmente atraentes."
+    },
+    {
+      "id": "4",
+      "title": "O que é React?",
+      "url": "Relvid",
+      "description": "Entenda os conceitos básicos do React, como componentes, props e state, e como utilizá-lo para criar interfaces de usuário interativas."
+    },
+    {
+      "id": "5",
+      "title": "O que é Banco de Dados",
+      "url": "leone",
+      "description": "Explore os fundamentos dos bancos de dados, incluindo tipos de banco de dados, linguagens de consulta e modelagem de dados."
+    },
+    {
+      "id": "6",
+      "title": "Diferença entre Git e GitHub",
+      "url": "teste",
+      "description": "Compreenda as diferenças entre Git e GitHub, incluindo suas funcionalidades e como utilizá-los para controle de versão de código."
+    },
+    {
+      "id": "7",
+      "title": "Python do início ao avançado",
+      "url": "Relvid",
+      "description": "Aprenda Python desde os conceitos básicos até tópicos mais avançados, como programação orientada a objetos e desenvolvimento web."
+    },
+    {
+      "id": "8",
+      "title": "Introdução a PHP, linguagem ainda está viva no meio dev?",
+      "url": "teste",
+      "description": "Introdução à linguagem PHP, incluindo sintaxe básica, funcionalidades e sua relevância no desenvolvimento web moderno."
+    },
+    {
+      "id": "9",
+      "title": "Introdução ao Laravel",
+      "url": "leone",
+      "description": "Explore o framework PHP Laravel e aprenda a criar aplicativos web robustos e escaláveis utilizando boas práticas de desenvolvimento."
+    },
+    {
+      "id": "10",
+      "title": "Bônus: Primeiros passos para montar um currículo",
+      "url": "Relvid",
+      "description": "Dicas e orientações sobre como criar um currículo eficaz que destaque suas habilidades, experiências e qualificações."
+    }
+  ],
+  "usuarios": [
+    {
+      "id": "1",
+      "nome": "Afonso Santana",
+      "email": "JavaMAN@gmail.com",
+      "senha": "senha123"
+    },
+    {
+      "id": "2",
+      "name": "lucasferreiraceara@gmail.com",
+      "password": "yyy"
+    },
+    {
+      "id": "3",
+      "name": "Lucas",
+      "password": "12345678"
+    },
+    {
+      "id": "5ab5",
+      "name": "lucasferreiraceara@gmail.com",
+      "password": "ff"
+    },
+    {
+      "id": "312c",
+      "name": "Jardiana",
+      "password": "123"
+    },
+    {
+      "id": "dee1",
+      "name": "lucasferreiraceara@gmail.com",
+      "email": "lucasferreiraceara@gmail.c",
+      "password": "13"
+    },
+    {
+      "id": "aa78",
+      "name": "Leone",
+      "email": "leone@unifor.br",
+      "password": "123"
+    },
+    {
+      "id": "1914",
+      "nome": "Ana",
+      "email": "ana@unifor.br",
+      "senha": "123"
+    },
+    {
+      "id": "adf2",
+      "nome": "Lucas",
+      "email": "lucasferreiraceara@gmail.com",
+      "senha": "12345678"
+    },
+    {
+      "id": "0f04",
+      "nome": "Leone",
+      "email": "leone@gmail.com",
+      "senha": "191403",
+      "userType": "Professor"
+    },
+    {
+      "id": "abd7",
+      "nome": "Cesar",
+      "email": "cesar@gmail.com",
+      "senha": "123",
+      "userType": "Aluno"
+    },
+    {
+      "id": "617f",
+      "nome": "Lucas",
+      "email": "lucasferreiraceara@gmail.com",
+      "senha": "191403",
+      "userType": "Aluno"
+    },
+    {
+      "id": "5ded",
+      "nome": "Llll",
+      "email": "unifor@unifor.br",
+      "senha": "191403",
+      "userType": "Professor"
+    },
+    {
+      "id": "938a",
+      "nome": "Jardianna",
+      "email": "jardianna@gmail.com",
+      "senha": "1",
+      "userType": "Professor"
+    }
+  ],
+  "modulos": {}
+}

@@ -12,7 +12,6 @@ const CursoCard = ({ curso }) => {
       <p>Duração: {curso.duracao}</p>
       <p>Preço: {curso.preco}</p>
       {/* Adicione mais informações do curso conforme necessário */}
-      <Link to={`/cursos/${curso.id}`}>Ver detalhes</Link>
     </div>
   );
 };

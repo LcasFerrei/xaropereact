@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ReactPlayer from 'react-player';
-import cursos from '../../database/cursos';
+import db from '../../database/db.json'
 
 function CursoDetail() {
   const { id } = useParams();
@@ -14,7 +14,7 @@ function CursoDetail() {
   const [videoDescription, setVideoDescription] = useState('');
 
   useEffect(() => {
-    const { title, url, description } = cursos[id] || { title: 'Curso a ser implementado', videoPath: '', description: '' };
+    const { title, url, description } = db.cursos[id] || { title: 'Curso a ser implementado', videoPath: '', description: '' }; // troca cursos para db dentro de "cursos"
     setCourseTitle(title);
     setVideoURL(url);
     setVideoDescription(description);

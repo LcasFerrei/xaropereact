@@ -853,3 +853,82 @@ body{
     margin: 0 auto;
   }
   
+
+  /* Estilos para o menu container */
+.menu-container {
+    position: absolute;
+    top: 50px; /* Ajuste conforme necessário para a posição vertical do menu */
+    right: 10px; /* Ajuste conforme necessário para a posição horizontal do menu */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 999; /* Garante que o menu esteja acima de outros elementos */
+  }
+  
+  .menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu > li {
+    margin-bottom: 10px;
+    color: rgb(98, 98, 204); /* Alterando a cor das letras para roxo */
+  }
+  
+  .menu > li > ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu > li > ul > li {
+    margin-bottom: 5px;
+  }
+  
+  .menu > li > ul > li > a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .menu > li > ul > li > a:hover {
+    color: #555;
+  }
+  
+ /* Estilos para o select */
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid rgb(98, 98, 204); /* Cor da borda */
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #fff;
+    appearance: none; /* Remove a aparência padrão do select */
+    text-align: center; /* Centraliza o texto */
+  }
+  
+  /* Estilos para as opções do select */
+  option {
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  /* Estilo quando o select está focado */
+  select:focus {
+    outline: none;
+    border-color: #007bff; /* Cor de destaque quando focado */
+  }
+  
+  /* Aplica a fonte Roboto ao select */
+  select {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .bxs-capsule:before{
+    padding: 30px;
+  }
+

@@ -14,11 +14,13 @@ import BancoImage from '../../Assets/Cursos/bancodedados.png';
 import CssImage from '../../Assets/Cursos/css.png';
 import HomePage from '../../components/Feature/ReviewsFutere';
 import StudentCommentsAndPodcasts from '../../components/Feature/Podcast';
+import Search from '../../components/Search/search';
 
 function Home() {
   return (
     <div>
       {/* Componentes */}
+      <Search/>
       <Header />
       <Banner />
       <h1>A DOSE CERTA DE CONHECIMENTO PARA SUA JORNADA NA PROGRAMAÇÃO!</h1>

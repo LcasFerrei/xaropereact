@@ -209,4 +209,35 @@ body{
     transform: translateX(200%);
 }
 
- 
+
+/* Estilos para o select */
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid rgb(98, 98, 204); /* Cor da borda */
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #fff;
+    appearance: none; /* Remove a aparência padrão do select */
+    text-align: center; /* Centraliza o texto */
+  }
+  
+  /* Estilos para as opções do select */
+  option {
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  /* Estilo quando o select está focado */
+  select:focus {
+    outline: none;
+    border-color: #007bff; /* Cor de destaque quando focado */
+  }
+  
+  /* Aplica a fonte Roboto ao select */
+  select {
+    font-family: 'Roboto', sans-serif;
+  }
+  

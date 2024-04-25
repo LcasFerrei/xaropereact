@@ -4,7 +4,7 @@ function Profs(){
     return (
         <div className="grid-container">
             <div className="card">
-                <img src="https://media.licdn.com/dms/image/D4D03AQEqwK_GXiaR3w/profile-displayphoto-shrink_800_800/0/1687770981636?e=1713398400&v=beta&t=VzuNVbYoXDqtcpY8IV-jWxBIe35jiNyDg0AjDePfruc" alt="professor Lucas Ferreira"/>
+                <img src="https://media.licdn.com/dms/image/D4D03AQEqwK_GXiaR3w/profile-displayphoto-shrink_800_800/0/1687770981636?e=1718841600&v=beta&t=zB9ReV3-QTXH-RwTtoelHKjKROL49fJlib8DTTMWdJI" alt="professor Lucas Ferreira"/>
                 <div className="card-body">
                     <h4 className="card-title"><strong>Lucas Ferreira</strong></h4>
                     <p className="card-text">Graduando do 3º semestre de ADS. Focado na área de <em>desenvolvimento web, IoT, e desenvolvimento para nuvem</em>.</p>
@@ -15,7 +15,7 @@ function Profs(){
                 </div>
             </div>
             <div className="card">
-                <img src="https://media.licdn.com/dms/image/C4D03AQHBok8NisQ3bw/profile-displayphoto-shrink_800_800/0/1592330436802?e=1713398400&v=beta&t=PTjRyW_RTgVo_CSuiJhYy3EYa1ZnOglYOtgkSRxCahk" alt="professora Jardiana"/>
+                <img src="https://media.licdn.com/dms/image/C4D03AQHBok8NisQ3bw/profile-displayphoto-shrink_800_800/0/1592330436802?e=1718841600&v=beta&t=txCIzpzg0hazbJ0NNPTtzvnPeju0UGl3v0DUDF4-igo" alt="professora Jardiana"/>
                 <div className="card-body">
                     <h4 className="card-title"><strong>Jardiana Galvão</strong></h4>
                     <p className="card-text">Graduanda do 3º semestre de ADS. <em>Secretária executiva</em>, focada na área de <em>desenvolvimento web, IoT, e desenvolvimento para nuvem</em>.</p>
@@ -25,7 +25,7 @@ function Profs(){
                 </div>
             </div>
             <div className="card">
-                <img src="https://media.licdn.com/dms/image/C4E35AQHekeivwSY1jQ/profile-framedphoto-shrink_400_400/0/1617289967591?e=1713063600&v=beta&t=Rj4yKGMXDT0mGqsLtk3CYffQNdRrOh9nrRXICLEmEZU" alt="professor Leone"/>
+                <img src="https://media.licdn.com/dms/image/C4E03AQEkb96as39tCA/profile-displayphoto-shrink_800_800/0/1617289518112?e=1718841600&v=beta&t=F_cLt2TGE-1YQuL6BpYLNt0GtNwFreDFwq177F3T06Q" alt="professor Leone"/>
                 <div className="card-body">
                     <h4 className="card-title"><strong>Leone Fernandes</strong></h4>
                     <p className="card-text">Estudante de Análise e Desenvolvimento de Sistemas pela Unifor. Especialista em Administração Financeira - UECE. Focado na área de <em>desenvolvimento web, IoT, e desenvolvimento para nuvem</em>.</p>
@@ -35,7 +35,7 @@ function Profs(){
                 </div>
             </div>
             <div className="card">
-                <img src="https://media.licdn.com/dms/image/D4D03AQHdvMHk5yuKQw/profile-displayphoto-shrink_800_800/0/1692633551711?e=1713398400&v=beta&t=OqK9TkWbgJpEoU2UkbAm-dFSoOS2UnvWRGlP2KCUu54" alt="professora Anna Maria"/>
+                <img src="https://media.licdn.com/dms/image/D4D03AQHdvMHk5yuKQw/profile-displayphoto-shrink_800_800/0/1692633551711?e=1718841600&v=beta&t=1jiV9BZjG2LO783KueuMXBly6ZofsmloifB7bsrEs2s" alt="professora Anna Maria"/>
                 <div className="card-body">
                     <h4 className="card-title"><strong>Anna Maria</strong></h4>
                     <p className="card-text">Graduanda do 3º semestre de ADS. <em>Assistente de logistica</em>, focada na área de <em>desenvolvimento web, IoT, e desenvolvimento para nuvem</em>.</p>
@@ -45,7 +45,7 @@ function Profs(){
                 </div>
             </div>
             <div className="card">
-                <img src="https://media.licdn.com/dms/image/C4E03AQHGtf2QEpFF5g/profile-displayphoto-shrink_800_800/0/1516463877334?e=1713398400&v=beta&t=K2OudoF3UNTcVnUoneW86_P_Qa4cTI9gePetdx2UCwU" alt="professor Rafael Garcia"/>
+                <img src="https://media.licdn.com/dms/image/C4E03AQHGtf2QEpFF5g/profile-displayphoto-shrink_800_800/0/1516463877334?e=1718841600&v=beta&t=OJcYJ6hrvUR8uu9pWbBKNIMelkQMSyuLwviRxL42HPQ" alt="professor Rafael Garcia"/>
                 <div className="card-body">
                     <h4 className="card-title"><strong>Rafael Garcia</strong></h4>
                     <p className="card-text">Professor do curso de Ciência da Computação, atuando em disciplinas de programação básica e avançada, para ambientes desktop e web.</p>
@@ -53,7 +53,7 @@ function Profs(){
                 </div>
             </div>
             <div className="card">
-                <img src="https://media.licdn.com/dms/image/C4D03AQHIDclYRtaB2g/profile-displayphoto-shrink_800_800/0/1516554876773?e=1713398400&v=beta&t=kJgKwpXQ1LAJ2EW0C8Q9QMa0kT6fglOHAzdhOMP_jsw" alt="professor Gustavo Guanabara"/>
+                <img src="https://media.licdn.com/dms/image/C4D03AQHIDclYRtaB2g/profile-displayphoto-shrink_200_200/0/1516554877281?e=1718841600&v=beta&t=XbbfixLZ1je57OoNA7j_0C6T42h8KDmrTORWRog08SA" alt="professor Gustavo Guanabara"/>
                 <div className="card-body">
                     <h4 className="card-title"><strong>Gustavo Guanabara</strong></h4>
                     <p className="card-text">Apaixonado por tecnologia desde sempre e comprometido em ensinar de forma simples e eficaz. Com mais de 20 anos de experiência, tenho dedicado minha carreira a compartilhar conhecimento em áreas como programação web, design de interfaces e desenvolvimento de aplicativos.</p>
