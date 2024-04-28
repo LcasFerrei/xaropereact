@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import db from '../../database/db.json';
+import { json } from 'react-router-dom';
+import axios from 'axios';
 
 function UsuarioLogin() {
   const [isLogin, setIsLogin] = useState(true);
@@ -11,6 +13,7 @@ function UsuarioLogin() {
   const [validEmail, setValidEmail] = useState(true);
   const [error, setError] = useState('');
   const [loginError, setLoginError] = useState(''); // Estado para armazenar a mensagem de erro no login
+  const [user, setUser] = useState(null); // Adicionando estado para o usuário
 
   const toggleForm = () => {
     setIsLogin(!isLogin);
@@ -77,13 +80,33 @@ function UsuarioLogin() {
         setError('');
       }, 5000);
     }
+      //axios.get(`http://localhost:3001/usuarios?email="${email}`).then( (res) => 
+      axios.get("http://localhost:3001/usuarios?email="+email).then((res) => {
+      const usuario = res.data[0];
+
+      if(usuario.senha === password) {
+        console.log("Usuário Logado!");
+        localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
+      } else {
+        console.log("Login errado");
+        }
+
+        //const usuario3 = localStorage.getItem("usuarioLogado");
+        const usuario3 = JSON.parse(localStorage.getItem("usuarioLogado"));
+      });
   };
 
   const handleLogin = () => {
     const user = db.usuarios.find((user) => user.email === email);
     if (user) {
       if (user.senha === password) {
-        window.location.href = '/';
+        const loggedInUser = {
+          nome: user.nome,
+          userType: user.userType
+        };
+        localStorage.setItem("user", JSON.stringify(loggedInUser));
+        setUser(loggedInUser);
+        window.location.href = '/'; // Redireciona para a página inicial após o login
       } else {
         setLoginError('Email ou senha incorretos.'); // Define a mensagem de erro no loginError
         setTimeout(() => {
@@ -97,6 +120,7 @@ function UsuarioLogin() {
       }, 5000);
     }
   };
+  
 
   return (
     <div className={`container ${isLogin ? '' : 'active'}`} id="container">
@@ -145,3 +169,5 @@ function UsuarioLogin() {
 }
 
 export default UsuarioLogin;
+
+

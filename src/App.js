@@ -9,6 +9,8 @@ import Playvideo from "./pages/Videopages/videohtml";
 import CursoHTML from "./pages/Cursos/html"
 import CursosPage from "./pages/Cursos/Cursos"
 import CursoDetail from "./components/CursosCard/CursoDetail";
+import Up from "./pages/UploadVideo/Up";
+import Usuarioarea from "./pages/CursosUsers/CursosUsers";
 
 
 
@@ -27,6 +29,8 @@ function App() {
         <Route path="/Cursos" element={<CursosPage />} />
         {/* Rota para detalhes do curso */}
         <Route path="/Cursos/:id" element={<CursoDetail />} />
+        <Route path="/Upload" element={<Up/>}></Route>
+        <Route path="/Usuarioarea" element={<Usuarioarea/>}></Route>
       </Routes>
     </BrowserRouter>
   );

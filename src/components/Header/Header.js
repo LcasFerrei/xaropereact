@@ -7,7 +7,32 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [cursosOpen, setCursosOpen] = useState(false);
   const menuRef = useRef(null);
-  const [userName, setUserName] = useState(""); // Estado para armazenar o nome do usuário logado
+  const [user, setUser] = useState(null); // Estado para armazenar o usuário logado
+
+  useEffect(() => {
+    // Verifica se há um usuário logado
+    const loggedInUser = localStorage.getItem("user");
+    if (loggedInUser) {
+      setUser(JSON.parse(loggedInUser));
+    }
+  }, []);
+  
+
+  const handleLogin = () => {
+    // Simula o login e define o usuário
+    const loggedInUser = {
+      nome: db.usuarios[0].nome,
+      userType: db.usuarios[0].userType
+    };
+    localStorage.setItem("user", JSON.stringify(loggedInUser));
+    setUser(loggedInUser);
+  };
+
+  const handleLogout = () => {
+    // Limpa o usuário do armazenamento local ao fazer logout
+    localStorage.removeItem("user");
+    setUser(null);
+  };
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -15,35 +40,6 @@ function Header() {
 
   const toggleCursos = () => {
     setCursosOpen(!cursosOpen);
-  };
-
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setMenuOpen(false);
-      }
-    }
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
-  // Função para fazer login e definir o nome do usuário
-  const handleLogin = async (email) => {
-    try {
-      // Faz a busca do usuário pelo e-mail no banco de dados simulado
-      const user = db.usuarios.find((user) => user.email === email);
-      if (user) {
-        setUserName(user.nome); // Define o nome do usuário encontrado
-      } else {
-        console.error("Usuário não encontrado");
-      }
-    } catch (error) {
-      console.error("Erro ao fazer login:", error);
-      // Trate o erro de acordo com sua lógica de frontend
-    }
   };
 
   return (
@@ -70,16 +66,20 @@ function Header() {
       </ul>
 
       <div className="header-icons">
-        <Link to="/login">
-          <i className="bx bx-user bx-sm"></i>
-        </Link>
+        {user ? (
+          <>
+            <p>Usuário: {user.nome} ({user.userType})</p>
+            <button onClick={handleLogout}>Logout</button>
+          </>
+        ) : (
+          <Link to="/login" onClick={() => handleLogin(db.usuarios[0].nome, db.usuarios[0].userType)}>
+            <i className="bx bx-user bx-sm"></i>
+          </Link>
+        )}
         <div id="menu" onClick={toggleMenu}>
           <i className="bx bx-menu bx-sm"></i>
         </div>
       </div>
-
-      {/* Se o usuário estiver logado, exiba seu nome */}
-      {userName && <p>Usuário logado: {userName}</p>}
 
       {menuOpen && (
         <div className="menu-container" ref={menuRef}>
@@ -100,13 +100,25 @@ function Header() {
               </Link>
             </li>
             <li>Podcast</li>
-            <li>Reviews</li>
+            {user && user.userType === "Professor" && ( // Mostra apenas se o usuário for um professor
+              <li>
+                <Link to="/upload" style={{ textDecoration: "none" }}>
+                  Área do Professor(a)
+                </Link>
+              </li>
+            )}
+            {user && user.userType === "Aluno" && ( // Mostra apenas se o usuário for um aluno
+              <li>
+                <Link to="/Usuarioarea" style={{ textDecoration: "none" }}>
+                  Área do Aluno
+                </Link>
+              </li>
+            )}
             <li>
-              <Link to="/Professores" style={{ textDecoration: "none" }}>
-                Professores
+              <Link to="/Faq" style={{ textDecoration: "none" }}>
+                Fale Conosco
               </Link>
             </li>
-            <li>Fale Conosco</li>
           </ul>
         </div>
       )}

@@ -1,15 +1,33 @@
 {
   "cursos": [
     {
+      "id": "0",
+      "title": "Primeiros Passos no HTML",
+      "url": "https://www.youtube.com/embed/GA5d8X-VUZk",
+      "description": "Aprenda os conceitos básicos do HTML, incluindo tags, elementos e estrutura de página.",
+      "videosRelacionados": [
+        {
+          "title": "Primeiros Passos no HTML",
+          "url": "https://www.youtube.com/embed/GA5d8X-VUZk",
+          "description": "Aprenda os conceitos básicos do HTML, incluindo tags, elementos e estrutura de página."
+        },
+        {
+          "title": "Primeiros Passos no HTML",
+          "url": "https://www.youtube.com/embed/GA5d8X-VUZk",
+          "description": "Aprenda os conceitos básicos do HTML, incluindo tags, elementos e estrutura de página."
+        }
+      ]
+    },
+    {
       "id": "1",
       "title": "Primeiros Passos no HTML",
-      "url": "leone",
+      "url": "https://www.youtube.com/embed/GA5d8X-VUZk",
       "description": "Aprenda os conceitos básicos do HTML, incluindo tags, elementos e estrutura de página."
     },
     {
       "id": "2",
       "title": "JavaScript do início ao avançado",
-      "url": "Relvid",
+      "url": "https://www.youtube.com/embed/GA5d8X-VUZk",
       "description": "Explore os fundamentos do JavaScript e avance para tópicos mais avançados, como manipulação do DOM e assincronicidade."
     },
     {
@@ -146,7 +164,36 @@
       "email": "jardianna@gmail.com",
       "senha": "1",
       "userType": "Professor"
+    },
+    {
+      "id": "8676",
+      "nome": "Lucas",
+      "email": "luc@gmail.com",
+      "senha": "123",
+      "userType": "Professor"
+    },
+    {
+      "id": "87f7",
+      "nome": "Lenice",
+      "email": "le@unifor.br",
+      "senha": "123",
+      "userType": "Aluno"
+    },
+    {
+      "id": "a76e",
+      "nome": "TATIANA",
+      "email": "ta@gmail.com",
+      "senha": "1",
+      "userType": "Aluno"
+    },
+    {
+      "id": "5f82",
+      "nome": "ucasv f s gomes",
+      "email": "l@gmaiol.com",
+      "senha": "123",
+      "userType": "Aluno"
     }
   ],
-  "modulos": {}
+  "modulos": {},
+  "Videcad": {}
 }

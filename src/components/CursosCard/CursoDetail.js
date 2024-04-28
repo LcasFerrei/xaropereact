@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ReactPlayer from 'react-player';
-import db from '../../database/db.json'
+import db from '../../database/db.json';
 
 function CursoDetail() {
   const { id } = useParams();
@@ -12,36 +12,40 @@ function CursoDetail() {
   const [courseTitle, setCourseTitle] = useState('');
   const [videoURL, setVideoURL] = useState('');
   const [videoDescription, setVideoDescription] = useState('');
+  const [relatedVideos, setRelatedVideos] = useState([]);
 
   useEffect(() => {
-    const { title, url, description } = db.cursos[id] || { title: 'Curso a ser implementado', videoPath: '', description: '' }; // troca cursos para db dentro de "cursos"
-    setCourseTitle(title);
-    setVideoURL(url);
-    setVideoDescription(description);
+    const curso = db.cursos.find(curso => curso.id === id);
+    if (curso) {
+      const { title, url, description, videosRelacionados } = curso;
+      setCourseTitle(title || 'Curso a ser implementado');
+      setVideoURL(url || '');
+      setVideoDescription(description || '');
+      setRelatedVideos(videosRelacionados || []);
+    }
   }, [id]);
 
   const totalVideos = 10; // Número total de vídeos no curso
 
-  const handleCommentSubmit = (e) => { // Função para lidar com o envio de comentários
-    e.preventDefault(); // Previne o comportamento padrão do formulário
-    if (commentText.trim() !== '') { // Verifica se o texto do comentário não está vazio
-      setComments([...comments, commentText]); // Adiciona o novo comentário ao estado de comentários
-      setCommentText(''); // Limpa o campo de texto do comentário
+  const handleCommentSubmit = (e) => {
+    e.preventDefault();
+    if (commentText.trim() !== '') {
+      setComments([...comments, commentText]);
+      setCommentText('');
     }
   };
 
-  const handleVideoWatched = () => { // Função para lidar com a marcação de um vídeo como assistido
-    setVideosWatched(videosWatched + 1); // Incrementa o contador de vídeos assistidos
+  const handleVideoWatched = () => {
+    setVideosWatched(videosWatched + 1);
   };
 
-  const completionPercentage = (videosWatched / totalVideos) * 100; // Calcula a porcentagem de conclusão do curso
+  const completionPercentage = (videosWatched / totalVideos) * 100;
 
   return (
     <div className="video-page">
-      <h1 className="video-title">{courseTitle}</h1> {/* Exibe o título do curso */}
+      <h1 className="video-title">{courseTitle}</h1>
 
       <div className="video-container">
-        {/* Video principal */}
         <div className="video-wrapper">
           <ReactPlayer
             className="react-player"
@@ -49,11 +53,10 @@ function CursoDetail() {
             width="100%"
             height="100%"
             controls
-            onEnded={handleVideoWatched} // Chama a função quando o vídeo termina
+            onEnded={handleVideoWatched}
           />
         </div>
         <div className="video-details">
-          {/* Descrição do vídeo */}
           <p className="video-description">
             {videoDescription}
           </p>
@@ -61,28 +64,32 @@ function CursoDetail() {
       </div>
 
       <div className="related-videos">
-        {/* Vídeos relacionados */}
-        <h2 style={{color: 'purple'}}>Vídeos Relacionados</h2>
+        <h2 style={{ color: 'purple' }}>Vídeos Relacionados</h2>
         <div className="related-videos-list">
-          {/* Lista de vídeos relacionados */}
-          {/* Cada vídeo é representado por um componente ReactPlayer dentro de um Link */}
-          {/* O Link redireciona para a página do respectivo vídeo */}
-          {/* O título do vídeo é exibido abaixo do componente ReactPlayer */}
-          {/* Adicione mais vídeos relacionados conforme necessário */}
+          {relatedVideos.map((video, index) => (
+            <div key={index} className="related-video">
+              <ReactPlayer
+                className="react-player"
+                url={video.url}
+                width="100%"
+                height="100%"
+                controls
+              />
+              <h3>{video.title}</h3>
+              <p>{video.description}</p>
+            </div>
+          ))}
         </div>
       </div>
 
       <div className="progress-bar">
-        {/* Barra de progresso para mostrar a porcentagem de conclusão do curso */}
         <div className="progress" style={{ width: `${completionPercentage}%` }}>
           {completionPercentage.toFixed(2)}% Concluído
         </div>
       </div>
 
       <div className="comments-section">
-        {/* Seção de Comentários */}
-        <h2 style={{color: 'purple'}}>Comentários</h2>
-        {/* Formulário para adicionar comentários */}
+        <h2 style={{ color: 'purple' }}>Comentários</h2>
         <form onSubmit={handleCommentSubmit}>
           <textarea
             value={commentText}
@@ -91,7 +98,6 @@ function CursoDetail() {
           ></textarea>
           <button type="submit">Enviar</button>
         </form>
-        {/* Lista de comentários */}
         <div className="comment-list">
           {comments.map((comment, index) => (
             <div key={index} className="comment">
