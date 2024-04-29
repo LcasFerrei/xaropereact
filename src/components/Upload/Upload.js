@@ -3,6 +3,104 @@ import './Upload.css';
 import db from '../../database/db.json';
 import axios from 'axios';
 
+function Upload() {
+  const [titulo, setTitulo] = useState('');
+  const [descricao, setDescricao] = useState('');
+  const [videoUrl, setVideoUrl] = useState('');
+  const [error, setError] = useState('');
+
+  const validateUrl = (url) => {
+    // Regex para validar URL de vídeo do YouTube
+    const youtubeUrlPattern = /^(https?\:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$/
+    return youtubeUrlPattern.test(url);
+  };
+
+  const handleEnviar = async () => {
+    // Validar campos
+    const isValidTitulo = titulo.trim() !== '';
+    const isValidDescricao = descricao.trim() !== '';
+    const isValidVideoUrl = validateUrl(videoUrl);
+
+    if (isValidTitulo && isValidDescricao && isValidVideoUrl) {
+      const novaAula = {
+        id: '_' + Math.random().toString(36).substr(2, 9),
+        title: titulo,
+        description: descricao,
+        url: videoUrl
+      };
+
+      try {
+        // Enviar os dados para o servidor utilizando axios
+        const response = await axios.post('http://localhost:3001/Videcad', novaAula);
+
+        if (response.status === 201) {
+          console.log('Nova aula cadastrada:', novaAula);
+          setTitulo('');
+          setDescricao('');
+          setVideoUrl('');
+          setError('');
+        } else {
+          throw new Error('Erro ao cadastrar aula.');
+        }
+      } catch (error) {
+        console.error('Erro ao cadastrar aula:', error);
+        setError('Erro ao cadastrar aula. Por favor, tente novamente.');
+      }
+    } else {
+      setError('Por favor, preencha todos os campos corretamente.');
+    }
+  };
+
+  const handleLimpar = () => {
+    setTitulo('');
+    setDescricao('');
+    setVideoUrl('');
+    setError('');
+  };
+
+  return (
+    <div className="containnner">
+      <h1>Cadastrar Aula</h1>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+      <div>
+        <label>Título:</label>
+        <input type="text" value={titulo} onChange={(e) => setTitulo(e.target.value)} />
+      </div>
+      <div>
+        <label>Descrição:</label>
+        <textarea value={descricao} onChange={(e) => setDescricao(e.target.value)} />
+      </div>
+      <div>
+        <label>URL do vídeo (YouTube):</label>
+        <input type="text" value={videoUrl} onChange={(e) => setVideoUrl(e.target.value)} />
+      </div>
+      <div>
+        <button onClick={handleEnviar}>Enviar</button>
+        <button onClick={handleLimpar}>Limpar</button>
+      </div>
+    </div>
+  );
+}
+
+export default Upload;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*const Upload = () => {
   const [titulo, setTitulo] = useState('');
   const [descricao, setDescricao] = useState('');
@@ -97,85 +195,3 @@ import axios from 'axios';
 };
 
 export default Upload;*/
-
-
-function Upload() {
-  const [titulo, setTitulo] = useState('');
-  const [descricao, setDescricao] = useState('');
-  const [videoUrl, setVideoUrl] = useState('');
-  const [error, setError] = useState('');
-
-  const validateUrl = (url) => {
-    // Regex para validar URL de vídeo do YouTube
-    const youtubeUrlPattern = /^(https?\:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$/
-    return youtubeUrlPattern.test(url);
-  };
-
-  const handleEnviar = async () => {
-    // Validar campos
-    const isValidTitulo = titulo.trim() !== '';
-    const isValidDescricao = descricao.trim() !== '';
-    const isValidVideoUrl = validateUrl(videoUrl);
-
-    if (isValidTitulo && isValidDescricao && isValidVideoUrl) {
-      const novaAula = {
-        id: '_' + Math.random().toString(36).substr(2, 9),
-        title: titulo,
-        description: descricao,
-        url: videoUrl
-      };
-
-      try {
-        // Enviar os dados para o servidor utilizando axios
-        const response = await axios.post('http://localhost:3001/Videcad', novaAula);
-
-        if (response.status === 201) {
-          console.log('Nova aula cadastrada:', novaAula);
-          setTitulo('');
-          setDescricao('');
-          setVideoUrl('');
-          setError('');
-        } else {
-          throw new Error('Erro ao cadastrar aula.');
-        }
-      } catch (error) {
-        console.error('Erro ao cadastrar aula:', error);
-        setError('Erro ao cadastrar aula. Por favor, tente novamente.');
-      }
-    } else {
-      setError('Por favor, preencha todos os campos corretamente.');
-    }
-  };
-
-  const handleLimpar = () => {
-    setTitulo('');
-    setDescricao('');
-    setVideoUrl('');
-    setError('');
-  };
-
-  return (
-    <div className="containnner">
-      <h1>Cadastrar Aula</h1>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <div>
-        <label>Título:</label>
-        <input type="text" value={titulo} onChange={(e) => setTitulo(e.target.value)} />
-      </div>
-      <div>
-        <label>Descrição:</label>
-        <textarea value={descricao} onChange={(e) => setDescricao(e.target.value)} />
-      </div>
-      <div>
-        <label>URL do vídeo (YouTube):</label>
-        <input type="text" value={videoUrl} onChange={(e) => setVideoUrl(e.target.value)} />
-      </div>
-      <div>
-        <button onClick={handleEnviar}>Enviar</button>
-        <button onClick={handleLimpar}>Limpar</button>
-      </div>
-    </div>
-  );
-}
-
-export default Upload;

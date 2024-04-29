@@ -59,7 +59,7 @@ const VideoPage = () => {
 
       <div className="related-videos">
         {/* Vídeos relacionados */}
-        <h2 style={{color: 'purple'}}>Vídeos Relacionados</h2>
+        <h2 style={{color: 'purple'}}>Modulos</h2>
         <div className="related-videos-list">
           <div className="related-video">
           <Link to="/VideoPage">

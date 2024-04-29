@@ -72,7 +72,7 @@ function Header() {
             <button onClick={handleLogout}>Logout</button>
           </>
         ) : (
-          <Link to="/login" onClick={() => handleLogin(db.usuarios[0].nome, db.usuarios[0].userType)}>
+          <Link to="/login" style={{ textDecoration: "none" }}>
             <i className="bx bx-user bx-sm"></i>
           </Link>
         )}

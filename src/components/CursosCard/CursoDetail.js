@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link  } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import db from '../../database/db.json';
 
@@ -63,24 +63,26 @@ function CursoDetail() {
         </div>
       </div>
 
-      <div className="related-videos">
-        <h2 style={{ color: 'purple' }}>Vídeos Relacionados</h2>
-        <div className="related-videos-list">
+      <div className="related-videos" style={{ marginTop: '20px', padding: '20px', border: '1px solid #ccc', borderRadius: '5px' }}>
+        <h2 style={{ color: 'purple', fontSize: '24px', marginBottom: '10px' }}>Módulos</h2>
+        <div className="related-videos-list" style={{ display: 'flex', flexWrap: 'wrap' }}>
           {relatedVideos.map((video, index) => (
-            <div key={index} className="related-video">
+            <div key={index} className="related-video" style={{ marginRight: '20px', marginBottom: '20px' }}>
               <ReactPlayer
-                className="react-player"
+                className="related-video-player"
                 url={video.url}
-                width="100%"
-                height="100%"
+                width="300px"
+                height="180px"
                 controls
               />
-              <h3>{video.title}</h3>
-              <p>{video.description}</p>
+              <h3 style={{ fontSize: '16px', marginTop: '10px', marginBottom: '5px' }}>{video.title}</h3>
+              <Link to={`/video/${video.id}`}>{video.title}</Link> {/* Use o componente Link */}
             </div>
           ))}
         </div>
       </div>
+
+
 
       <div className="progress-bar">
         <div className="progress" style={{ width: `${completionPercentage}%` }}>
