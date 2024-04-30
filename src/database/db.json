@@ -238,43 +238,22 @@
       "email": "lucasferreiraceara@gmail.com",
       "senha": "1",
       "userType": "Aluno"
-    },
-    {
-      "id": "0349",
-      "nome": "Anna Maria",
-      "email": "Ana@unifor.br",
-      "senha": "123",
-      "userType": "Professor"
-    },
-    {
-      "id": "7706",
-      "nome": "Ana",
-      "email": "ana@unifor.br",
-      "senha": "123",
-      "userType": "Aluno"
-    },
-    {
-      "id": "ef51",
-      "nome": "Ana",
-      "email": "ana@unifor.br",
-      "senha": "123",
-      "userType": "Aluno"
-    },
-    {
-      "id": "2bdb",
-      "nome": "Lucas",
-      "email": "lucas@gmail.com",
-      "senha": "123",
-      "userType": "Aluno"
-    },
-    {
-      "id": "8efa",
-      "nome": "Jardiana",
-      "email": "jardi@unifor.br",
-      "senha": "123",
-      "userType": "Professor"
     }
   ],
   "modulos": {},
-  "Videcad": {}
+  "Videcad": [
+    {
+      "id": "24c5",
+      "title": "fbghgh",
+      "url": "https://www.youtube.com/watch?v=tGn_qMFBQgg",
+      "description": "fg",
+      "videosRelacionados": [
+        {
+          "title": "fgfgh",
+          "url": "https://www.youtube.com/watch?v=tGn_qMFBQgg",
+          "description": "ghgfh"
+        }
+      ]
+    }
+  ]
 }

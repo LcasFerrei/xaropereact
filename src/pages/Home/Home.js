@@ -20,7 +20,7 @@ function Home() {
   return (
     <div>
       {/* Componentes */}
-      <Search/>
+      {/*Search*/}
       <Header />
       <Banner />
       <h1>A DOSE CERTA DE CONHECIMENTO PARA SUA JORNADA NA PROGRAMAÇÃO!</h1>

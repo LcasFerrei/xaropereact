@@ -126,6 +126,6 @@ header {
     padding: 30px;
   }
 
-  .bx .bx-user .bx-sm::before{
-    padding: 30px;
-  }
+    .bx .bx-user .bx-sm::before{
+      padding: 30px;
+    }

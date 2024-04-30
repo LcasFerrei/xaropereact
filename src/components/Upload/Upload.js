@@ -1,84 +1,137 @@
 import React, { useState } from 'react';
-import './Upload.css';
-import db from '../../database/db.json';
 import axios from 'axios';
+import './Upload.css';
 
 function Upload() {
-  const [titulo, setTitulo] = useState('');
-  const [descricao, setDescricao] = useState('');
-  const [videoUrl, setVideoUrl] = useState('');
-  const [error, setError] = useState('');
+  const [cursoData, setCursoData] = useState({
+    title: '',
+    url: '',
+    description: '',
+    videosRelacionados: [{ title: '', url: '', description: '' }]
+  });
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const validateUrl = (url) => {
-    // Regex para validar URL de vídeo do YouTube
-    const youtubeUrlPattern = /^(https?\:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$/
-    return youtubeUrlPattern.test(url);
+  const handleChange = (event, index) => {
+    const { name, value } = event.target;
+    const newVideosRelacionados = [...cursoData.videosRelacionados];
+    newVideosRelacionados[index] = { ...newVideosRelacionados[index], [name]: value };
+    setCursoData({ ...cursoData, videosRelacionados: newVideosRelacionados });
   };
 
-  const handleEnviar = async () => {
-    // Validar campos
-    const isValidTitulo = titulo.trim() !== '';
-    const isValidDescricao = descricao.trim() !== '';
-    const isValidVideoUrl = validateUrl(videoUrl);
-
-    if (isValidTitulo && isValidDescricao && isValidVideoUrl) {
-      const novaAula = {
-        id: '_' + Math.random().toString(36).substr(2, 9),
-        title: titulo,
-        description: descricao,
-        url: videoUrl
-      };
-
-      try {
-        // Enviar os dados para o servidor utilizando axios
-        const response = await axios.post('http://localhost:3001/Videcad', novaAula);
-
-        if (response.status === 201) {
-          console.log('Nova aula cadastrada:', novaAula);
-          setTitulo('');
-          setDescricao('');
-          setVideoUrl('');
-          setError('');
-        } else {
-          throw new Error('Erro ao cadastrar aula.');
-        }
-      } catch (error) {
-        console.error('Erro ao cadastrar aula:', error);
-        setError('Erro ao cadastrar aula. Por favor, tente novamente.');
-      }
-    } else {
-      setError('Por favor, preencha todos os campos corretamente.');
-    }
+  const addVideoRelacionado = () => {
+    setCursoData({
+      ...cursoData,
+      videosRelacionados: [...cursoData.videosRelacionados, { title: '', url: '', description: '' }]
+    });
   };
 
-  const handleLimpar = () => {
-    setTitulo('');
-    setDescricao('');
-    setVideoUrl('');
-    setError('');
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const novoCurso = {
+      title: cursoData.title,
+      url: cursoData.url,
+      description: cursoData.description,
+      videosRelacionados: cursoData.videosRelacionados
+    };
+
+    axios.post('http://localhost:3001/Videcad', novoCurso)
+      .then(response => {
+        setSuccessMessage('Curso adicionado com sucesso!');
+        setErrorMessage('');
+        setCursoData({ // Limpa os campos do formulário
+          title: '',
+          url: '',
+          description: '',
+          videosRelacionados: [{ title: '', url: '', description: '' }]
+        });
+        console.log('Curso adicionado com sucesso:', response.data);
+      })
+      .catch(error => {
+        setErrorMessage('Erro ao adicionar o curso. Por favor, tente novamente.');
+        setSuccessMessage('');
+        console.error('Erro ao adicionar o curso:', error);
+      });
   };
 
   return (
-    <div className="containnner">
-      <h1>Cadastrar Aula</h1>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+    <form className="upload-form" onSubmit={handleSubmit}>
+      {successMessage && <p className="success-message">{successMessage}</p>}
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
       <div>
-        <label>Título:</label>
-        <input type="text" value={titulo} onChange={(e) => setTitulo(e.target.value)} />
+        <label htmlFor="title">Título do Curso:</label><br />
+        <input
+          type="text"
+          id="title"
+          name="title"
+          value={cursoData.title}
+          onChange={(e) => setCursoData({ ...cursoData, title: e.target.value })}
+          required
+        /><br />
       </div>
       <div>
-        <label>Descrição:</label>
-        <textarea value={descricao} onChange={(e) => setDescricao(e.target.value)} />
+        <label htmlFor="url">URL do Curso:</label><br />
+        <input
+          type="text"
+          id="url"
+          name="url"
+          value={cursoData.url}
+          onChange={(e) => setCursoData({ ...cursoData, url: e.target.value })}
+          required
+        /><br />
       </div>
       <div>
-        <label>URL do vídeo (YouTube):</label>
-        <input type="text" value={videoUrl} onChange={(e) => setVideoUrl(e.target.value)} />
+        <label htmlFor="description">Descrição do Curso:</label><br />
+        <textarea
+          id="description"
+          name="description"
+          rows="4"
+          cols="50"
+          value={cursoData.description}
+          onChange={(e) => setCursoData({ ...cursoData, description: e.target.value })}
+          required
+        ></textarea><br />
       </div>
       <div>
-        <button onClick={handleEnviar}>Enviar</button>
-        <button onClick={handleLimpar}>Limpar</button>
+        {cursoData.videosRelacionados.map((video, index) => (
+          <div key={index}>
+            <h2>Vídeo Relacionado {index + 1}</h2>
+            <label htmlFor={`tituloVideo${index}`}>Título do Vídeo:</label><br />
+            <input
+              type="text"
+              id={`tituloVideo${index}`}
+              name="title"
+              value={video.title}
+              onChange={(e) => handleChange(e, index)}
+              required
+            /><br />
+            <label htmlFor={`urlVideo${index}`}>URL do Vídeo:</label><br />
+            <input
+              type="text"
+              id={`urlVideo${index}`}
+              name="url"
+              value={video.url}
+              onChange={(e) => handleChange(e, index)}
+              required
+            /><br />
+            <label htmlFor={`descricaoVideo${index}`}>Descrição do Vídeo:</label><br />
+            <textarea
+              id={`descricaoVideo${index}`}
+              name="description"
+              rows="4"
+              cols="50"
+              value={video.description}
+              onChange={(e) => handleChange(e, index)}
+              required
+            ></textarea><br />
+            <hr />
+          </div>
+        ))}
       </div>
-    </div>
+      <button type="button" onClick={addVideoRelacionado}>Adicionar um novo vídeo relacionado</button><br /><br />
+      <button type="submit">Enviar Curso</button>
+    </form>
   );
 }
 
