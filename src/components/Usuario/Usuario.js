@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import db from '../../database/db.json';
-import { json } from 'react-router-dom';
 import axios from 'axios';
+import db from '../../database/db.json'; // Importe o banco de dados simulado
 
 function UsuarioLogin() {
   const [isLogin, setIsLogin] = useState(true);
@@ -12,27 +11,33 @@ function UsuarioLogin() {
   const [userType, setUserType] = useState('Aluno');
   const [validEmail, setValidEmail] = useState(true);
   const [error, setError] = useState('');
-  const [loginError, setLoginError] = useState(''); // Estado para armazenar a mensagem de erro no login
-  const [user, setUser] = useState(null); // Adicionando estado para o usuário
-
+  const [loginError, setLoginError] = useState('');
+  const [user, setUser] = useState(null);
+  
   const toggleForm = () => {
     setIsLogin(!isLogin);
   };
-
+  
   const validateEmail = (email) => {
     const re = /\S+@\S+\.\S+/;
     return re.test(email);
   };
-
+  
   const handleSignup = async () => {
     const isValidEmail = validateEmail(email);
     const isValidName = name.trim() !== '';
     const isValidPassword = password.trim() !== '';
 
     setValidEmail(isValidEmail);
-
+    
     if (isValidEmail && isValidName && isValidPassword) {
       const newUser = { nome: name, email: email, senha: password, userType: userType };
+      
+      // Adiciona a propriedade cursosInscritos como um array vazio apenas se o tipo de usuário for "Aluno"
+      if (userType === 'Aluno') {
+        newUser.cursosInscritos = [];
+      }
+      
       try {
         const response = await fetch('http://localhost:3001/usuarios', {
           method: 'POST',
@@ -75,46 +80,35 @@ function UsuarioLogin() {
       setEmail('');
       setPassword('');
       setName('');
-
+      
       setTimeout(() => {
         setError('');
       }, 5000);
     }
-      //axios.get(`http://localhost:3001/usuarios?email="${email}`).then( (res) => 
-      axios.get("http://localhost:3001/usuarios?email="+email).then((res) => {
-      const usuario = res.data[0];
-
-      if(usuario.senha === password) {
-        console.log("Usuário Logado!");
-        localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
-      } else {
-        console.log("Login errado");
-        }
-
-        //const usuario3 = localStorage.getItem("usuarioLogado");
-        const usuario3 = JSON.parse(localStorage.getItem("usuarioLogado"));
-      });
   };
 
   const handleLogin = () => {
-    const user = db.usuarios.find((user) => user.email === email);
-    if (user) {
-      if (user.senha === password) {
-        const loggedInUser = {
-          nome: user.nome,
-          userType: user.userType
+    // Encontra o usuário correspondente ao email fornecido durante o login
+    const loggedInUser = db.usuarios.find((user) => user.email === email);
+  
+    if (loggedInUser) {
+      if (loggedInUser.senha === password) {
+        // Define o usuário com base nos dados encontrados
+        const user = {
+          nome: loggedInUser.nome,
+          userType: loggedInUser.userType
         };
-        localStorage.setItem("user", JSON.stringify(loggedInUser));
-        setUser(loggedInUser);
+        localStorage.setItem("user", JSON.stringify(user));
+        setUser(user);
         window.location.href = '/'; // Redireciona para a página inicial após o login
       } else {
-        setLoginError('Email ou senha incorretos.'); // Define a mensagem de erro no loginError
+        setLoginError('Email ou senha incorretos.');
         setTimeout(() => {
           setLoginError('');
         }, 5000);
       }
     } else {
-      setLoginError('Email não cadastrado.'); // Define a mensagem de erro no loginError
+      setLoginError('Email não cadastrado.');
       setTimeout(() => {
         setLoginError('');
       }, 5000);
@@ -146,7 +140,7 @@ function UsuarioLogin() {
           <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
           <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
           <button type="button" onClick={handleLogin}>Entrar</button>
-          {loginError && <p style={{ color: 'red' }}>{loginError}</p>} {/* Exibe a mensagem de erro no login */}
+          {loginError && <p style={{ color: 'red' }}>{loginError}</p>}
           <a href="#">Esqueceu sua senha?</a>
         </form>
       </div>
@@ -169,5 +163,3 @@ function UsuarioLogin() {
 }
 
 export default UsuarioLogin;
-
-

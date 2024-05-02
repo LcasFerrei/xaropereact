@@ -51,3 +51,32 @@
     margin: 0 auto;
   }
   
+
+  .inscrever-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+  }
+  
+  .inscrever-button:hover {
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .inscrever-button:focus {
+    outline: none;
+  }
+
+  .cursando-button {
+    background-color: #28a745; /* Verde */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: default; /* Desativa o cursor ao passar sobre o botão */
+  }
+  

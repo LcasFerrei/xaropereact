@@ -7,6 +7,7 @@ function Upload() {
     title: '',
     url: '',
     description: '',
+    type: '', // Novo campo para o tipo de curso
     videosRelacionados: [{ title: '', url: '', description: '' }]
   });
   const [successMessage, setSuccessMessage] = useState('');
@@ -33,6 +34,7 @@ function Upload() {
       title: cursoData.title,
       url: cursoData.url,
       description: cursoData.description,
+      type: cursoData.type, // Inclui o tipo de curso no objeto enviado
       videosRelacionados: cursoData.videosRelacionados
     };
 
@@ -44,6 +46,7 @@ function Upload() {
           title: '',
           url: '',
           description: '',
+          type: '',
           videosRelacionados: [{ title: '', url: '', description: '' }]
         });
         console.log('Curso adicionado com sucesso:', response.data);
@@ -55,10 +58,51 @@ function Upload() {
       });
   };
 
+  const isValidYouTubeUrl = (url) => {
+    const pattern = /^(https?\:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$/;
+    return pattern.test(url);
+  };
+
+  const handleURLChange = (event) => {
+    const { value } = event.target;
+    if (!isValidYouTubeUrl(value)) {
+      setErrorMessage('Insira um link válido do YouTube.');
+    } else {
+      if (value.includes('watch?v=')) {
+        setErrorMessage('Insira o link do vídeo no formato de embed.');
+      } else {
+        setErrorMessage('');
+      }
+    }
+    setCursoData({ ...cursoData, url: value });
+  };
+
   return (
     <form className="upload-form" onSubmit={handleSubmit}>
       {successMessage && <p className="success-message">{successMessage}</p>}
       {errorMessage && <p className="error-message">{errorMessage}</p>}
+      <div>
+        <label htmlFor="type">Tipo de Curso:</label><br />
+        <select
+          id="type"
+          name="type"
+          value={cursoData.type}
+          onChange={(e) => setCursoData({ ...cursoData, type: e.target.value })}
+          required
+        >
+          <option value="">Selecione o tipo de curso</option>
+          <option value="Html">HTML</option>
+          <option value="JavaScript">JavaScript</option>
+          <option value="CSS">CSS</option>
+          <option value="React">React</option>
+          <option value="Banco de Dados">Banco de Dados</option>
+          <option value="Git and GitHub">Git and GitHub</option>
+          <option value="Python">Python</option>
+          <option value="PHP">PHP</option>
+          <option value="Laravel">Laravel</option>
+          <option value="Bônus">Bônus: Preparação para Entrevistas de Emprego</option>
+        </select>
+      </div>
       <div>
         <label htmlFor="title">Título do Curso:</label><br />
         <input
@@ -77,7 +121,7 @@ function Upload() {
           id="url"
           name="url"
           value={cursoData.url}
-          onChange={(e) => setCursoData({ ...cursoData, url: e.target.value })}
+          onChange={handleURLChange}
           required
         /><br />
       </div>
@@ -136,115 +180,3 @@ function Upload() {
 }
 
 export default Upload;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*const Upload = () => {
-  const [titulo, setTitulo] = useState('');
-  const [descricao, setDescricao] = useState('');
-  const [videoUrl, setVideoUrl] = useState('');
-  const [error, setError] = useState('');
-
-  const handleTituloChange = (event) => {
-    setTitulo(event.target.value);
-  };
-
-  const handleDescricaoChange = (event) => {
-    setDescricao(event.target.value);
-  };
-
-  const handleVideoUrlChange = (event) => {
-    setVideoUrl(event.target.value);
-  };
-
-  const generateId = () => {
-    return '_' + Math.random().toString(36).substr(2, 9);
-  };
-
-  const handleEnviar = async () => {
-    // Validar os campos
-    const isValidTitulo = titulo.trim() !== '';
-    const isValidDescricao = descricao.trim() !== '';
-    const isValidVideoUrl = videoUrl.trim() !== '';
-
-    if (isValidTitulo && isValidDescricao && isValidVideoUrl) {
-      const novaAula = {
-        id: generateId(),
-        title: titulo,
-        url: videoUrl,
-        description: descricao
-      };
-
-      try {
-        const response = await fetch('http://localhost:3001/Videcad', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(novaAula)
-        });
-
-        if (response.ok) {
-          console.log('Nova aula cadastrada:', novaAula);
-          setTitulo('');
-          setDescricao('');
-          setVideoUrl('');
-        } else {
-          throw new Error('Erro ao cadastrar aula.');
-        }
-      } catch (error) {
-        console.error('Erro ao cadastrar aula:', error);
-        setError('Erro ao cadastrar aula. Por favor, tente novamente.');
-      }
-    } else {
-      setError('Por favor, preencha todos os campos.');
-    }
-  };
-
-  const handleCancelar = () => {
-    setTitulo('');
-    setDescricao('');
-    setVideoUrl('');
-    setError('');
-  };
-
-  return (
-    <div className="upload-container">
-      <h2>Cadastrar Aula</h2>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <div className="input-group">
-        <label htmlFor="titulo">Título:</label>
-        <input id="titulo" type="text" value={titulo} onChange={handleTituloChange} />
-      </div>
-      <div className="input-group">
-        <label htmlFor="descricao">Descrição:</label>
-        <textarea id="descricao" value={descricao} onChange={handleDescricaoChange} />
-      </div>
-      <div className="input-group">
-        <label htmlFor="videoUrl">Vídeo URL:</label>
-        <input id="videoUrl" type="text" value={videoUrl} onChange={handleVideoUrlChange} />
-      </div>
-      <div className="button-group">
-        <button type="button" onClick={handleEnviar}>Enviar</button>
-        <button type="button" onClick={handleCancelar} className="cancel-button">Cancelar</button>
-      </div>
-    </div>
-  );
-};
-
-export default Upload;*/

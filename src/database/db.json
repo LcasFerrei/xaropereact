@@ -24,7 +24,7 @@
       ]
     },
     {
-      "id": "2",
+      "id": "JavaScript",
       "title": "JavaScript do início ao avançado",
       "url": "https://www.youtube.com/embed/GA5d8X-VUZk",
       "description": "Explore os fundamentos do JavaScript e avance para tópicos mais avançados, como manipulação do DOM e assincronicidade.",
@@ -47,7 +47,7 @@
       ]
     },
     {
-      "id": "3",
+      "id": "CSS",
       "title": "O que é e como usar o CSS?",
       "url": "teste",
       "description": "Descubra o que é CSS e aprenda a utilizá-lo para estilizar páginas web e criar layouts visualmente atraentes.",
@@ -70,9 +70,9 @@
       ]
     },
     {
-      "id": "4",
+      "id": "React",
       "title": "O que é React?",
-      "url": "Relvid",
+      "url": "https://www.youtube.com/embed/GA5d8X-VUZk",
       "description": "Entenda os conceitos básicos do React, como componentes, props e state, e como utilizá-lo para criar interfaces de usuário interativas.",
       "videosRelacionados": [
         {
@@ -93,7 +93,7 @@
       ]
     },
     {
-      "id": "5",
+      "id": "Banco de Dados",
       "title": "O que é Banco de Dados",
       "url": "leone",
       "description": "Explore os fundamentos dos bancos de dados, incluindo tipos de banco de dados, linguagens de consulta e modelagem de dados.",
@@ -116,7 +116,7 @@
       ]
     },
     {
-      "id": "6",
+      "id": "Git and GitHub",
       "title": "Diferença entre Git e GitHub",
       "url": "teste",
       "description": "Compreenda as diferenças entre Git e GitHub, incluindo suas funcionalidades e como utilizá-los para controle de versão de código.",
@@ -139,7 +139,7 @@
       ]
     },
     {
-      "id": "7",
+      "id": "Python",
       "title": "Python do início ao avançado",
       "url": "Relvid",
       "description": "Aprenda Python desde os conceitos básicos até tópicos mais avançados, como programação orientada a objetos e desenvolvimento web.",
@@ -162,7 +162,7 @@
       ]
     },
     {
-      "id": "8",
+      "id": "PHP",
       "title": "Introdução a PHP, linguagem ainda está viva no meio dev?",
       "url": "teste",
       "description": "Introdução à linguagem PHP, incluindo sintaxe básica, funcionalidades e sua relevância no desenvolvimento web moderno.",
@@ -185,7 +185,7 @@
       ]
     },
     {
-      "id": "9",
+      "id": "Laravel",
       "title": "Introdução ao Laravel",
       "url": "leone",
       "description": "Explore o framework PHP Laravel e aprenda a criar aplicativos web robustos e escaláveis utilizando boas práticas de desenvolvimento.",
@@ -208,7 +208,7 @@
       ]
     },
     {
-      "id": "10",
+      "id": "Bônus",
       "title": "Bônus: Primeiros passos para montar um currículo",
       "url": "Relvid",
       "description": "Dicas e orientações sobre como criar um currículo eficaz que destaque suas habilidades, experiências e qualificações.",
@@ -233,27 +233,13 @@
   ],
   "usuarios": [
     {
-      "id": "427d",
+      "id": "ffb9",
       "nome": "Lucas",
-      "email": "lucasferreiraceara@gmail.com",
-      "senha": "1",
-      "userType": "Aluno"
+      "email": "lucas@unifor.br",
+      "senha": "123",
+      "userType": "Professor"
     }
   ],
   "modulos": {},
-  "Videcad": [
-    {
-      "id": "24c5",
-      "title": "fbghgh",
-      "url": "https://www.youtube.com/watch?v=tGn_qMFBQgg",
-      "description": "fg",
-      "videosRelacionados": [
-        {
-          "title": "fgfgh",
-          "url": "https://www.youtube.com/watch?v=tGn_qMFBQgg",
-          "description": "ghgfh"
-        }
-      ]
-    }
-  ]
+  "Videcad": []
 }

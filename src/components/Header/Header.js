@@ -11,7 +11,7 @@ function Header() {
 
   useEffect(() => {
     // Verifica se há um usuário logado
-    const loggedInUser = localStorage.getItem("user");
+    const loggedInUser = localStorage.getItem("user"); // motifiquei no outro usuario isso
     if (loggedInUser) {
       setUser(JSON.parse(loggedInUser));
     }
@@ -21,12 +21,14 @@ function Header() {
   const handleLogin = () => {
     // Simula o login e define o usuário
     const loggedInUser = {
-      nome: db.usuarios[0].nome,
-      userType: db.usuarios[0].userType
+      ...db.usuarios[0], // Copia todos os campos do primeiro usuário
+      id: db.usuarios[0].id, // Inclui o ID do primeiro usuário no objeto loggedInUser
     };
     localStorage.setItem("user", JSON.stringify(loggedInUser));
     setUser(loggedInUser);
   };
+  
+  
 
   const handleLogout = () => {
     // Limpa o usuário do armazenamento local ao fazer logout
