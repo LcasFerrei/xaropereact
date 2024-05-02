@@ -14,7 +14,7 @@ import Entrevista from '../../Assets/Cursos/medicamento.png';
 import axios from 'axios'; // Importe o axios
 import db from '../../database/db.json'; // Importe o banco de dados simulado
 
-function CursoXaropes({ id, titulo, descricao, link, imagem, user, onInscricao }) {
+function CursoXaropes({ id, titulo, descricao, link, imagem, user, onInscricao, loggedIn }) {
   const [inscrito, setInscrito] = useState(false);
 
   const handleInscricao = (event) => {
@@ -30,7 +30,7 @@ function CursoXaropes({ id, titulo, descricao, link, imagem, user, onInscricao }
         <h2>{titulo}</h2>
         <p>{descricao}</p>
         <a href={link} target="_blank" rel="noopener noreferrer">Saiba mais</a>
-        {user && !inscrito && (
+        {loggedIn && !inscrito && (
           <button className="inscrever-button" onClick={handleInscricao}>Inscrever-se</button>
         )}
         {inscrito && (
@@ -41,51 +41,34 @@ function CursoXaropes({ id, titulo, descricao, link, imagem, user, onInscricao }
   );
 }
 
+
+
 function PaginaCursos() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:3001/usuarios')
-      .then(response => {
-        const loggedInUser = response.data;
-        if (loggedInUser) {
-          setUser(loggedInUser);
-        }
-      })
-      .catch(error => {
-        console.error('Erro ao obter usuário:', error);
-      });
+    const loggedInUser = localStorage.getItem("user");
+    if (loggedInUser) {
+      setUser(JSON.parse(loggedInUser));
+    }
   }, []);
 
   const handleInscricao = (curso) => {
-    // Verificar se o usuário está logado
     if (!user) {
       console.error("Usuário não está logado.");
       return;
     }
-  
-    // Encontrar o índice do usuário no banco de dados
     const userIndex = db.usuarios.findIndex((usuario) => usuario.id === user.id);
-  
-    // Verificar se o usuário está registrado no banco de dados
     if (userIndex === -1) {
       console.error("Usuário não encontrado no banco de dados.");
       return;
     }
-  
-    // Verificar se o usuário já está inscrito no curso
     if (db.usuarios[userIndex].cursosInscritos.includes(curso.id)) {
       console.error("Usuário já está inscrito neste curso.");
       return;
     }
-  
-    // Adicionar o ID do curso à lista de cursos inscritos do usuário
     db.usuarios[userIndex].cursosInscritos.push(curso.id);
-  
-    // Atualizar o estado do banco de dados no armazenamento local
     localStorage.setItem("db", JSON.stringify(db));
-  
-    // Confirmar inscrição
     console.log(`Usuário ${user.nome} inscrito no curso: ${curso.titulo}`);
   };
    
@@ -174,6 +157,7 @@ function PaginaCursos() {
             key={index} 
             {...curso} 
             user={user} 
+            loggedIn={!!user} // Passa true se o usuário estiver logado, senão passa false
             onInscricao={handleInscricao} 
           />
         ))}

@@ -65,7 +65,7 @@ function CursoDetail() {
       </div>
 
       <div className="related-videos" style={{ marginTop: '20px', padding: '20px', border: '1px solid #ccc', borderRadius: '5px' }}>
-        <h2 style={{ color: 'purple', fontSize: '24px', marginBottom: '10px' }}>Módulos</h2>
+        <h2 style={{ color: 'purple', fontSize: '24px', marginBottom: '10px' }}>Aulas</h2>
         <div className="related-videos-list" style={{ display: 'flex', flexWrap: 'wrap' }}>
           {relatedVideos.map((video, index) => (
             <div key={index} className="related-video" style={{ marginRight: '20px', marginBottom: '20px' }}>
