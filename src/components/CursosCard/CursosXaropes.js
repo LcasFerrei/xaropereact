@@ -26,7 +26,7 @@ function CursoXarope({ id, titulo, descricao, link, imagem, user, onInscricao })
         <h2>{titulo}</h2> 
         <p>{descricao}</p> 
         <a href={link} target="_blank" rel="noopener noreferrer">Saiba mais</a> 
-        {!inscrito && (
+        {user && !inscrito && (
           <button className="inscrever-button" onClick={handleInscricao}>Inscrever-se</button>
         )}
         {inscrito && (
