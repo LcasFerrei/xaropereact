@@ -1,7 +1,7 @@
 {
   "cursos": [
     {
-      "id": "1",
+      "id": "htmlcurso",
       "title": "Primeiros Passos no HTML",
       "url": "https://www.youtube.com/embed/GA5d8X-VUZk",
       "description": "Aprenda os conceitos básicos do HTML, incluindo tags, elementos e estrutura de página.",
@@ -24,7 +24,7 @@
       ]
     },
     {
-      "id": "JavaScript",
+      "id": "javascriptcurso",
       "title": "JavaScript do início ao avançado",
       "url": "https://www.youtube.com/embed/GA5d8X-VUZk",
       "description": "Explore os fundamentos do JavaScript e avance para tópicos mais avançados, como manipulação do DOM e assincronicidade.",
@@ -47,9 +47,9 @@
       ]
     },
     {
-      "id": "CSS",
+      "id": "csscurso",
       "title": "O que é e como usar o CSS?",
-      "url": "teste",
+      "url": "https://www.youtube.com/embed/GA5d8X-VUZk",
       "description": "Descubra o que é CSS e aprenda a utilizá-lo para estilizar páginas web e criar layouts visualmente atraentes.",
       "videosRelacionados": [
         {
@@ -70,7 +70,7 @@
       ]
     },
     {
-      "id": "React",
+      "id": "reactcurso",
       "title": "O que é React?",
       "url": "https://www.youtube.com/embed/GA5d8X-VUZk",
       "description": "Entenda os conceitos básicos do React, como componentes, props e state, e como utilizá-lo para criar interfaces de usuário interativas.",
@@ -93,7 +93,7 @@
       ]
     },
     {
-      "id": "Banco de Dados",
+      "id": "bancocurso",
       "title": "O que é Banco de Dados",
       "url": "leone",
       "description": "Explore os fundamentos dos bancos de dados, incluindo tipos de banco de dados, linguagens de consulta e modelagem de dados.",
@@ -116,7 +116,7 @@
       ]
     },
     {
-      "id": "Git and GitHub",
+      "id": "gitgithubcurso",
       "title": "Diferença entre Git e GitHub",
       "url": "teste",
       "description": "Compreenda as diferenças entre Git e GitHub, incluindo suas funcionalidades e como utilizá-los para controle de versão de código.",
@@ -139,7 +139,7 @@
       ]
     },
     {
-      "id": "Python",
+      "id": "pythoncurso",
       "title": "Python do início ao avançado",
       "url": "Relvid",
       "description": "Aprenda Python desde os conceitos básicos até tópicos mais avançados, como programação orientada a objetos e desenvolvimento web.",
@@ -162,7 +162,7 @@
       ]
     },
     {
-      "id": "PHP",
+      "id": "phpcurso",
       "title": "Introdução a PHP, linguagem ainda está viva no meio dev?",
       "url": "teste",
       "description": "Introdução à linguagem PHP, incluindo sintaxe básica, funcionalidades e sua relevância no desenvolvimento web moderno.",
@@ -185,7 +185,7 @@
       ]
     },
     {
-      "id": "Laravel",
+      "id": "laravelcurso",
       "title": "Introdução ao Laravel",
       "url": "leone",
       "description": "Explore o framework PHP Laravel e aprenda a criar aplicativos web robustos e escaláveis utilizando boas práticas de desenvolvimento.",
@@ -208,7 +208,7 @@
       ]
     },
     {
-      "id": "Bônus",
+      "id": "bonuscurso",
       "title": "Bônus: Primeiros passos para montar um currículo",
       "url": "Relvid",
       "description": "Dicas e orientações sobre como criar um currículo eficaz que destaque suas habilidades, experiências e qualificações.",
@@ -233,86 +233,115 @@
   ],
   "usuarios": [
     {
-      "id": "ffb9",
+      "id": "bedb",
       "nome": "Lucas",
-      "email": "lucas@unifor.br",
+      "email": "lucasferreiraceara@gmail.com",
+      "senha": "1",
+      "userType": "Aluno",
+      "cursosInscritos": [
+        "Curso de HTML",
+        "Curso de JavaScript Básico",
+        "Curso de CSS",
+        "Curso de React.js",
+        "Curso de Banco de Dados",
+        "Bônus:  Preparação para Entrevistas de Emprego",
+        "Curso de Laravel"
+      ]
+    },
+    {
+      "id": "40ec",
+      "nome": "Jardiana",
+      "email": "jardi@unifor.br",
       "senha": "123",
-      "userType": "Professor"
+      "userType": "Aluno",
+      "cursosInscritos": [
+        "Curso de CSS"
+      ]
     },
     {
-      "id": "c5c2",
-      "nome": "Lucas",
-      "email": "ll@unifor.br",
-      "senha": "1",
-      "userType": "Professor"
-    },
-    {
-      "id": "198a",
-      "nome": "anna",
-      "email": "anna@unifor.br",
+      "id": "f8bf",
+      "nome": "leone",
+      "email": "l@unifor.br",
       "senha": "1",
       "userType": "Aluno",
-      "cursosInscritos": []
-    },
-    {
-      "id": "b00c",
-      "nome": "Leone",
-      "email": "leone@gmail.com",
-      "senha": "1",
-      "userType": "Professor"
-    },
-    {
-      "id": "bad7",
-      "nome": "Lucas",
-      "email": "llll@unifor.br",
-      "senha": "1",
-      "userType": "Aluno",
-      "cursosInscritos": []
+      "cursosInscritos": [
+        "Curso de Python",
+        "Curso de CSS"
+      ]
     }
   ],
   "modulos": {},
-  "Videcad": [
+  "Videcad": [],
+  "Xaropecursos": [
     {
-      "id": "a48c",
-      "title": "fjsbnh",
-      "url": "https://www.youtube.com/embed/XSBwgUws",
-      "description": "ryygyufyju",
-      "type": "Html",
-      "videosRelacionados": [
-        {
-          "title": "ggjnkbhnjgj",
-          "url": "https://www.youtube.com/embed/XSBwgUws",
-          "description": "gyhujikygtrf"
-        }
-      ]
+      "id": "htmlcurso",
+      "titulo": "Curso de HTML",
+      "descricao": "Aprenda os fundamentos do HTML para criar páginas web. Este curso abrange os conceitos básicos de estruturação de páginas web usando HTML, incluindo tags, elementos semânticos e formulários.",
+      "link": "https://curso-html-css",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/2048px-HTML5_logo_and_wordmark.svg.png"
     },
     {
-      "id": "1fc5",
-      "title": "dfghjk",
-      "url": "https://www.youtube.com/embed/XSBwgUws",
-      "description": "dfgfhkl",
-      "type": "Html",
-      "videosRelacionados": [
-        {
-          "title": "cdfghjk",
-          "url": "https://www.youtube.com/embed/XSBwgUws",
-          "description": "sdfrtfyui"
-        }
-      ]
+      "id": "javascriptcurso",
+      "titulo": "Curso de JavaScript Básico",
+      "descricao": "Introdução ao JavaScript para iniciantes em desenvolvimento web. Este curso cobre os conceitos básicos da linguagem JavaScript, incluindo variáveis, estruturas de controle, funções e manipulação do DOM.",
+      "link": "https://curso-javascript-basico",
+      "imagem": "https://static.vecteezy.com/system/resources/previews/027/127/463/original/javascript-logo-javascript-icon-transparent-free-png.png"
     },
     {
-      "id": "cd2c",
-      "title": "aertyu",
-      "url": "https://www.youtube.com/embed/XSBwgUws",
-      "description": "egrthyui",
-      "type": "JavaScript",
-      "videosRelacionados": [
-        {
-          "title": "errtgyhjk",
-          "url": "https://www.youtube.com/embed/XSBwgUws",
-          "description": "ergthyjuk"
-        }
-      ]
+      "id": "csscurso",
+      "titulo": "Curso de CSS",
+      "descricao": "Aprenda os fundamentos do CSS para estilizar páginas web. Este curso abrange os conceitos básicos de estilização de elementos usando CSS, incluindo seletores, propriedades de estilo, layout e animações simples.",
+      "link": "https://curso-reactjs",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/800px-CSS3_logo.svg.png"
+    },
+    {
+      "id": "reactcurso",
+      "titulo": "Curso de React.js",
+      "descricao": "Aprenda a criar aplicações web modernas com React.js. O curso cobre tópicos como componentização, estado e propriedades, manipulação de eventos, roteamento, gerenciamento de estado com Redux, e muito mais.",
+      "link": "https://curso-reactjs",
+      "imagem": "https://cdn1.iconfinder.com/data/icons/programing-development-8/24/react_logo-512.png"
+    },
+    {
+      "id": "bancocurso",
+      "titulo": "Curso de Banco de Dados",
+      "descricao": "Introdução aos bancos de dados para desenvolvedores web. Este curso cobre os fundamentos de bancos de dados relacionais e SQL, incluindo modelagem de dados, consultas básicas e operações CRUD.",
+      "link": "https://curso-reactjs",
+      "imagem": "https://cdn.icon-icons.com/icons2/1508/PNG/512/officedatabase_104402.png"
+    },
+    {
+      "id": "gitgithubcurso",
+      "titulo": "Curso de Git e GitHub",
+      "descricao": "Aprenda os fundamentos do controle de versão com Git e do gerenciamento de repositórios com GitHub. Este curso abrange os conceitos básicos de Git, incluindo clonagem, commits, branches, merges, e colaboração em projetos usando GitHub.",
+      "link": "https://curso-reactjs",
+      "imagem": "https://www.ratamero.com/blog/assets/git-and-github-logos.png"
+    },
+    {
+      "id": "pythoncurso",
+      "titulo": "Curso de Python",
+      "descricao": "Introdução à linguagem de programação Python. Este curso cobre os fundamentos da sintaxe Python, tipos de dados, estruturas de controle, funções, manipulação de arquivos e introdução à programação orientada a objetos.",
+      "link": "https://curso-python",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png"
+    },
+    {
+      "id": "phpcurso",
+      "titulo": "Curso de PHP",
+      "descricao": "Aprenda a linguagem de programação PHP para desenvolvimento web. Este curso cobre os fundamentos do PHP, incluindo sintaxe básica, manipulação de formulários, conexão com bancos de dados e criação de páginas dinâmicas.",
+      "link": "https://curso.pqp",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/2560px-PHP-logo.svg.png"
+    },
+    {
+      "id": "laravelcurso",
+      "titulo": "Curso de Laravel",
+      "descricao": "Domine o framework PHP Laravel para desenvolvimento web moderno. Este curso aborda os conceitos fundamentais do Laravel, incluindo rotas, controladores, modelos, visualizações, migrações de banco de dados e autenticação de usuários.",
+      "link": "https://curso.-laravel",
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-QG6nY5FbRbdMReG-QV_duM7BzsYZLNpqERBiWBoc-g&s"
+    },
+    {
+      "id": "bonuscurso",
+      "titulo": "Bônus:  Preparação para Entrevistas de Emprego",
+      "descricao": "Este curso aborda as melhores práticas e estratégias para se preparar para entrevistas de emprego de forma eficaz. Você aprenderá a pesquisar a empresa, revisar suas habilidades e experiências relevantes, praticar respostas para perguntas comuns, demonstrar suas habilidades técnicas e comportamentais, lidar com perguntas difíceis, entender o processo de entrevista e seguir as etapas pós-entrevista.",
+      "link": "https://curso-preparacao-entrevistas",
+      "imagem": "https://cdn-icons-png.flaticon.com/512/1810/1810119.png"
     }
   ]
 }

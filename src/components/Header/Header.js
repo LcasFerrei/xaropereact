@@ -1,17 +1,16 @@
 import { Link } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
-import axios from "axios"; // Importe axios
-import db from '../../database/db.json'; // Importe o banco de dados simulado
+import axios from "axios"; 
+import db from '../../database/db.json'; 
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [cursosOpen, setCursosOpen] = useState(false);
   const menuRef = useRef(null);
-  const [user, setUser] = useState(null); // Estado para armazenar o usuário logado
+  const [user, setUser] = useState(null); 
 
   useEffect(() => {
-    // Verifica se há um usuário logado
-    const loggedInUser = localStorage.getItem("user"); // motifiquei no outro usuario isso
+    const loggedInUser = localStorage.getItem("user"); 
     if (loggedInUser) {
       setUser(JSON.parse(loggedInUser));
     }
@@ -19,21 +18,18 @@ function Header() {
   
 
   const handleLogin = () => {
-    // Simula o login e define o usuário
     const loggedInUser = {
-      ...db.usuarios[0], // Copia todos os campos do primeiro usuário
-      id: db.usuarios[0].id, // Inclui o ID do primeiro usuário no objeto loggedInUser
+      ...db.usuarios[0], 
+      id: db.usuarios[0].id, 
     };
     localStorage.setItem("user", JSON.stringify(loggedInUser));
     setUser(loggedInUser);
   };
   
-  
-
   const handleLogout = () => {
-    // Limpa o usuário do armazenamento local ao fazer logout
     localStorage.removeItem("user");
     setUser(null);
+    window.location.href = "/"; // Redireciona para a página inicial
   };
 
   const toggleMenu = () => {
@@ -102,14 +98,14 @@ function Header() {
               </Link>
             </li>
             <li>Podcast</li>
-            {user && user.userType === "Professor" && ( // Mostra apenas se o usuário for um professor
+            {user && user.userType === "Professor" && ( 
               <li>
                 <Link to="/upload" style={{ textDecoration: "none" }}>
                   Área do Professor(a)
                 </Link>
               </li>
             )}
-            {user && user.userType === "Aluno" && ( // Mostra apenas se o usuário for um aluno
+            {user && user.userType === "Aluno" && ( 
               <li>
                 <Link to="/Usuarioarea" style={{ textDecoration: "none" }}>
                   Área do Aluno

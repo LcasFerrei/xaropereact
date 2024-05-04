@@ -89,30 +89,35 @@ function UsuarioLogin() {
 
   const handleLogin = () => {
     // Encontra o usuário correspondente ao email fornecido durante o login
-    const loggedInUser = db.usuarios.find((user) => user.email === email);
-  
-    if (loggedInUser) {
-      if (loggedInUser.senha === password) {
-        // Define o usuário com base nos dados encontrados
-        const user = {
-          nome: loggedInUser.nome,
-          userType: loggedInUser.userType
-        };
-        localStorage.setItem("user", JSON.stringify(user));
-        setUser(user);
-        window.location.href = '/'; // Redireciona para a página inicial após o login
+    axios.get(`http://localhost:3001/usuarios?email=${email}`).then( (res) => {
+      const loggedInUser = res.data[0];
+      console.log(loggedInUser);
+
+      if (loggedInUser) {
+        if (loggedInUser.senha === password) {
+          // Define o usuário com base nos dados encontrados
+          /*const user = {
+            nome: loggedInUser.nome,
+            userType: loggedInUser.userType
+          };*/
+          localStorage.setItem("user", JSON.stringify(loggedInUser));
+          setUser(user);
+          window.location.href = '/'; // Redireciona para a página inicial após o login
+        } else {
+          setLoginError('Email ou senha incorretos.');
+          setTimeout(() => {
+            setLoginError('');
+          }, 5000);
+        }
       } else {
-        setLoginError('Email ou senha incorretos.');
+        setLoginError('Email não cadastrado.');
         setTimeout(() => {
           setLoginError('');
         }, 5000);
       }
-    } else {
-      setLoginError('Email não cadastrado.');
-      setTimeout(() => {
-        setLoginError('');
-      }, 5000);
-    }
+    }); //db.usuarios.find((user) => user.email === email);
+  
+    
   };
   
 

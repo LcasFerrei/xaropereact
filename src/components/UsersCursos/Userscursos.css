@@ -1,64 +1,157 @@
 .user-cursos-container {
-    background: #c9d6ff; /* Fundo sólido */
-    color: #333; /* Cor do texto */
-    padding: 50px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  h1 {
-    font-size: 42px;
-    margin-bottom: 40px;
-    text-align: center;
-    color: #333; /* Cor do título */
-  }
-  
-  .filtro-container {
-    margin-bottom: 20px;
-  }
-  
-  .filtro-container input {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  .cursos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Ajuste do tamanho mínimo dos cards */
-    gap: 30px;
-  }
-  
-  
-  .curso-card {
-    background-color: #fff; /* Fundo dos cards */
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  .curso-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333; /* Cor do título do curso */
-  }
-  
-  p {
-    font-size: 18px;
-    margin-top: 0;
-  }
-  
-  .certificado-disponivel {
-    color: #63e457;
-  }
-  
-  .certificado-indisponivel {
-    color: #ff4560;
-  }
-  
+  background: #c9d6ff; /* Fundo sólido */
+  color: #333; /* Cor do texto */
+  padding: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.user-cursos-container h1 {
+  font-size: 42px;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #333; /* Cor do título */
+}
+
+.filtro-container {
+  margin-bottom: 20px;
+}
+
+.filtro-container input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.cursos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Ajuste do tamanho mínimo dos cards */
+  gap: 30px;
+}
+
+.curso-card {
+  background-color: #fff; /* Fundo dos cards */
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.curso-card:hover {
+  transform: translateY(-5px);
+}
+
+.curso-card h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333; /* Cor do título do curso */
+}
+
+.curso-card p {
+  font-size: 18px;
+  margin-top: 0;
+}
+
+.certificado-disponivel {
+  color: #63e457;
+}
+
+.certificado-indisponivel {
+  color: #ff4560;
+}
+
+.btn-desinscrever {
+  background-color: #ff4560; /* Cor de fundo vermelha */
+  color: #fff; /* Cor do texto branco */
+  border: none; /* Remover borda */
+  padding: 10px 20px; /* Espaçamento interno */
+  border-radius: 5px; /* Borda arredondada */
+  cursor: pointer; /* Cursor ao passar */
+  transition: background-color 0.3s ease; /* Transição suave */
+}
+
+.btn-desinscrever:hover {
+  background-color: #ff6382; /* Cor de fundo vermelha mais clara ao passar */
+}
+
+.pesquisa-container {
+  margin-bottom: 20px; /* Adiciona um espaço entre a barra de pesquisa e a lista de cursos */
+}
+
+.pesquisa-container input {
+  width: 100%; /* Define a largura da barra de pesquisa para ocupar todo o contêiner */
+  padding: 12px; /* Adiciona espaço interno para melhor aparência */
+  font-size: 16px; /* Define o tamanho da fonte */
+  border: none; /* Remove a borda padrão */
+  border-radius: 20px; /* Adiciona bordas arredondadas */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
+  background-color: #f8f9fa; /* Cor de fundo */
+  color: #333; /* Cor do texto */
+  transition: all 0.3s ease; /* Adiciona uma transição suave */
+}
+
+.pesquisa-container input::placeholder {
+  color: #999; /* Cor do texto de espaço reservado */
+}
+
+.pesquisa-container input:focus {
+  outline: none; /* Remove o contorno ao focar na barra de pesquisa */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra mais proeminente ao focar */
+}
+
+.pesquisa-container input:hover {
+  background-color: #f5f5f5; /* Cor de fundo ao passar o mouse */
+}
+
+.certificados-disponiveis {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Centraliza o conteúdo */
+}
+
+.certificados-disponiveis h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.certificados-disponiveis ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto; /* Centraliza a lista */
+  max-width: 600px; /* Limita a largura da lista */
+}
+
+.certificados-disponiveis {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Centraliza o conteúdo */
+  max-width: 600px; /* Limita a largura da seção */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.certificados-disponiveis ul li:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.certificados-disponiveis ul li::before {
+  content: "\2022"; /* Adiciona um ponto de lista personalizado */
+  color: #ff4560; /* Cor do ponto de lista */
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.certificados-disponiveis ul li:last-child {
+  margin-bottom: 0;
+}

@@ -80,3 +80,33 @@
     cursor: default; /* Desativa o cursor ao passar sobre o botão */
   }
   
+
+  .pesquisa-container {
+    margin-bottom: 20px; /* Adiciona um espaço entre a barra de pesquisa e a lista de cursos */
+  }
+  
+  .pesquisa-container input {
+    width: 100%; /* Define a largura da barra de pesquisa para ocupar todo o contêiner */
+    padding: 12px; /* Adiciona espaço interno para melhor aparência */
+    font-size: 16px; /* Define o tamanho da fonte */
+    border: none; /* Remove a borda padrão */
+    border-radius: 20px; /* Adiciona bordas arredondadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
+    background-color: #f8f9fa; /* Cor de fundo */
+    color: #333; /* Cor do texto */
+    transition: all 0.3s ease; /* Adiciona uma transição suave */
+  }
+  
+  .pesquisa-container input::placeholder {
+    color: #999; /* Cor do texto de espaço reservado */
+  }
+  
+  .pesquisa-container input:focus {
+    outline: none; /* Remove o contorno ao focar na barra de pesquisa */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra mais proeminente ao focar */
+  }
+  
+  .pesquisa-container input:hover {
+    background-color: #f5f5f5; /* Cor de fundo ao passar o mouse */
+  }
+  
