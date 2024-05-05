@@ -266,7 +266,8 @@
       "userType": "Aluno",
       "cursosInscritos": [
         "Curso de Python",
-        "Curso de CSS"
+        "Curso de CSS",
+        "Curso de Laravel"
       ]
     },
     {
@@ -319,6 +320,63 @@
               "title": "Ed e dificil",
               "url": "https://www.youtube.com/embed/XSBwgUws",
               "description": "ddd"
+            }
+          ]
+        },
+        {
+          "title": "ddd",
+          "url": "https://www.youtube.com/embed/GA5d8X-VUZk",
+          "description": "ddd",
+          "type": "Html",
+          "videosRelacionados": [
+            {
+              "title": "ddd",
+              "url": "https://www.youtube.com/embed/GA5d8X-VUZk",
+              "description": "ddd"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "da0b",
+      "nome": "Xavier",
+      "email": "x@unifor.br",
+      "senha": "1",
+      "userType": "Professor",
+      "meusCursos": [
+        {
+          "title": "NOVO TESTE",
+          "url": "https://www.youtube.com/embed/XSBwgUws",
+          "description": "FDFDFD",
+          "type": "PHP",
+          "videosRelacionados": [
+            {
+              "title": "MARAVILHA",
+              "url": "https://www.youtube.com/embed/XSBwgUws",
+              "description": "TTTT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cad2",
+      "nome": "Lais",
+      "email": "la@gmail.com",
+      "senha": "1",
+      "userType": "Professor",
+      "meusCursos": [
+        {
+          "title": "Para todas do inicio ao fim",
+          "url": "https://www.youtube.com/embed/RkOyf6o2EiU",
+          "description": "Bem-vindo ao curso de Python, uma jornada fascinante pelo mundo da programação! Python é uma das linguagens de programação mais populares e poderosas atualmente, conhecida por sua simplicidade, versatilidade e legibilidade de código. Seja você um iniciante absoluto ou um programador experiente, este curso irá guiá-lo em uma jornada de aprendizado dinâmica e gratificante.",
+          "type": "Python",
+          "videosRelacionados": [
+            {
+              "title": "Envbio parte 2",
+              "url": "https://www.youtube.com/embed/RkOyf6o2EiU",
+              "description": "Ao concluir este curso, você estará equipado com as habilidades necessárias para criar seus próprios programas em Python, resolver problemas de forma eficiente e explorar as inúmeras oportunidades que o mundo da programação tem a oferecer. Então, junte-se a nós nesta emocionante jornada pelo universo da programação com Python. Estamos ansiosos para embarcar nessa aventura com você!\n\n"
             }
           ]
         }
