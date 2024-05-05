@@ -11,6 +11,7 @@ import CursosPage from "./pages/Cursos/Cursos"
 import CursoDetail from "./components/CursosCard/CursoDetail";
 import Up from "./pages/UploadVideo/Up";
 import Usuarioarea from "./pages/CursosUsers/CursosUsers";
+import UserProf from "./components/UserProf/UserProf";
 
 
 
@@ -31,6 +32,7 @@ function App() {
         <Route path="/Cursos/:id" element={<CursoDetail />} />
         <Route path="/Upload" element={<Up/>}></Route>
         <Route path="/Usuarioarea" element={<Usuarioarea/>}></Route>
+        <Route path="/UserProfs" element={<UserProf/>}></Route>
       </Routes>
     </BrowserRouter>
   );

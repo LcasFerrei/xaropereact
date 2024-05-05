@@ -275,9 +275,56 @@
       "email": "gabi@unifor.br",
       "senha": "1",
       "userType": "Professor"
+    },
+    {
+      "id": "961e",
+      "nome": "Maria",
+      "email": "maria@unifor.br",
+      "senha": "1",
+      "userType": "Professor",
+      "meusCursos": [
+        {
+          "title": "JAVA",
+          "url": "https://www.youtube.com/embed/XSBwgUws",
+          "description": "ffff",
+          "type": "Html",
+          "videosRelacionados": [
+            {
+              "title": "ffffff",
+              "url": "https://www.youtube.com/embed/XSBwgUws",
+              "description": "fffbvc"
+            }
+          ]
+        },
+        {
+          "title": "C# TIME ",
+          "url": "https://www.youtube.com/embed/XSBwgUws",
+          "description": "DDD",
+          "type": "Bônus",
+          "videosRelacionados": [
+            {
+              "title": "VIDEO GAMER",
+              "url": "https://www.youtube.com/embed/XSBwgUws",
+              "description": "FFFF"
+            }
+          ]
+        },
+        {
+          "title": "Estrutura de dados",
+          "url": "https://www.youtube.com/embed/XSBwgUws",
+          "description": "Magico",
+          "type": "React",
+          "videosRelacionados": [
+            {
+              "title": "Ed e dificil",
+              "url": "https://www.youtube.com/embed/XSBwgUws",
+              "description": "ddd"
+            }
+          ]
+        }
+      ]
     }
   ],
-  "modulos": {},
   "Videcad": [],
   "Xaropecursos": [
     {

@@ -99,11 +99,18 @@ function Header() {
             </li>
             <li>Podcast</li>
             {user && user.userType === "Professor" && ( 
+              <>
               <li>
                 <Link to="/upload" style={{ textDecoration: "none" }}>
+                  Área do Upload
+                </Link>
+              </li>
+              <li>
+                <Link to="/UserProfs" style={{ textDecoration: "none" }}>
                   Área do Professor(a)
                 </Link>
               </li>
+              </>
             )}
             {user && user.userType === "Aluno" && ( 
               <li>

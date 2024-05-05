@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Upload.css';
 
@@ -7,11 +7,29 @@ function Upload() {
     title: '',
     url: '',
     description: '',
-    type: '', // Novo campo para o tipo de curso
+    type: '',
     videosRelacionados: [{ title: '', url: '', description: '' }]
   });
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [user, setUser] = useState(null);
+  const [cursos, setCursos] = useState([]);
+
+  useEffect(() => {
+    setUser(JSON.parse(localStorage.getItem("user")));
+  }, []);
+
+  useEffect(() => {
+    if (user) {
+      axios.get(`http://localhost:3001/usuarios/${user.id}?timestamp=${Date.now()}`)
+        .then(response => {
+          setCursos(response.data.meusCursos);
+        })
+        .catch(error => {
+          console.error('Erro ao obter cursos do usuário:', error);
+        });
+    }
+  }, [user]);
 
   const handleChange = (event, index) => {
     const { name, value } = event.target;
@@ -30,19 +48,31 @@ function Upload() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    if (!user) {
+      setErrorMessage('Faça login para adicionar um curso.');
+      return;
+    }
+
+    if (user.userType !== 'Professor') {
+      setErrorMessage('Apenas professores podem adicionar cursos.');
+      return;
+    }
+
     const novoCurso = {
       title: cursoData.title,
       url: cursoData.url,
       description: cursoData.description,
-      type: cursoData.type, // Inclui o tipo de curso no objeto enviado
+      type: cursoData.type,
       videosRelacionados: cursoData.videosRelacionados
     };
 
-    axios.post('http://localhost:3001/Videcad', novoCurso)
+    const updatedUser = { ...user, meusCursos: [...cursos, novoCurso] };
+
+    axios.put(`http://localhost:3001/usuarios/${user.id}`, updatedUser)
       .then(response => {
         setSuccessMessage('Curso adicionado com sucesso!');
         setErrorMessage('');
-        setCursoData({ // Limpa os campos do formulário
+        setCursoData({
           title: '',
           url: '',
           description: '',

@@ -37,6 +37,10 @@ function UsuarioLogin() {
       if (userType === 'Aluno') {
         newUser.cursosInscritos = [];
       }
+
+      if (userType == 'Professor'){
+        newUser.meusCursos = [];
+      }
       
       try {
         const response = await fetch('http://localhost:3001/usuarios', {
