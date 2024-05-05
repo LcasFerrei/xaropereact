@@ -33,9 +33,42 @@ function UserProf() {
     console.log(`Excluir curso de índice ${index}`);
   };
 
-  const handlePost = (index) => {
-    // Implementar lógica de postagem aqui
-    console.log(`Postar curso de índice ${index}`);
+  const handlePost = (curso) => {
+    // Gerar um ID único para o curso
+    const id = generateUniqueId();
+
+    const cursoParaEnviar = {
+      id: id,
+      titulo: curso.title,
+      descricao: curso.description,
+      link: curso.url,
+      imagem: 'URL_DA_IMAGEM', // Substitua 'URL_DA_IMAGEM' pela URL da imagem do curso
+    };
+
+    // Enviar para o endpoint Xaropecursos
+    axios.post('http://localhost:3001/Xaropecursos', cursoParaEnviar)
+      .then(response => {
+        console.log('Curso postado com sucesso em Xaropecursos:', response.data);
+      })
+      .catch(error => {
+        console.error('Erro ao postar o curso em Xaropecursos:', error);
+      });
+
+    // Enviar para o endpoint cursos
+    const cursoParaCursos = {
+      id: id,
+      title: curso.title,
+      url: curso.url,
+      videosRelacionados: curso.videosRelacionados,
+    };
+
+    axios.post('http://localhost:3001/cursos', cursoParaCursos)
+      .then(response => {
+        console.log('Curso enviado para cursos com sucesso:', response.data);
+      })
+      .catch(error => {
+        console.error('Erro ao enviar o curso para cursos:', error);
+      });
   };
 
   const handleSearch = (event) => {
@@ -45,6 +78,11 @@ function UserProf() {
   const filteredCursos = cursos.filter(curso =>
     curso.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  // Função para gerar IDs únicos
+  const generateUniqueId = () => {
+    return Math.random().toString(36).substr(2, 9);
+  };
 
   return (
     <div style={styles.container}>
@@ -76,7 +114,7 @@ function UserProf() {
             <div style={styles.buttonContainer}>
               <button style={styles.editButton} onClick={() => handleEdit(index)}>Editar</button>
               <button style={styles.deleteButton} onClick={() => handleDelete(index)}>Excluir</button>
-              <button style={styles.postButton} onClick={() => handlePost(index)}>Postar</button>
+              <button style={styles.postButton} onClick={() => handlePost(curso)}>Postar</button>
             </div>
           </div>
         ))}

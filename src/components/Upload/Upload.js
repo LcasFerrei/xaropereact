@@ -14,6 +14,8 @@ function Upload() {
   const [errorMessage, setErrorMessage] = useState('');
   const [user, setUser] = useState(null);
   const [cursos, setCursos] = useState([]);
+  const [image, setImage] = useState(null);
+
 
   useEffect(() => {
     setUser(JSON.parse(localStorage.getItem("user")));

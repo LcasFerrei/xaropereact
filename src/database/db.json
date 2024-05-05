@@ -229,6 +229,54 @@
           "description": "Aprenda sobre a estrutura básica de um documento HTML, incluindo a tag <html>, <head> e <body>."
         }
       ]
+    },
+    {
+      "id": "db7a",
+      "title": "Para todas do inicio ao fim",
+      "url": "https://www.youtube.com/embed/RkOyf6o2EiU",
+      "videosRelacionados": [
+        {
+          "title": "Envbio parte 2",
+          "url": "https://www.youtube.com/embed/RkOyf6o2EiU",
+          "description": "Ao concluir este curso, você estará equipado com as habilidades necessárias para criar seus próprios programas em Python, resolver problemas de forma eficiente e explorar as inúmeras oportunidades que o mundo da programação tem a oferecer. Então, junte-se a nós nesta emocionante jornada pelo universo da programação com Python. Estamos ansiosos para embarcar nessa aventura com você!\n\n"
+        }
+      ]
+    },
+    {
+      "id": "6132",
+      "title": "teste lucas",
+      "url": "https://www.youtube.com/embed/XSBwgUws",
+      "videosRelacionados": [
+        {
+          "title": "legal coll",
+          "url": "https://www.youtube.com/embed/XSBwgUws",
+          "description": "ggg"
+        }
+      ]
+    },
+    {
+      "id": "zct9s33yr",
+      "title": "Para todas do inicio ao fim",
+      "url": "https://www.youtube.com/embed/RkOyf6o2EiU",
+      "videosRelacionados": [
+        {
+          "title": "Envbio parte 2",
+          "url": "https://www.youtube.com/embed/RkOyf6o2EiU",
+          "description": "Ao concluir este curso, você estará equipado com as habilidades necessárias para criar seus próprios programas em Python, resolver problemas de forma eficiente e explorar as inúmeras oportunidades que o mundo da programação tem a oferecer. Então, junte-se a nós nesta emocionante jornada pelo universo da programação com Python. Estamos ansiosos para embarcar nessa aventura com você!\n\n"
+        }
+      ]
+    },
+    {
+      "id": "y1mf11zsp",
+      "title": "ESTRUTURA DE DADOS E HORRIVEL",
+      "url": "https://www.youtube.com/embed/XSBwgUws",
+      "videosRelacionados": [
+        {
+          "title": "Banco de Dados soó a jardi pra entender",
+          "url": "https://www.youtube.com/embed/XSBwgUws",
+          "description": "fvgbhjk"
+        }
+      ]
     }
   ],
   "usuarios": [
@@ -267,7 +315,8 @@
       "cursosInscritos": [
         "Curso de Python",
         "Curso de CSS",
-        "Curso de Laravel"
+        "Curso de Laravel",
+        "ESTRUTURA DE DADOS E HORRIVEL"
       ]
     },
     {
@@ -379,6 +428,41 @@
               "description": "Ao concluir este curso, você estará equipado com as habilidades necessárias para criar seus próprios programas em Python, resolver problemas de forma eficiente e explorar as inúmeras oportunidades que o mundo da programação tem a oferecer. Então, junte-se a nós nesta emocionante jornada pelo universo da programação com Python. Estamos ansiosos para embarcar nessa aventura com você!\n\n"
             }
           ]
+        },
+        {
+          "title": "teste lucas",
+          "url": "https://www.youtube.com/embed/XSBwgUws",
+          "description": "blablablablavlavlavlavl",
+          "type": "PHP",
+          "videosRelacionados": [
+            {
+              "title": "legal coll",
+              "url": "https://www.youtube.com/embed/XSBwgUws",
+              "description": "ggg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3bc4",
+      "nome": "and",
+      "email": "and@unifor.br",
+      "senha": "1",
+      "userType": "Professor",
+      "meusCursos": [
+        {
+          "title": "ESTRUTURA DE DADOS E HORRIVEL",
+          "url": "https://www.youtube.com/embed/XSBwgUws",
+          "description": "paulo cirilo me ajude a passar",
+          "type": "Banco de Dados",
+          "videosRelacionados": [
+            {
+              "title": "Banco de Dados soó a jardi pra entender",
+              "url": "https://www.youtube.com/embed/XSBwgUws",
+              "description": "fvgbhjk"
+            }
+          ]
         }
       ]
     }
@@ -454,6 +538,62 @@
       "descricao": "Este curso aborda as melhores práticas e estratégias para se preparar para entrevistas de emprego de forma eficaz. Você aprenderá a pesquisar a empresa, revisar suas habilidades e experiências relevantes, praticar respostas para perguntas comuns, demonstrar suas habilidades técnicas e comportamentais, lidar com perguntas difíceis, entender o processo de entrevista e seguir as etapas pós-entrevista.",
       "link": "https://curso-preparacao-entrevistas",
       "imagem": "https://cdn-icons-png.flaticon.com/512/1810/1810119.png"
+    },
+    {
+      "id": "0178",
+      "titulo": "Para todas do inicio ao fim",
+      "descricao": "Bem-vindo ao curso de Python, uma jornada fascinante pelo mundo da programação! Python é uma das linguagens de programação mais populares e poderosas atualmente, conhecida por sua simplicidade, versatilidade e legibilidade de código. Seja você um iniciante absoluto ou um programador experiente, este curso irá guiá-lo em uma jornada de aprendizado dinâmica e gratificante.",
+      "link": "https://www.youtube.com/embed/RkOyf6o2EiU",
+      "imagem": "URL_DA_IMAGEM"
+    },
+    {
+      "id": "bd6d",
+      "titulo": "teste lucas",
+      "descricao": "blablablablavlavlavlavl",
+      "link": "https://www.youtube.com/embed/XSBwgUws",
+      "imagem": "URL_DA_IMAGEM"
+    },
+    {
+      "id": "1e33",
+      "titulo": "teste lucas",
+      "descricao": "blablablablavlavlavlavl",
+      "link": "https://www.youtube.com/embed/XSBwgUws",
+      "imagem": "URL_DA_IMAGEM"
+    },
+    {
+      "id": "8b40",
+      "titulo": "Para todas do inicio ao fim",
+      "descricao": "Bem-vindo ao curso de Python, uma jornada fascinante pelo mundo da programação! Python é uma das linguagens de programação mais populares e poderosas atualmente, conhecida por sua simplicidade, versatilidade e legibilidade de código. Seja você um iniciante absoluto ou um programador experiente, este curso irá guiá-lo em uma jornada de aprendizado dinâmica e gratificante.",
+      "link": "https://www.youtube.com/embed/RkOyf6o2EiU",
+      "imagem": "URL_DA_IMAGEM"
+    },
+    {
+      "id": "2cb4",
+      "titulo": "Para todas do inicio ao fim",
+      "descricao": "Bem-vindo ao curso de Python, uma jornada fascinante pelo mundo da programação! Python é uma das linguagens de programação mais populares e poderosas atualmente, conhecida por sua simplicidade, versatilidade e legibilidade de código. Seja você um iniciante absoluto ou um programador experiente, este curso irá guiá-lo em uma jornada de aprendizado dinâmica e gratificante.",
+      "link": "https://www.youtube.com/embed/RkOyf6o2EiU",
+      "imagem": "URL_DA_IMAGEM"
+    },
+    {
+      "id": "d851",
+      "titulo": "teste lucas",
+      "descricao": "blablablablavlavlavlavl",
+      "link": "https://www.youtube.com/embed/XSBwgUws",
+      "imagem": "URL_DA_IMAGEM"
+    },
+    {
+      "id": "zct9s33yr",
+      "titulo": "Para todas do inicio ao fim",
+      "descricao": "Bem-vindo ao curso de Python, uma jornada fascinante pelo mundo da programação! Python é uma das linguagens de programação mais populares e poderosas atualmente, conhecida por sua simplicidade, versatilidade e legibilidade de código. Seja você um iniciante absoluto ou um programador experiente, este curso irá guiá-lo em uma jornada de aprendizado dinâmica e gratificante.",
+      "link": "https://www.youtube.com/embed/RkOyf6o2EiU",
+      "imagem": "URL_DA_IMAGEM"
+    },
+    {
+      "id": "y1mf11zsp",
+      "titulo": "ESTRUTURA DE DADOS E HORRIVEL",
+      "descricao": "paulo cirilo me ajude a passar",
+      "link": "https://www.youtube.com/embed/XSBwgUws",
+      "imagem": "URL_DA_IMAGEM"
     }
   ]
 }
