@@ -8,8 +8,11 @@ function CursoXarope({ id, titulo, descricao, link, imagem, user, onInscricao })
   const [inscrito, setInscrito] = useState(false);
 
   useEffect(() => {
-    setInscrito(user && user.cursosInscritos.includes(titulo));
+    if (user && user.cursosInscritos) {
+      setInscrito(user.cursosInscritos.includes(titulo));
+    }
   }, [user, id]);
+  
 
   const handleInscricao = (event) => { 
     event.preventDefault(); 
