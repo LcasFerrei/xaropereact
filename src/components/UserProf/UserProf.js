@@ -33,7 +33,7 @@ function UserProf() {
     console.log(`Excluir curso de índice ${index}`);
   };
 
-  const handlePost = (curso) => {
+  const handlePost = (curso, index) => {
     // Gerar um ID único para o curso
     const id = generateUniqueId();
 
@@ -42,7 +42,7 @@ function UserProf() {
       titulo: curso.title,
       descricao: curso.description,
       link: curso.url,
-      imagem: 'URL_DA_IMAGEM', // Substitua 'URL_DA_IMAGEM' pela URL da imagem do curso
+      imagem: curso.image, // Utilizando a URL da imagem fornecida pelo usuário
     };
 
     // Enviar para o endpoint Xaropecursos
@@ -65,6 +65,12 @@ function UserProf() {
     axios.post('http://localhost:3001/cursos', cursoParaCursos)
       .then(response => {
         console.log('Curso enviado para cursos com sucesso:', response.data);
+        // Atualizar o estado do curso para exibir "Publicado"
+        setCursos(prevCursos => {
+          const updatedCursos = [...prevCursos];
+          updatedCursos[index].publicado = true; // Adicionando uma propriedade publicado ao curso
+          return updatedCursos;
+        });
       })
       .catch(error => {
         console.error('Erro ao enviar o curso para cursos:', error);
@@ -73,6 +79,17 @@ function UserProf() {
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
+  };
+
+  const handleImageUpload = (index) => {
+    const imageUrl = prompt("Insira a URL da imagem:");
+    if (imageUrl) {
+      setCursos(prevCursos => {
+        const updatedCursos = [...prevCursos];
+        updatedCursos[index].image = imageUrl;
+        return updatedCursos;
+      });
+    }
   };
 
   const filteredCursos = cursos.filter(curso =>
@@ -86,7 +103,7 @@ function UserProf() {
 
   return (
     <div style={styles.container}>
-      <h1 style={styles.header}>Meus Cursos</h1>
+      <h1 style={styles.header}>Área do Genius</h1>
       <div style={styles.searchContainer}>
         <input
           type="text"
@@ -103,6 +120,7 @@ function UserProf() {
             <p><strong>Tipo de Curso:</strong> {curso.type}</p>
             <p><strong>Descrição:</strong> {curso.description}</p>
             <p><strong>URL do Curso:</strong> <a href={curso.url} target="_blank" rel="noopener noreferrer">{curso.url}</a></p>
+            {curso.image && <img src={curso.image} alt="Imagem do curso" style={styles.courseImage} />}
             <h3>Vídeos Relacionados</h3>
             {curso.videosRelacionados.map((video, idx) => (
               <div style={styles.relatedVideo} key={idx}>
@@ -114,7 +132,8 @@ function UserProf() {
             <div style={styles.buttonContainer}>
               <button style={styles.editButton} onClick={() => handleEdit(index)}>Editar</button>
               <button style={styles.deleteButton} onClick={() => handleDelete(index)}>Excluir</button>
-              <button style={styles.postButton} onClick={() => handlePost(curso)}>Postar</button>
+              {curso.publicado ? <p style={{ color: 'rgb(98, 98, 204)' }}>Publicado</p> : <button style={styles.postButton} onClick={() => handlePost(curso, index)}>Postar</button>}
+              <button style={styles.imageButton} onClick={() => handleImageUpload(index)}>Adicionar Imagem</button>
             </div>
           </div>
         ))}
@@ -157,6 +176,7 @@ const styles = {
     marginBottom: '20px',
     boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
     boxSizing: 'border-box',
+    position: 'relative', // Para a posição absoluta da imagem
   },
   courseTitle: {
     fontSize: '24px',
@@ -199,6 +219,20 @@ const styles = {
     padding: '10px 20px',
     cursor: 'pointer',
     transition: 'background-color 0.3s ease',
+  },
+  imageButton: {
+    backgroundColor: 'green',
+    color: '#fff',
+    border: 'none',
+    borderRadius: '5px',
+    padding: '10px 20px',
+    cursor: 'pointer',
+    transition: 'background-color 0.3s ease',
+  },
+  courseImage: {
+    width: '100%',
+    borderRadius: '8px',
+    marginTop: '10px',
   },
 };
 

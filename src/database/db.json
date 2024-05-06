@@ -229,245 +229,55 @@
           "description": "Aprenda sobre a estrutura básica de um documento HTML, incluindo a tag <html>, <head> e <body>."
         }
       ]
-    },
-    {
-      "id": "db7a",
-      "title": "Para todas do inicio ao fim",
-      "url": "https://www.youtube.com/embed/RkOyf6o2EiU",
-      "videosRelacionados": [
-        {
-          "title": "Envbio parte 2",
-          "url": "https://www.youtube.com/embed/RkOyf6o2EiU",
-          "description": "Ao concluir este curso, você estará equipado com as habilidades necessárias para criar seus próprios programas em Python, resolver problemas de forma eficiente e explorar as inúmeras oportunidades que o mundo da programação tem a oferecer. Então, junte-se a nós nesta emocionante jornada pelo universo da programação com Python. Estamos ansiosos para embarcar nessa aventura com você!\n\n"
-        }
-      ]
-    },
-    {
-      "id": "6132",
-      "title": "teste lucas",
-      "url": "https://www.youtube.com/embed/XSBwgUws",
-      "videosRelacionados": [
-        {
-          "title": "legal coll",
-          "url": "https://www.youtube.com/embed/XSBwgUws",
-          "description": "ggg"
-        }
-      ]
-    },
-    {
-      "id": "zct9s33yr",
-      "title": "Para todas do inicio ao fim",
-      "url": "https://www.youtube.com/embed/RkOyf6o2EiU",
-      "videosRelacionados": [
-        {
-          "title": "Envbio parte 2",
-          "url": "https://www.youtube.com/embed/RkOyf6o2EiU",
-          "description": "Ao concluir este curso, você estará equipado com as habilidades necessárias para criar seus próprios programas em Python, resolver problemas de forma eficiente e explorar as inúmeras oportunidades que o mundo da programação tem a oferecer. Então, junte-se a nós nesta emocionante jornada pelo universo da programação com Python. Estamos ansiosos para embarcar nessa aventura com você!\n\n"
-        }
-      ]
-    },
-    {
-      "id": "y1mf11zsp",
-      "title": "ESTRUTURA DE DADOS E HORRIVEL",
-      "url": "https://www.youtube.com/embed/XSBwgUws",
-      "videosRelacionados": [
-        {
-          "title": "Banco de Dados soó a jardi pra entender",
-          "url": "https://www.youtube.com/embed/XSBwgUws",
-          "description": "fvgbhjk"
-        }
-      ]
     }
   ],
   "usuarios": [
     {
-      "id": "bedb",
-      "nome": "Lucas",
-      "email": "lucasferreiraceara@gmail.com",
-      "senha": "1",
-      "userType": "Aluno",
-      "cursosInscritos": [
-        "Curso de HTML",
-        "Curso de JavaScript Básico",
-        "Curso de CSS",
-        "Curso de React.js",
-        "Curso de Banco de Dados",
-        "Bônus:  Preparação para Entrevistas de Emprego",
-        "Curso de Laravel"
-      ]
-    },
-    {
-      "id": "40ec",
-      "nome": "Jardiana",
-      "email": "jardi@unifor.br",
-      "senha": "123",
-      "userType": "Aluno",
-      "cursosInscritos": [
-        "Curso de CSS"
-      ]
-    },
-    {
-      "id": "f8bf",
-      "nome": "leone",
+      "id": "da08",
+      "nome": "LUCAS",
       "email": "l@unifor.br",
       "senha": "1",
-      "userType": "Aluno",
-      "cursosInscritos": [
-        "Curso de Python",
-        "Curso de CSS",
-        "Curso de Laravel",
-        "ESTRUTURA DE DADOS E HORRIVEL"
+      "userType": "Professor",
+      "meusCursos": [
+        {}
       ]
     },
     {
-      "id": "116e",
-      "nome": "Gabriela",
-      "email": "gabi@unifor.br",
-      "senha": "1",
-      "userType": "Professor"
-    },
-    {
-      "id": "961e",
-      "nome": "Maria",
-      "email": "maria@unifor.br",
+      "id": "825f",
+      "nome": "Jardi",
+      "email": "jardiana@unifor.br",
       "senha": "1",
       "userType": "Professor",
       "meusCursos": [
         {
-          "title": "JAVA",
+          "title": "titulo",
           "url": "https://www.youtube.com/embed/XSBwgUws",
-          "description": "ffff",
-          "type": "Html",
+          "description": "eee",
+          "type": "JavaScript",
           "videosRelacionados": [
             {
-              "title": "ffffff",
+              "title": "legal",
               "url": "https://www.youtube.com/embed/XSBwgUws",
-              "description": "fffbvc"
+              "description": "f"
             }
           ]
         },
         {
-          "title": "C# TIME ",
+          "title": "Jardi teste",
           "url": "https://www.youtube.com/embed/XSBwgUws",
-          "description": "DDD",
-          "type": "Bônus",
-          "videosRelacionados": [
-            {
-              "title": "VIDEO GAMER",
-              "url": "https://www.youtube.com/embed/XSBwgUws",
-              "description": "FFFF"
-            }
-          ]
-        },
-        {
-          "title": "Estrutura de dados",
-          "url": "https://www.youtube.com/embed/XSBwgUws",
-          "description": "Magico",
-          "type": "React",
-          "videosRelacionados": [
-            {
-              "title": "Ed e dificil",
-              "url": "https://www.youtube.com/embed/XSBwgUws",
-              "description": "ddd"
-            }
-          ]
-        },
-        {
-          "title": "ddd",
-          "url": "https://www.youtube.com/embed/GA5d8X-VUZk",
-          "description": "ddd",
-          "type": "Html",
+          "description": "ssss",
+          "type": "JavaScript",
           "videosRelacionados": [
             {
               "title": "ddd",
-              "url": "https://www.youtube.com/embed/GA5d8X-VUZk",
+              "url": "https://www.youtube.com/embed/XSBwgUws",
               "description": "ddd"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "da0b",
-      "nome": "Xavier",
-      "email": "x@unifor.br",
-      "senha": "1",
-      "userType": "Professor",
-      "meusCursos": [
-        {
-          "title": "NOVO TESTE",
-          "url": "https://www.youtube.com/embed/XSBwgUws",
-          "description": "FDFDFD",
-          "type": "PHP",
-          "videosRelacionados": [
-            {
-              "title": "MARAVILHA",
-              "url": "https://www.youtube.com/embed/XSBwgUws",
-              "description": "TTTT"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "cad2",
-      "nome": "Lais",
-      "email": "la@gmail.com",
-      "senha": "1",
-      "userType": "Professor",
-      "meusCursos": [
-        {
-          "title": "Para todas do inicio ao fim",
-          "url": "https://www.youtube.com/embed/RkOyf6o2EiU",
-          "description": "Bem-vindo ao curso de Python, uma jornada fascinante pelo mundo da programação! Python é uma das linguagens de programação mais populares e poderosas atualmente, conhecida por sua simplicidade, versatilidade e legibilidade de código. Seja você um iniciante absoluto ou um programador experiente, este curso irá guiá-lo em uma jornada de aprendizado dinâmica e gratificante.",
-          "type": "Python",
-          "videosRelacionados": [
-            {
-              "title": "Envbio parte 2",
-              "url": "https://www.youtube.com/embed/RkOyf6o2EiU",
-              "description": "Ao concluir este curso, você estará equipado com as habilidades necessárias para criar seus próprios programas em Python, resolver problemas de forma eficiente e explorar as inúmeras oportunidades que o mundo da programação tem a oferecer. Então, junte-se a nós nesta emocionante jornada pelo universo da programação com Python. Estamos ansiosos para embarcar nessa aventura com você!\n\n"
-            }
-          ]
-        },
-        {
-          "title": "teste lucas",
-          "url": "https://www.youtube.com/embed/XSBwgUws",
-          "description": "blablablablavlavlavlavl",
-          "type": "PHP",
-          "videosRelacionados": [
-            {
-              "title": "legal coll",
-              "url": "https://www.youtube.com/embed/XSBwgUws",
-              "description": "ggg"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "3bc4",
-      "nome": "and",
-      "email": "and@unifor.br",
-      "senha": "1",
-      "userType": "Professor",
-      "meusCursos": [
-        {
-          "title": "ESTRUTURA DE DADOS E HORRIVEL",
-          "url": "https://www.youtube.com/embed/XSBwgUws",
-          "description": "paulo cirilo me ajude a passar",
-          "type": "Banco de Dados",
-          "videosRelacionados": [
-            {
-              "title": "Banco de Dados soó a jardi pra entender",
-              "url": "https://www.youtube.com/embed/XSBwgUws",
-              "description": "fvgbhjk"
             }
           ]
         }
       ]
     }
   ],
-  "Videcad": [],
   "Xaropecursos": [
     {
       "id": "htmlcurso",
@@ -538,62 +348,6 @@
       "descricao": "Este curso aborda as melhores práticas e estratégias para se preparar para entrevistas de emprego de forma eficaz. Você aprenderá a pesquisar a empresa, revisar suas habilidades e experiências relevantes, praticar respostas para perguntas comuns, demonstrar suas habilidades técnicas e comportamentais, lidar com perguntas difíceis, entender o processo de entrevista e seguir as etapas pós-entrevista.",
       "link": "https://curso-preparacao-entrevistas",
       "imagem": "https://cdn-icons-png.flaticon.com/512/1810/1810119.png"
-    },
-    {
-      "id": "0178",
-      "titulo": "Para todas do inicio ao fim",
-      "descricao": "Bem-vindo ao curso de Python, uma jornada fascinante pelo mundo da programação! Python é uma das linguagens de programação mais populares e poderosas atualmente, conhecida por sua simplicidade, versatilidade e legibilidade de código. Seja você um iniciante absoluto ou um programador experiente, este curso irá guiá-lo em uma jornada de aprendizado dinâmica e gratificante.",
-      "link": "https://www.youtube.com/embed/RkOyf6o2EiU",
-      "imagem": "URL_DA_IMAGEM"
-    },
-    {
-      "id": "bd6d",
-      "titulo": "teste lucas",
-      "descricao": "blablablablavlavlavlavl",
-      "link": "https://www.youtube.com/embed/XSBwgUws",
-      "imagem": "URL_DA_IMAGEM"
-    },
-    {
-      "id": "1e33",
-      "titulo": "teste lucas",
-      "descricao": "blablablablavlavlavlavl",
-      "link": "https://www.youtube.com/embed/XSBwgUws",
-      "imagem": "URL_DA_IMAGEM"
-    },
-    {
-      "id": "8b40",
-      "titulo": "Para todas do inicio ao fim",
-      "descricao": "Bem-vindo ao curso de Python, uma jornada fascinante pelo mundo da programação! Python é uma das linguagens de programação mais populares e poderosas atualmente, conhecida por sua simplicidade, versatilidade e legibilidade de código. Seja você um iniciante absoluto ou um programador experiente, este curso irá guiá-lo em uma jornada de aprendizado dinâmica e gratificante.",
-      "link": "https://www.youtube.com/embed/RkOyf6o2EiU",
-      "imagem": "URL_DA_IMAGEM"
-    },
-    {
-      "id": "2cb4",
-      "titulo": "Para todas do inicio ao fim",
-      "descricao": "Bem-vindo ao curso de Python, uma jornada fascinante pelo mundo da programação! Python é uma das linguagens de programação mais populares e poderosas atualmente, conhecida por sua simplicidade, versatilidade e legibilidade de código. Seja você um iniciante absoluto ou um programador experiente, este curso irá guiá-lo em uma jornada de aprendizado dinâmica e gratificante.",
-      "link": "https://www.youtube.com/embed/RkOyf6o2EiU",
-      "imagem": "URL_DA_IMAGEM"
-    },
-    {
-      "id": "d851",
-      "titulo": "teste lucas",
-      "descricao": "blablablablavlavlavlavl",
-      "link": "https://www.youtube.com/embed/XSBwgUws",
-      "imagem": "URL_DA_IMAGEM"
-    },
-    {
-      "id": "zct9s33yr",
-      "titulo": "Para todas do inicio ao fim",
-      "descricao": "Bem-vindo ao curso de Python, uma jornada fascinante pelo mundo da programação! Python é uma das linguagens de programação mais populares e poderosas atualmente, conhecida por sua simplicidade, versatilidade e legibilidade de código. Seja você um iniciante absoluto ou um programador experiente, este curso irá guiá-lo em uma jornada de aprendizado dinâmica e gratificante.",
-      "link": "https://www.youtube.com/embed/RkOyf6o2EiU",
-      "imagem": "URL_DA_IMAGEM"
-    },
-    {
-      "id": "y1mf11zsp",
-      "titulo": "ESTRUTURA DE DADOS E HORRIVEL",
-      "descricao": "paulo cirilo me ajude a passar",
-      "link": "https://www.youtube.com/embed/XSBwgUws",
-      "imagem": "URL_DA_IMAGEM"
     }
   ]
 }
