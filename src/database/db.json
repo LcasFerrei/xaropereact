@@ -231,53 +231,7 @@
       ]
     }
   ],
-  "usuarios": [
-    {
-      "id": "da08",
-      "nome": "LUCAS",
-      "email": "l@unifor.br",
-      "senha": "1",
-      "userType": "Professor",
-      "meusCursos": [
-        {}
-      ]
-    },
-    {
-      "id": "825f",
-      "nome": "Jardi",
-      "email": "jardiana@unifor.br",
-      "senha": "1",
-      "userType": "Professor",
-      "meusCursos": [
-        {
-          "title": "titulo",
-          "url": "https://www.youtube.com/embed/XSBwgUws",
-          "description": "eee",
-          "type": "JavaScript",
-          "videosRelacionados": [
-            {
-              "title": "legal",
-              "url": "https://www.youtube.com/embed/XSBwgUws",
-              "description": "f"
-            }
-          ]
-        },
-        {
-          "title": "Jardi teste",
-          "url": "https://www.youtube.com/embed/XSBwgUws",
-          "description": "ssss",
-          "type": "JavaScript",
-          "videosRelacionados": [
-            {
-              "title": "ddd",
-              "url": "https://www.youtube.com/embed/XSBwgUws",
-              "description": "ddd"
-            }
-          ]
-        }
-      ]
-    }
-  ],
+  "usuarios": [],
   "Xaropecursos": [
     {
       "id": "htmlcurso",
