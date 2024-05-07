@@ -23,26 +23,26 @@ function UserProf() {
     }
   }, [user]);
 
-  const handleEdit = (index) => {
-    // Implementar lógica de edição aqui
+  const handleEdit = (index) => { // (JARDIANA, ANNA)
+    // Colocar a  lógica de edição aqui
     console.log(`Editar curso de índice ${index}`);
   };
 
-  const handleDelete = (index) => {
-    // Implementar lógica de exclusão aqui
+  const handleDelete = (index) => { // (JARDIANA, ANNA)
+    // Colocar a  lógica de exclusão aqui
     console.log(`Excluir curso de índice ${index}`);
   };
 
   const handlePost = (curso, index) => {
-    // Gerar um ID único para o curso
-    const id = generateUniqueId();
+    
+    const id = generateUniqueId(); // Gerar um ID único para o curso
 
     const cursoParaEnviar = {
       id: id,
       titulo: curso.type,
       descricao: curso.description,
       link: curso.url,
-      imagem: curso.image, // Utilizando a URL da imagem fornecida pelo usuário
+      imagem: curso.image, // Recebe a URL da imagem fornecida pelo usuário
     };
 
     // Enviar para o endpoint Xaropecursos
@@ -86,7 +86,7 @@ function UserProf() {
     const reader = new FileReader();
 
     reader.onload = function(event) {
-      const imageUrl = event.target.result; // URL da imagem convertida em base64
+      const imageUrl = event.target.result; // URL da imagem convertida
       setCursos(prevCursos => {
         const updatedCursos = [...prevCursos];
         updatedCursos[index].image = imageUrl;
@@ -94,7 +94,7 @@ function UserProf() {
       });
     };
 
-    reader.readAsDataURL(file); // Converte o arquivo para base64
+    reader.readAsDataURL(file); // Converte o arquivo 
   };
 
   const filteredCursos = cursos.filter(curso =>
