@@ -15,7 +15,8 @@ function Upload() {
   const [user, setUser] = useState(null);
   const [cursos, setCursos] = useState([]);
   const [image, setImage] = useState(null);
-
+  const [outroCurso, setOutroCurso] = useState(false);
+  const [novoTipoCurso, setNovoTipoCurso] = useState('');
 
   useEffect(() => {
     setUser(JSON.parse(localStorage.getItem("user")));
@@ -60,11 +61,13 @@ function Upload() {
       return;
     }
 
+    const tipoCurso = outroCurso ? novoTipoCurso : cursoData.type;
+
     const novoCurso = {
       title: cursoData.title,
       url: cursoData.url,
       description: cursoData.description,
-      type: cursoData.type,
+      type: tipoCurso,
       videosRelacionados: cursoData.videosRelacionados
     };
 
@@ -119,7 +122,10 @@ function Upload() {
           id="type"
           name="type"
           value={cursoData.type}
-          onChange={(e) => setCursoData({ ...cursoData, type: e.target.value })}
+          onChange={(e) => {
+            setCursoData({ ...cursoData, type: e.target.value });
+            setOutroCurso(e.target.value === 'Outro');
+          }}
           required
         >
           <option value="">Selecione o tipo de curso</option>
@@ -133,7 +139,17 @@ function Upload() {
           <option value="PHP">PHP</option>
           <option value="Laravel">Laravel</option>
           <option value="Bônus">Bônus: Preparação para Entrevistas de Emprego</option>
+          <option value="Outro">Outro</option>
         </select>
+        {outroCurso && (
+          <input
+            type="text"
+            placeholder="Digite o novo tipo de curso"
+            value={novoTipoCurso}
+            onChange={(e) => setNovoTipoCurso(e.target.value)}
+            required
+          />
+        )}
       </div>
       <div>
         <label htmlFor="title">Título do Curso:</label><br />
@@ -212,4 +228,3 @@ function Upload() {
 }
 
 export default Upload;
-

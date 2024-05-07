@@ -39,7 +39,7 @@ function UserProf() {
 
     const cursoParaEnviar = {
       id: id,
-      titulo: curso.title,
+      titulo: curso.type,
       descricao: curso.description,
       link: curso.url,
       imagem: curso.image, // Utilizando a URL da imagem fornecida pelo usuário
@@ -81,15 +81,20 @@ function UserProf() {
     setSearchTerm(event.target.value);
   };
 
-  const handleImageUpload = (index) => {
-    const imageUrl = prompt("Insira a URL da imagem:");
-    if (imageUrl) {
+  const handleImageUpload = (index, event) => {
+    const file = event.target.files[0]; // Pega o primeiro arquivo selecionado
+    const reader = new FileReader();
+
+    reader.onload = function(event) {
+      const imageUrl = event.target.result; // URL da imagem convertida em base64
       setCursos(prevCursos => {
         const updatedCursos = [...prevCursos];
         updatedCursos[index].image = imageUrl;
         return updatedCursos;
       });
-    }
+    };
+
+    reader.readAsDataURL(file); // Converte o arquivo para base64
   };
 
   const filteredCursos = cursos.filter(curso =>
@@ -133,7 +138,8 @@ function UserProf() {
               <button style={styles.editButton} onClick={() => handleEdit(index)}>Editar</button>
               <button style={styles.deleteButton} onClick={() => handleDelete(index)}>Excluir</button>
               {curso.publicado ? <p style={{ color: 'rgb(98, 98, 204)' }}>Publicado</p> : <button style={styles.postButton} onClick={() => handlePost(curso, index)}>Postar</button>}
-              <button style={styles.imageButton} onClick={() => handleImageUpload(index)}>Adicionar Imagem</button>
+              <label htmlFor={`imageUpload-${index}`} style={styles.imageButton}>Adicionar Imagem</label>
+              <input type="file" id={`imageUpload-${index}`} style={{ display: 'none' }} onChange={(event) => handleImageUpload(index, event)} accept="image/*" />
             </div>
           </div>
         ))}
@@ -228,6 +234,7 @@ const styles = {
     padding: '10px 20px',
     cursor: 'pointer',
     transition: 'background-color 0.3s ease',
+    display: 'inline-block',
   },
   courseImage: {
     width: '100%',
