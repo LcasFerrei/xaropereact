@@ -232,6 +232,9 @@
     }
   ],
   "usuarios": [],
+  // essa parte virou o schema cursos no bd
+  // a classe passou a ser ListagemCurso.js
+  
   "Xaropecursos": [
     {
       "id": "htmlcurso",
